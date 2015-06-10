@@ -1,12 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
+<script type="text/javascript">
+    function mouseIn(img)
+    {
+        img.src="img/bea.jpeg";
+    }
+
+    function mouseOut(img)
+    {
+        img.src="img/geese.jpeg";
+    }
+</script>
+
     <head>
         <meta charset="utf-8">
         <title>Hello Magda</title>
     </head>
     <body>
         <h1>The geese</h1>
-         <img src="img/geese.jpeg" alt="Geese"> 
+         <img src="img/bea.jpeg" alt="Geese" onmouseover="mouseIn(this)" onmouseout="mouseOut(this)"/> 
         <p>
             
         </p>
