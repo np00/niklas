@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- A Sample ACM SIG Proceedings Paper in LaTeX Format -->
+<!-- view-source:https://dokie.li/acm-sigproc-sp -->
+
+<head>
+    <meta charset="utf-8" />
+    <title>[Under Construction]SCORVoc: Vocabulary-based Information Integration and Exchange in Supply Networks</title>
+    <link rel="stylesheet alternate" href="css/lncs.css" media="all" title="LNCS" />
+    <link rel="stylesheet" href="css/acm.css" media="all" title="ACM" />
+    <link rel="stylesheet alternate" href="https://www.w3.org/StyleSheets/TR/W3C-ED.css" media="all" title="W3C-ED" />
+    <link rel="stylesheet" href="css/do.css" media="all" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" media="all" />
+    <script src="scripts/simplerdf.js"></script>
+    <script src="scripts/medium-editor.min.js"></script>
+    <script src="scripts/medium-editor-tables.min.js"></script>
+    <script src="scripts/do.js"></script>
+</head>
+
+<body about="" prefix="rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns# rdfs: http://www.w3.org/2000/01/rdf-schema# owl: http://www.w3.org/2002/07/owl# xsd: http://www.w3.org/2001/XMLSchema# dcterms: http://purl.org/dc/terms/ dctypes: http://purl.org/dc/dcmitype/ foaf: http://xmlns.com/foaf/0.1/ v: http://www.w3.org/2006/vcard/ns# pimspace: http://www.w3.org/ns/pim/space# cc: https://creativecommons.org/ns# skos: http://www.w3.org/2004/02/skos/core# prov: http://www.w3.org/ns/prov# qb: http://purl.org/linked-data/cube# schema: http://schema.org/ void: http://rdfs.org/ns/void# rsa: http://www.w3.org/ns/auth/rsa# cert: http://www.w3.org/ns/auth/cert# cal: http://www.w3.org/2002/12/cal/ical# wgs: http://www.w3.org/2003/01/geo/wgs84_pos# org: http://www.w3.org/ns/org# biblio: http://purl.org/net/biblio# bibo: http://purl.org/ontology/bibo/ book: http://purl.org/NET/book/vocab# ov: http://open.vocab.org/terms/ sioc: http://rdfs.org/sioc/ns# doap: http://usefulinc.com/ns/doap# dbr: http://dbpedia.org/resource/ dbp: http://dbpedia.org/property/ sio: http://semanticscience.org/resource/ opmw: http://www.opmw.org/ontology/ deo: http://purl.org/spar/deo/ doco: http://purl.org/spar/doco/ cito: http://purl.org/spar/cito/ fabio: http://purl.org/spar/fabio/ oa: http://www.w3.org/ns/oa# as: https://www.w3.org/ns/activitystreams# ldp: http://www.w3.org/ns/ldp# solid: http://www.w3.org/ns/solid/terms# acl: http://www.w3.org/ns/auth/acl# dio: https://w3id.org/dio#" typeof="schema:CreativeWork sioc:Post prov:Entity">
+    <main>
+        <article about="" typeof="schema:ScholarlyArticle">
+            <h1 property="schema:name">[Under Construction]SCORVoc: Vocabulary-based Information Integration and Exchange in Supply Networks</h1>
+            <div id="authors">
+                <dl id="author-name">
+                    <dt>Authors</dt>
+                    <dd id="author-1"><span about="" rel="schema:contributor"><a about="#Niklas-Petersen" typeof="schema:Person" rel="schema:url" property="schema:name" href="">Niklas Petersen</a></span><span about="#Niklas-Petersen" rel="schema:memberOf" resource="#University-of-Bonn"></span><sup><a href="#author-org-1">1</a></sup><sup><a href="#author-org-2">2</a></sup><sup><a href="#author-email-1">‡</a></sup></dd>
+                    <dd id="author-2"><span about="" rel="schema:contributor"><a about="#Irlan-Grangel-Gonzales" typeof="schema:Person" rel="schema:url" property="schema:name" href="">Irlán Grangel-González</a></span><span about="#Irlan-Grangel-Gonzales" rel="schema:memberOf" resource="#University-of-Bonn"></span><sup><a href="#author-org-1">1</a></sup><sup><a href="#author-org-2">2</a></sup><sup><a href="#author-email-2">§</a></sup></dd>
+                    <dd id="author-3"><span about="" rel="schema:contributor"><a about="#Gökhan-Coskun" typeof="schema:Person" rel="schema:url" property="schema:name" href="">Gökhan Coskun</a></span><span about="#Gökhan-Coskun" rel="schema:memberOf" resource="#Fraunhofer-IAIS"></span><sup><a href="#author-org-1">1</a></sup><sup><a href="#author-org-2">2</a></sup><sup><a href="#author-email-3">¶</a></sup></dd>
+                    <dd id="author-4"><span about="" rel="schema:contributor"><a about="#Sören-Auer" typeof="schema:Person" rel="schema:url" property="schema:name" href="">Sören Auer</a></span><span about="#Sören-Auer" rel="schema:memberOf" resource="#University-of-Bonn"></span><sup><a href="#author-org-1">1</a></sup><sup><a href="#author-org-2">2</a></sup><sup><a href="#author-email-4">x</a></sup></dd>
+                    <dd id="author-5"><span about="" rel="schema:contributor"><a about="#Marvin-Frommhold" typeof="schema:Person" rel="schema:url" property="schema:name" href="">Marvin Frommhold</a></span><span about="#Marvin-Frommhold" rel="schema:memberOf" resource="#University-of-Leipzig"></span><sup><a href="#author-org-3">3</a></sup><sup><a href="#author-org-4">4</a></sup><sup><a href="#author-email-5">y</a></sup></dd>
+                    <dd id="author-6"><span about="" rel="schema:contributor"><a about="#Sebastian-Tramp" typeof="schema:Person" rel="schema:url" property="schema:name" href="">Sebastian Tramp</a></span><span about="#Sebastian-Tramp" rel="schema:memberOf" resource="#eccenca"></span><sup><a href="#author-org-4">4</a></sup><sup><a href="#author-email-6">z</a></sup></dd>
+                    <dd id="author-7"><span about="" rel="schema:contributor"><a about="#Maxime-Lefrançois" typeof="schema:Person" rel="schema:url" property="schema:name" href="">Maxime Lefrançois</a></span><span about="#Maxime-Lefrançois" rel="schema:memberOf" resource="#FAYOL-ENSMSE"></span><sup><a href="#author-org-5">5</a></sup><sup><a href="#author-email-7">u</a></sup></dd>
+                    <dd id="author-8"><span about="" rel="schema:contributor"><a about="#Antoine-Zimmermann" typeof="schema:Person" rel="schema:url" property="schema:name" href="">Antoine Zimmermann</a></span><span about="#Antoine-Zimmermann" rel="schema:memberOf" resource="#FAYOL-ENSMS"></span><sup><a href="#author-org-5">5</a></sup><sup><a href="#author-email-8">i</a></sup></dd>
+                </dl>
+                <ul id="author-org">
+                    <li id="author-org-1"><sup>1</sup><a about="#University-of-Bonn" typeof="schema:Organization" property="schema:name" rel="schema:url" href="https://www.uni-bonn.de/">University of Bonn</a>, <span class="adr"><span class="street-address"> Römerstraße 164</span>, <span class="region">Northrhine Westfalia</span>, <span class="locality">Bonn</span>, <span clss="postal-code">53111</span>, <span class="country-name">Germany</span></span>
+                    </li>
+                    <li id="author-org-2"><sup>2</sup><a about="#Fraunhofer-IAIS" typeof="schema:Organization" property="schema:name" rel="schema:url" href="https://www.iais.fraunhofer.de/">Fraunhofer IAIS</a>, <span class="adr"><span class="street-address"> Schloss Birlinghoven </span>, <span class="region">Northrhine Westfalia</span>, <span class="locality"> Sankt Augustin</span>, <span clss="postal-code">53757</span>, <span class="country-name">Germany</span></span>
+                    </li>
+                    <li id="author-org-3"><sup>3</sup><a about="#University-of-Leipzig" typeof="schema:Organization" property="schema:name" rel="schema:url" href="http://www.uni-leipzig.de/">University of Leipzig</a>, <span class="adr"><span class="locality">Leipzig</span>, <span class="country-name">Germany</span></span>
+                    </li>
+                    <li id="author-org-4"><sup>4</sup><a about="#Brookhaven-Laboratories" typeof="schema:Organization" property="schema:name" rel="schema:url" href="http://www.eccenca.com/">eccenca GmbH</a>, <span class="adr"><span class="locality">Leipzig</span>, <span class="country-name">Germany</span></span>
+                    </li>
+                    <li id="author-org-5"><sup>5</sup><a about="#FAYOL-ENSMS" typeof="schema:Organization" property="schema:name" rel="schema:url" href="http://www.nasa.gov/centers/ames">École Nationale Supérieure des Mines,</a>, <span class="adr"><span class="locality">Saint-Étienne</span>, <span class="postal-code">42023</span></span>
+                    </li>
+                </ul>
+                <ul id="author-email">
+                    <li id="author-email-1"><sup>‡</sup><a about="#Niklas-Petersen" rel="schema:email" href="mailto:dummy@dummy.com">dummy@dummy.com</a></li>
+                    <li id="author-email-2"><sup>§</sup><a about="#Irlan-Grangel-Gonzales" rel="schema:email" href="mailto:dummy@dummy.com">dummy@dummy.com</a></li>
+                    <li id="author-email-3"><sup>¶</sup><a about="#Gökhan-Coskun" rel="schema:email" href="mailto:dummy@dummy.com">dummy@dummy.com</a></li>
+                    <li id="author-email-4"><sup>x</sup><a about="#Sören-Auer" rel="schema:email" href="mailto:dummy@dummy.com">dummy@dummy.com</a></li>
+                    <li id="author-email-5"><sup>y</sup><a about="#Marvin-Frommhold" rel="schema:email" href="mailto:dummy@dummy.com">dummy@dummy.com</a></li>
+                    <li id="author-email-6"><sup>z</sup><a about="#Sebastian-Tramp" rel="schema:email" href="mailto:dummy@dummy.com">dummy@dummy.com</a></li>
+                    <li id="author-email-7"><sup>u</sup><a about="#Maxime-Lefrançois" rel="schema:email" href="mailto:dummy@dummy.com">dummy@dummy.com</a></li>
+                    <li id="author-email-8"><sup>i</sup><a about="#Antoine-Zimmermann" rel="schema:email" href="mailto:dummy@dummy.com">dummy@dummy.com</a></li>
+                </ul>
+            </div>
+            <div id="content">
+                <section id="abstract">
+                    <h2>Abstract</h2>
+                    <div datatype="rdf:HTML" property="schema:abstract">
+                        <p>
+                            <b>Advanced, highly specialized economies require in- stant, robust and efficient information flows within its value- added and Supply Chain networks. Especially also in the context of the recent Industry 4.0, smart manufacturing or cyber-physical systems initiatives more efficient and effective information ex- change in supply networks is of paramount importance. The Supply Chain Operation Reference (SCOR) is a cross-industry approach to lay the groundwork for this goal by defining a con- ceptual model for Supply Chain related information. Semantics- based approaches could facilitate information flows in supply networks, and enable to analyze, monitor and optimize Supply Chains (in particular for robustness). This paper first reviews existing formalizations of the Supply Chain Council’s SCOR standard. It then introduces the SCORVoc RDFS vocabulary which fully formalizes the latest SCOR standard, while over- coming the identified limitations of existing work. SCORVoc is operationalized by a set of SPARQL queries, that enable to evaluate metrics and key performance indicator (KPIs) defined by SCOR, on-the-fly, in an information systems that adheres to the vocabulary. Finally, we define concrete test scenarios and implement a synthetic </b>
+                        </p>
+                    </div>
+                </section>
+                <section id="introduction" rel="schema:hasPart" resource="#introduction">
+                    <h2 property="schema:name">Introduction</h2>
+                    <div datatype="rdf:HTML" property="schema:description" resource="#introduction" typeof="deo:Introduction">
+                        <p>
+                            In the past decades, internal enterprise information systems experienced much technical and scientific advancement. However, comparatively little progress was made to improve the exchange of information between enterprises. Until today, most of the communication between enterprises is done via informal channels, such as emails (including file attachments) or telephone calls. Only tier-1 suppliers of major Original Equipment Manufacturers (OEM) are usually fully integrated into the information exchange and corresponding IT-support (e.g. electronic data interchange connections) since these are expensive to deploy and maintain. Informal communication is time-consuming, costly and can become inefficient when crucial information is spread among many different people that each use their own format or system.
+                        </p>
+                        <p>
+                            This paper focuses on the two following business requirements:
+                            <ol type="1">
+                                <li>The production plans of a factory are highly dependent on the incoming supplies, since just-in-time productions aims at keeping the stock as low as possible to reduce dead capital. Hence being able to instantly exchange machine-interpretable messages between manufacturer and supplier is critical, for example, in case of supply shortages.
+                                </li>
+                                <li>It is a competitive advantage for a business to be able to assess the reliability of suppliers. However, monitor- ing the direct suppliers is not enough, since problems deeper in the Supply Chain (delays, strikes, outages, bankruptcies) can have a negative effect even on reliable suppliers. Therefore, it is of paramount importance to be able to pro-actively identify critical suppliers a
+                                </li>
+                            </ol>
+                        </p>
+                        <p>
+                            Hence we need a standardized way to represent knowledge about the business processes and the supply network, and to reason with it. This paper focuses on one of the most prominent such standards, namely the
+                            <emph>Supply Chain Operations Reference Model </emph> (<a class="ref" href="http://www.apics.org/sites/apics-supply-chain-council/frameworks/scor">SCOR</a>) [<a class="ref" href="#ref-1">1</a>]. While SCOR offers a great basis to answer the two identified business requirements, its reference itself only contains textual definitions. Neither machine-interpretable formats for messages, nor automatized ways to reason with such messages exist.
+                            <p>
+                                In order to address these limitations, we developed an approach for making the SCOR reference model executable. Our approach comprises the definition of the SCORVoc vo- cabulary providing an ontological formalization of the terms and concepts defined by SCOR. We argue that using a light- weight RDFS vocabulary is a good step towards applying the SCOR reference in real world applications. The fine-grained Linked Data representation formalism provides a number of benefits for implementing SCOR, namely:
+                                <ul style="list-style-type:disc">
+                                    <li>
+                                        <emph>Identification</emph> – world-wide unique identifiers facilitate the data exchange and linking in supply networks,</li>
+                                    <li>
+                                        <emph>Coherence/Reuse</emph> – mixing and mashing of vocabularies as well as schemata enables the reuse and alignment with domain specific formalisms,
+                                    </li>
+                                    <li>
+                                        <emph>Granularity</emph> – integration of representation on different levels of granularity,
+                                    </li>
+                                    <li>
+                                        <emph>Execution</emph> – query execution in order to automatically aggregate and analyze data,
+                                    </li>
+                                    <li>
+                                        <emph>Integration</emph> – bindings to a number of other technology ecosystems comprising XML (with RDF/XML, JSON (with JSON-LD) or HTML (with RDFa).
+                                    </li>
+                                </ul>
+                            </p>
+                            <p>
+                                Thus, this paper addresses the following research question: <em>How can the SCOR model be formalized and operationalized using the Semantic Web formalisms and the Linked Data principles?</em>
+                            </p>
+                            <p>
+                                Our approach is structured as follows: <a class="ref" href="#the-body-of-the-paper">Section II</a> first provides a more detailed overview on SCOR together with a discussion about the motivation and the goal of the reference. Then, existing works aimed at formalizing SCOR into a vocabulary (using RDF/S and OWL) are reviewed in <a class="ref" href="#dummy">Section III</a>.
+                            </p>
+                            <p>
+                                Finally, <a class="ref" href="#dummy">Section IV</a> to <a class="ref" href="#dummy">Section V</a> detail our main contributions:
+                                <ul style="list-style-type:disc">
+                                    <li><a class="ref" href="#dummy">Section IV</a>, we describe our methodical formalization of the terms and concepts. As a result, we defined the SCORVoc vocabulary consisting of 211 classes, 257 properties and 327 instances publicly available on the web. The vocabulary is a first step towards solving the first identified business requirements. </li>
+                                    <li>The SCORVoc vocabulary is partly operationalized using RDF Schema and OWL axioms is well as class constructors. Unfortunately, these languages are not sufficient to capture the semantics of all the metrics and evaluate all the KPIs. In <a class="ref" href="#dummy">Section IV-C</a> we address this specific need. We introduce 28 queries that adhere to the vocabulary for automatically computing crucial KPIs in a supply network, e.g. with regard to reliability, responsiveness, agility or cost.</li>
+                                    <li>The practical applicability of SCORVoc and its associated SPARQL queries is evaluated in <a class="ref" href="#dummy">Section V</a>. We demonstrate on generated synthetic benchmark data, that the amount of data and the query execution is easy to handle for partners in supply networks. Finally, <a class="ref" href="#dummy">Section VI</a> concludes and discusses future work.</li>
+                            </p>
+                    </div>
+                </section>
+                <section id="overview-of-SCOR" rel="schema:hasPart" resource="#overview-of-SCOR">
+                    <h2 property="schema:name">Overview of SCOR</h2>
+                    <div datatype="rdf:HTML" property="schema:description" resource="#overview-of-SCOR" typeof="deo:todo">
+                        <p>
+                            
+                                <figure>
+                                    <object data="img/SCORModel.png" height="240" type="image/png" width="240"></object>
+                                    <figcaption>High-level overview of the Supply Chain Organizations Reference (SCOR v11.0).                       </figcaption>
+                                </figure>
+                                      <figure>
+                                    <object data="img/before.png" height="240" type="image/png" width="240"></object>
+                                    <figcaption>Supply Chain workflow example: Reliability between Enterprises</figcaption>
+                                </figure>
+                        </p>
+                    </div>
+                </section>
+                <section id="related-work" rel="schema:hasPart" resource="#related-work">
+                    <h2 property="schema:name">Related Work</h2>
+                    <div datatype="rdf:HTML" property="schema:description" resource="#related-work" typeof="deo:todo">
+                        <p></p>
+                    </div>
+                </section>
+                <section id="formalization" rel="schema:hasPart" resource="#formalization">
+                    <h2 property="schema:name">Formalization and Operationalization</h2>
+                    <div datatype="rdf:HTML" property="schema:description" resource="#formalization" typeof="deo:todo">
+                        <p></p>
+                    </div>
+                </section>
+                <section id="evaluation" rel="schema:hasPart" resource="#evaluation">
+                    <h2 property="schema:name">Evaluation</h2>
+                    <div datatype="rdf:HTML" property="schema:description" resource="#evaluation" typeof="deo:todo">
+                              <figure>
+                                    <object data="img/after.png" height="240" type="image/png" width="240"></object>
+                                    <figcaption>Final view on the Supply Chain, where KPI information is propagated through the network                     </figcaption>
+                                </figure>
+                        <p></p>
+                    </div>
+                </section>
+                <section id="conclusion" rel="schema:hasPart" resource="#conclusion">
+                    <h2 property="schema:name">Conclusion and Future work</h2>
+                    <div datatype="rdf:HTML" property="schema:description" resource="#conclusion" typeof="deo:Conclusion">
+                        <p></p>
+                    </div>
+                </section>
+                <section id="acknowledgements" rel="schema:hasPart" resource="#acknowledgements">
+                    <h2 property="schema:name">Acknowledgements</h2>
+                    <div datatype="rdf:HTML" property="schema:description" resource="#acknowledgements" typeof="deo:todo">
+                        <p></p>
+                    </div>
+                </section>
+                <section id="references">
+                    <h2>References</h2>
+                    <div>
+                        <ol>
+                            <li id="ref-1" property="schema:citation">S. C. Council, “Supply chain operations reference model,” <em>SCOR, Version</em>, vol. 11, 2012.</li>
+                            <!-- 
+                            <li id="ref-2" property="schema:citation">J. Braams. Babel, a multilingual style-option system for use with <span class="latex">L<span>a</span>T<span>e</span>X</span>’s standard document styles. <em>TUGboat</em>, 12(2):291–301, June 1991.</li>
+                            <li id="ref-3" property="schema:citation">M. Clark. Post congress tristesse. In <em>TeX90 Conference Proceedings</em>, pages 84–89. TeX Users Group, March 1991.</li>
+                            <li id="ref-4" property="schema:citation">M. Herlihy. A methodology for implementing highly concurrent data objects. <em>ACM Trans. Program. Lang. Syst.</em>, 15(5):745–770, November 1993.</li>
+                            <li id="ref-5" property="schema:citation">L. Lamport. <em>LaTeX User’s Guide and Document Reference Manual</em>. Addison-Wesley Publishing Company, Reading, Massachusetts, 1986.</li>
+                            <li id="ref-6" property="schema:citation">S. Salas and E. Hille. <em>Calculus: One and Several Variable</em>. John Wiley and Sons, New York, 1978.</li>
+                            -->
+                        </ol>
+                    </div>
+                </section>
+
+                <section id="overview-of-scor" rel="schema:hasPart" resource="#tmp">
+                    <h2 property="schema:name">/tmp/</h2>
+                    <div property="schema:description">
+                        <section id="citations" rel="schema:hasPart" resource="#citations">
+                            <h3 property="schema:name">Citations</h3>
+                            <div datatype="rdf:HTML" property="schema:description">
+                                <p>Citations to articles [<a class="ref" href="#1">1</a>, <a class="ref" href="#3">3</a>, <a class="ref" href="#3">3</a>, <a class="ref" href="#4">4</a>], conference proceedings [<a class="ref" href="#2">2</a>] or books
+                                    <cite>[<a class="ref" href="#5">5</a>, <a class="ref" href="#6">6</a>]</cite> listed in the Bibliography section of your article will occur throughout the text of your article. You should use BibTeX to automatically produce this bibliography; you simply need to insert one of several citation commands with a key of the item cited in the proper location in the <code>.tex</code> file [<a class="ref" href="#5">5</a>]. The key is a short reference you invent to uniquely identify each work; in this sample document, the key is the first author’s surname and a word from the title. This identifying key is included with each item in the <code>.bib</code> file for your article.</p>
+                                <p>The details of the construction of the <code>.bib</code> file are beyond the scope of this sample document, but more information can be found in the <em>Author’s Guide</em>, and exhaustive details in the <em><span class="latex">L<span>a</span>T<span>e</span>X</span> User’s Guide</em>[<a class="ref" href="#5">5</a>].</p>
+                                <p>This article shows only the plainest form of the citation command, using <code>\cite</code>. This is what is stipulated in the SIGS style specifications. No other citation format is endorsed.</p>
+                            </div>
+                        </section>
+                        <section id="tables" rel="schema:hasPart" resource="#tables">
+                            <h3 property="schema:name">Tables</h3>
+                            <div datatype="rdf:HTML" property="schema:description">
+                                <p>Because tables cannot be split across pages, the best placement for them is typically the top of the page nearest their initial cite. To ensure this proper
+                                    <q>floating</q> placement of tables, use the environment <strong>table</strong> to enclose the table’s contents and the table caption. The contents of the table itself must go in the <strong>tabular</strong> environment, to be aligned properly in rows and columns, with the desired horizontal and vertical rules. Again, detailed instructions on <strong>tabular</strong> material is found in the <em><span class="latex">L<span>a</span>T<span>e</span>X</span> User’s Guide</em>.</p>
+                                <p>Immediately following this sentence is the point at which Table [<a href="#frequency-of-special-characters">Frequency of Special Characters</a>] is included in the input file; compare the placement of the table here with the table in the printed dvi output of this document.</p>
+                                <table id="frequency-of-special-characters">
+                                    <caption>Frequency of Special Characters</caption>
+                                    <thead>
+                                        <tr>
+                                            <th>Non-English or Math</th>
+                                            <th>Frequency</th>
+                                            <th>Comments</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Ø</td>
+                                            <td>1 in 1,000</td>
+                                            <td>For Swedish names</td>
+                                        </tr>
+                                        <tr>
+                                            <td>π</td>
+                                            <td>1 in 5</td>
+                                            <td>Common in math</td>
+                                        </tr>
+                                        <tr>
+                                            <td>$</td>
+                                            <td>4 in 5</td>
+                                            <td>Used in business</td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <math>
+                                                    <msubsup>
+                                                        <mi>Ψ</mi>
+                                                        <mn>1</mn>
+                                                        <mn>2</mn>
+                                                    </msubsup>
+                                                </math>
+                                            </td>
+                                            <td>1 in 40,000</td>
+                                            <td>Unexplained usage</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <p>To set a wider table, which takes up the whole width of the page’s live area, use the environment <strong>table*</strong> to enclose the table’s contents and the table caption. As with a single-column table, this wide table will
+                                    <q>float</q> to a location deemed more desirable. Immediately following this sentence is the point at which Table 2 is included in the input file; again, it is instructive to compare the placement of the table here with the table in the printed dvi output of this document.</p>
+                            </div>
+                        </section>
+                        <section id="figures" rel="schema:hasPart" resource="#figures">
+                            <h3 property="schema:name">Figures</h3>
+                            <div datatype="rdf:HTML" property="schema:description">
+                                <p>Like tables, figures cannot be split across pages; the best placement for them is typically the top or the bottom of the page nearest their initial cite. To ensure this proper
+                                    <q>floating</q> placement of figures, use the environment <strong>figure</strong> to enclose the figure and its caption.</p>
+                                <p>This sample document contains examples of <strong>.eps</strong> and <strong>.ps</strong> files to be displayable with <span class="latex">L<span>a</span>T<span>e</span>X</span>. More details on each of these is found in the <em>Author’s Guide</em>.</p>
+                                <figure>
+                                    <img height="13%" src="media/images/fly.png" width="13%" />
+                                    <figcaption>A sample black and white graphic (.eps format).</figcaption>
+                                </figure>
+                                <figure>
+                                    <img height="25%" src="media/images/fly.png" width="25%" />
+                                    <figcaption>A sample black and white graphic (.eps format) that has been resized with the <code>epsfig</code> command.</figcaption>
+                                </figure>
+                                <p>As was the case with tables, you may want a figure that spans two columns. To do this, and still to ensure proper
+                                    <q>floating</q> placement of tables, use the environment <strong>figure*</strong> to enclose the figure and its caption.</p>
+                                <p>Note that either <strong>.ps</strong> or <strong>.eps</strong> formats are used; use the <code>\epsfig</code> or <code>\psfig</code> commands as appropriate for the different file types.</p>
+                                <figure>
+                                    <object data="media/images/rosette.svg" height="240" type="image/svg+xml" width="240"></object>
+                                    <figcaption>A sample black and white graphic (.ps format) that has been resized with the <code>psfig</code> command.</figcaption>
+                                </figure>
+                            </div>
+                        </section>
+                        <section id="theorem-like-constructs" rel="schema:hasPart" resource="#theorem-like-constructs">
+                            <h3 property="schema:name">Theorem-like Constructs</h3>
+                            <div datatype="rdf:HTML" property="schema:description">
+                                <p>Other common constructs that may occur in your article are the forms for logical constructs like theorems, axioms, corollaries and proofs. There are two forms, one produced by the command <code>\newtheorem</code> and the other by the command <code>\newdef</code>; perhaps the clearest and easiest way to distinguish them is to compare the two in the output of this sample document:</p>
+                                <p>This uses the <strong>theorem</strong> environment, created by the <code>\newtheorem</code> command:</p>
+                                <dl class="theorem">
+                                    <dt>Theorem 1</dt>
+                                    <dd><span>Let <math><mi>f</mi></math> be continuous on <math><mo form="prefix">[</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo form="postfix">]</mo></math>. If G is an antiderivative for f on [a, b], then</span>
+                                        <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                            <mtable class="m-equation" displaystyle="true">
+                                                <mtr>
+                                                    <mtd columnalign="left">
+                                                        <mstyle displaystyle="true">
+                                                            <munderover>
+                                                                <mo>∫</mo>
+                                                                <mi>a</mi>
+                                                                <mi>b</mi>
+                                                            </munderover>
+                                                        </mstyle>
+                                                        <mi>f</mi>
+                                                        <mrow>
+                                                            <mo form="prefix">(</mo>
+                                                            <mi>t</mi>
+                                                            <mo form="postfix">)</mo>
+                                                        </mrow>
+                                                        <mo>ⅆ</mo>
+                                                        <mi>t</mi>
+                                                        <mo>=</mo>
+                                                        <mi>G</mi>
+                                                        <mrow>
+                                                            <mo form="prefix">(</mo>
+                                                            <mi>b</mi>
+                                                            <mo form="postfix">)</mo>
+                                                        </mrow>
+                                                        <mo>-</mo>
+                                                        <mi>G</mi>
+                                                        <mrow>
+                                                            <mo form="prefix">(</mo>
+                                                            <mi>a</mi>
+                                                            <mo form="postfix">)</mo>
+                                                        </mrow>
+                                                        <mo>.</mo>
+                                                    </mtd>
+                                                </mtr>
+                                            </mtable>
+                                        </math>
+                                    </dd>
+                                </dl>
+                                <p>The other uses the <strong>definition</strong> environment, created by the <code>\newdef</code> command:</p>
+                                <dl class="definition">
+                                    <dt>Definition 1</dt>
+                                    <dd><span>If <math><mi>z</mi></math> is irrational, then by <math><msup><mi>e</mi><mi>z</mi></msup></math> we mean the unique number which has logarithm <math><mi>z</mi></math>:</span>
+                                        <math>
+                                            <mo>log</mo>
+                                            <msup>
+                                                <mi>e</mi>
+                                                <mi>z</mi>
+                                            </msup>
+                                            <mo>=</mo>
+                                            <mi>z</mi>
+                                        </math>
+                                    </dd>
+                                </dl>
+                                <p>Two lists of constructs that use one of these forms is given in the <em>Author’s Guidelines</em>.</p>
+                                <p>There is one other similar construct environment, which is already set up for you; i.e. you must <em>not</em> use a <code>\newdef</code> command to create it: the <strong>proof</strong> environment. Here is a example of its use:</p>
+                                <dl class="proof">
+                                    <dt>Proof</dt>
+                                    <dd><span>Suppose on the contrary there exists a real number <math><mi>L</mi></math> such that</span>
+                                        <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                            <mtable class="m-equation" displaystyle="true">
+                                                <mtr>
+                                                    <mtd columnalign="left">
+                                                        <mstyle displaystyle="true">
+                                                            <munder>
+                                                                <mi>lim</mi>
+                                                                <mrow>
+                                                                    <mi>x</mi>
+                                                                    <mo>→</mo>
+                                                                    <mo>∞</mo>
+                                                                </mrow>
+                                                            </munder>
+                                                        </mstyle>
+                                                        <mfrac linethickness="1">
+                                                            <mrow>
+                                                                <mi>f</mi>
+                                                                <mrow>
+                                                                    <mo form="prefix">(</mo>
+                                                                    <mi>x</mi>
+                                                                    <mo form="postfix">)</mo>
+                                                                </mrow>
+                                                            </mrow>
+                                                            <mrow>
+                                                                <mi>g</mi>
+                                                                <mrow>
+                                                                    <mo form="prefix">(</mo>
+                                                                    <mi>x</mi>
+                                                                    <mo form="postfix">)</mo>
+                                                                </mrow>
+                                                            </mrow>
+                                                        </mfrac>
+                                                        <mo>=</mo>
+                                                        <mi>L</mi>
+                                                        <mo>.</mo>
+                                                    </mtd>
+                                                </mtr>
+                                            </mtable>
+                                        </math>
+                                        <p>Then</p>
+                                        <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                            <mtable class="m-equation" displaystyle="true">
+                                                <mtr>
+                                                    <mtd columnalign="left">
+                                                        <mi>l</mi>
+                                                        <mo>=</mo>
+                                                        <mstyle displaystyle="true">
+                                                            <munder>
+                                                                <mi>lim</mi>
+                                                                <mrow>
+                                                                    <mi>x</mi>
+                                                                    <mo>→</mo>
+                                                                    <mi>c</mi>
+                                                                </mrow>
+                                                            </munder>
+                                                        </mstyle>
+                                                        <mi>f</mi>
+                                                        <mrow>
+                                                            <mo form="prefix">(</mo>
+                                                            <mi>x</mi>
+                                                            <mo form="postfix">)</mo>
+                                                        </mrow>
+                                                        <mo>=</mo>
+                                                        <mstyle displaystyle="true">
+                                                            <munder>
+                                                                <mi>lim</mi>
+                                                                <mrow>
+                                                                    <mi>x</mi>
+                                                                    <mo>→</mo>
+                                                                    <mi>c</mi>
+                                                                </mrow>
+                                                            </munder>
+                                                        </mstyle>
+                                                        <mrow>
+                                                            <mo rspace="0.3em" lspace="0em" stretchy="true" fence="true" form="prefix">[</mo>
+                                                            <mi>g</mi>
+                                                            <mrow>
+                                                                <mi>x</mi>
+                                                            </mrow>
+                                                            <mo>⋅</mo>
+                                                            <mfrac linethickness="1">
+                                                                <mrow>
+                                                                    <mi>f</mi>
+                                                                    <mrow>
+                                                                        <mo form="prefix">(</mo>
+                                                                        <mi>x</mi>
+                                                                        <mo form="postfix">)</mo>
+                                                                    </mrow>
+                                                                </mrow>
+                                                                <mrow>
+                                                                    <mi>g</mi>
+                                                                    <mrow>
+                                                                        <mo form="prefix">(</mo>
+                                                                        <mi>x</mi>
+                                                                        <mo form="postfix">)</mo>
+                                                                    </mrow>
+                                                                </mrow>
+                                                            </mfrac>
+                                                            <mo rspace="0em" lspace="0.3em" stretchy="true" fence="true" form="postfix">]</mo>
+                                                        </mrow>
+                                                        <mo>=</mo>
+                                                        <mstyle displaystyle="true">
+                                                            <munder>
+                                                                <mi>lim</mi>
+                                                                <mrow>
+                                                                    <mi>x</mi>
+                                                                    <mo>→</mo>
+                                                                    <mi>c</mi>
+                                                                </mrow>
+                                                            </munder>
+                                                        </mstyle>
+                                                        <mi>g</mi>
+                                                        <mrow>
+                                                            <mo form="prefix">(</mo>
+                                                            <mi>x</mi>
+                                                            <mo form="postfix">)</mo>
+                                                        </mrow>
+                                                        <mo>⋅</mo>
+                                                        <mstyle displaystyle="true">
+                                                            <munder>
+                                                                <mi>lim</mi>
+                                                                <mrow>
+                                                                    <mi>x</mi>
+                                                                    <mo>→</mo>
+                                                                    <mi>c</mi>
+                                                                </mrow>
+                                                            </munder>
+                                                        </mstyle>
+                                                        <mfrac linethickness="1">
+                                                            <mrow>
+                                                                <mi>f</mi>
+                                                                <mrow>
+                                                                    <mo form="prefix">(</mo>
+                                                                    <mi>x</mi>
+                                                                    <mo form="postfix">)</mo>
+                                                                </mrow>
+                                                            </mrow>
+                                                            <mrow>
+                                                                <mi>g</mi>
+                                                                <mrow>
+                                                                    <mo form="prefix">(</mo>
+                                                                    <mi>x</mi>
+                                                                    <mo form="postfix">)</mo>
+                                                                </mrow>
+                                                            </mrow>
+                                                        </mfrac>
+                                                        <mo>=</mo>
+                                                        <mn>0</mn>
+                                                        <mo>⋅</mo>
+                                                        <mi>L</mi>
+                                                        <mo>=</mo>
+                                                        <mn>0</mn>
+                                                        <mo>,</mo>
+                                                    </mtd>
+                                                </mtr>
+                                            </mtable>
+                                        </math>
+                                        <p>which contradicts our assumption that
+                                            <math>
+                                                <mi>l</mi>
+                                                <mo>≠</mo>
+                                                <mn>0</mn>
+                                            </math>.</p>
+                                    </dd>
+                                </dl>
+                                <p>Complete rules about using these environments and using the two different creation commands are in the <em>Author’s Guide</em>; please consult it for more detailed instructions. If you need to use another construct, not listed therein, which you want to have the same formatting as the Theorem or the Definition[<a class="ref" href="#6">6</a>] shown above, use the <code>\newtheorem</code> or the <code>\newdef</code> command, respectively, to create it.</p>
+                                <table id="some-typical-commands">
+                                    <caption>Some Typical Commands</caption>
+                                    <thead>
+                                        <tr>
+                                            <th>Command</th>
+                                            <th>A Number</th>
+                                            <th>Comments</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><code>\alignauthor</code></td>
+                                            <td>100</td>
+                                            <td>Author alignment</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>\numberofauthors</code></td>
+                                            <td>200</td>
+                                            <td>Author enumeration</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>\table</code></td>
+                                            <td>300</td>
+                                            <td>For tables</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>\table*</code></td>
+                                            <td>400</td>
+                                            <td>For wider tables</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <figure>
+                                    <img height="auto" src="media/images/flies.png" width="100%" />
+                                    <figcaption>A sample black and white graphic (.eps format) that needs to span two columns of text.</figcaption>
+                                </figure>
+                            </div>
+                        </section>
+                        <dl>
+                            <dt>A <em>Caveat</em> for the <span class="tex">T<span>e</span>X</span> Expert</dt>
+                            <dd>Because you have just been given permission to use the <code>\newdef</code> command to create a new form, you might think you can use <span class="tex">T<span>e</span>X</span>’s <code>\def</code> to create a new command: <em>Please refrain from doing this!</em> Remember that your <span class="latex">L<span>a</span>T<span>e</span>X</span> source code is primarily intended to create camera-ready copy, but may be converted to other forms – e.g. HTML. If you inadvertently omit some or all of the <code>\def</code>s recompilation will be, to say the least, problematic.</dd>
+                        </dl>
+                    </div>
+                </section>
+                
+                <section id="appendix">
+                    <dl>
+                        <dt>Appendix</dt>
+                        <dd>
+                            <section>
+                                <h2>Headings in Appendices</h2>
+                                <div>
+                                    <p>The rules about hierarchical headings discussed above for the body of the article are different in the appendices. In the <strong>appendix</strong> environment, the <strong>command</strong> section is used to indicate the start of each Appendix, with alphabetic order designation (i.e. the first is A, the second B, etc.) and a title (if you include one). So, if you need hierarchical structure within an Appendix, start with <strong>subsection</strong> as the highest level. Here is an outline of the body of this document in Appendix-appropriate form:</p>
+                                    <section>
+                                        <h3>Introduction</h3>
+                                    </section>
+                                    <section>
+                                        <h3>The Body of the Paper</h3>
+                                        <div>
+                                            <section>
+                                                <h4>Type Changes and Special Characters</h4>
+                                            </section>
+                                            <section>
+                                                <h4>Math Equations</h4>
+                                            </section>
+                                        </div>
+                                    </section>
+                                    <section>
+                                        <h3>Conclusions</h3>
+                                    </section>
+                                    <section>
+                                        <h3>Acknowledgments</h3>
+                                    </section>
+                                    <section>
+                                        <h3>Additional Authors</h3>
+                                        <div>
+                                            <p>This section is inserted by <span class="latex">L<span>a</span>T<span>e</span>X</span>; you do not insert it. You just add the names and information in the <code>\additionalauthors</code> command at the start of the document.</p>
+                                        </div>
+                                    </section>
+                                    <section>
+                                        <h3>References</h3>
+                                        <div>
+                                            <p>Generated by bibtex from your .bib file. Run latex, then bibtex, then latex twice (to resolve references) to create the .bbl file. Insert that .bbl file into the .tex source file and comment out the command <code>\thebibliography</code>.</p>
+                                        </div>
+                                    </section>
+                                </div>
+                            </section>
+                            <section>
+                                <h2>More Help For The Hardy</h2>
+                                <div>
+                                    <p>The acm_proc_article-sp document class file itself is chockfull of succinct and helpful comments. If you consider yourself a moderately experienced to expert user of <span class="latex">L<span>a</span>T<span>e</span>X</span>, you may find reading it useful but please remember not to change it.</p>
+                                </div>
+                            </section>
+                        </dd>
+                    </dl>
+                </section>
+            </div>
+        </article>
+    </main>
+</body>
+
+</html>
