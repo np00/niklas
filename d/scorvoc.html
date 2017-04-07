@@ -6,8 +6,8 @@
 <head>
     <meta charset="utf-8" />
     <title>[Under Construction]SCORVoc: Vocabulary-based Information Integration and Exchange in Supply Networks</title>
-    <link rel="stylesheet alternate" href="css/lncs.css" media="all" title="LNCS" />
-    <link rel="stylesheet" href="css/acm.css" media="all" title="ACM" />
+    <link rel="stylesheet" href="css/lncs.css" media="all" title="LNCS" />
+    <link rel="stylesheet alternate" href="css/acm.css" media="all" title="ACM" />
     <link rel="stylesheet alternate" href="https://www.w3.org/StyleSheets/TR/W3C-ED.css" media="all" title="W3C-ED" />
     <link rel="stylesheet" href="css/do.css" media="all" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" media="all" />
@@ -42,7 +42,7 @@
                     </li>
                     <li id="author-org-4"><sup>4</sup><a about="#Brookhaven-Laboratories" typeof="schema:Organization" property="schema:name" rel="schema:url" href="http://www.eccenca.com/">eccenca GmbH</a>, <span class="adr"><span class="locality">Leipzig</span>, <span class="country-name">Germany</span></span>
                     </li>
-                    <li id="author-org-5"><sup>5</sup><a about="#FAYOL-ENSMS" typeof="schema:Organization" property="schema:name" rel="schema:url" href="http://www.nasa.gov/centers/ames">École Nationale Supérieure des Mines,</a>, <span class="adr"><span class="locality">Saint-Étienne</span>, <span class="postal-code">42023</span></span>
+                    <li id="author-org-5"><sup>5</sup><a about="#FAYOL-ENSMS" typeof="schema:Organization" property="schema:name" rel="schema:url" href="http://www.nasa.gov/centers/ames">École Nationale Supérieure des Mines</a>, <span class="adr"><span class="locality">Saint-Étienne</span>, <span class="postal-code">42023</span></span>
                     </li>
                 </ul>
                 <ul id="author-email">
@@ -73,98 +73,273 @@
                         </p>
                         <p>
                             This paper focuses on the two following business requirements:
-                            <ol type="1">
-                                <li>The production plans of a factory are highly dependent on the incoming supplies, since just-in-time productions aims at keeping the stock as low as possible to reduce dead capital. Hence being able to instantly exchange machine-interpretable messages between manufacturer and supplier is critical, for example, in case of supply shortages.
-                                </li>
-                                <li>It is a competitive advantage for a business to be able to assess the reliability of suppliers. However, monitor- ing the direct suppliers is not enough, since problems deeper in the Supply Chain (delays, strikes, outages, bankruptcies) can have a negative effect even on reliable suppliers. Therefore, it is of paramount importance to be able to pro-actively identify critical suppliers a
-                                </li>
-                            </ol>
                         </p>
+                        <ol type="1">
+                            <li>The production plans of a factory are highly dependent on the incoming supplies, since just-in-time productions aims at keeping the stock as low as possible to reduce dead capital. Hence being able to instantly exchange machine-interpretable messages between manufacturer and supplier is critical, for example, in case of supply shortages.
+                            </li>
+                            <li>It is a competitive advantage for a business to be able to assess the reliability of suppliers. However, monitor- ing the direct suppliers is not enough, since problems deeper in the Supply Chain (delays, strikes, outages, bankruptcies) can have a negative effect even on reliable suppliers. Therefore, it is of paramount importance to be able to pro-actively identify critical suppliers and potential threats in the entire value-added network.
+                            </li>
+                        </ol>
                         <p>
                             Hence we need a standardized way to represent knowledge about the business processes and the supply network, and to reason with it. This paper focuses on one of the most prominent such standards, namely the
-                            <emph>Supply Chain Operations Reference Model </emph> (<a class="ref" href="http://www.apics.org/sites/apics-supply-chain-council/frameworks/scor">SCOR</a>) [<a class="ref" href="#ref-1">1</a>]. While SCOR offers a great basis to answer the two identified business requirements, its reference itself only contains textual definitions. Neither machine-interpretable formats for messages, nor automatized ways to reason with such messages exist.
-                            <p>
-                                In order to address these limitations, we developed an approach for making the SCOR reference model executable. Our approach comprises the definition of the SCORVoc vo- cabulary providing an ontological formalization of the terms and concepts defined by SCOR. We argue that using a light- weight RDFS vocabulary is a good step towards applying the SCOR reference in real world applications. The fine-grained Linked Data representation formalism provides a number of benefits for implementing SCOR, namely:
-                                <ul style="list-style-type:disc">
-                                    <li>
-                                        <emph>Identification</emph> – world-wide unique identifiers facilitate the data exchange and linking in supply networks,</li>
-                                    <li>
-                                        <emph>Coherence/Reuse</emph> – mixing and mashing of vocabularies as well as schemata enables the reuse and alignment with domain specific formalisms,
-                                    </li>
-                                    <li>
-                                        <emph>Granularity</emph> – integration of representation on different levels of granularity,
-                                    </li>
-                                    <li>
-                                        <emph>Execution</emph> – query execution in order to automatically aggregate and analyze data,
-                                    </li>
-                                    <li>
-                                        <emph>Integration</emph> – bindings to a number of other technology ecosystems comprising XML (with RDF/XML, JSON (with JSON-LD) or HTML (with RDFa).
-                                    </li>
-                                </ul>
-                            </p>
-                            <p>
-                                Thus, this paper addresses the following research question: <em>How can the SCOR model be formalized and operationalized using the Semantic Web formalisms and the Linked Data principles?</em>
-                            </p>
-                            <p>
-                                Our approach is structured as follows: <a class="ref" href="#the-body-of-the-paper">Section II</a> first provides a more detailed overview on SCOR together with a discussion about the motivation and the goal of the reference. Then, existing works aimed at formalizing SCOR into a vocabulary (using RDF/S and OWL) are reviewed in <a class="ref" href="#dummy">Section III</a>.
-                            </p>
-                            <p>
-                                Finally, <a class="ref" href="#dummy">Section IV</a> to <a class="ref" href="#dummy">Section V</a> detail our main contributions:
-                                <ul style="list-style-type:disc">
-                                    <li><a class="ref" href="#dummy">Section IV</a>, we describe our methodical formalization of the terms and concepts. As a result, we defined the SCORVoc vocabulary consisting of 211 classes, 257 properties and 327 instances publicly available on the web. The vocabulary is a first step towards solving the first identified business requirements. </li>
-                                    <li>The SCORVoc vocabulary is partly operationalized using RDF Schema and OWL axioms is well as class constructors. Unfortunately, these languages are not sufficient to capture the semantics of all the metrics and evaluate all the KPIs. In <a class="ref" href="#dummy">Section IV-C</a> we address this specific need. We introduce 28 queries that adhere to the vocabulary for automatically computing crucial KPIs in a supply network, e.g. with regard to reliability, responsiveness, agility or cost.</li>
-                                    <li>The practical applicability of SCORVoc and its associated SPARQL queries is evaluated in <a class="ref" href="#dummy">Section V</a>. We demonstrate on generated synthetic benchmark data, that the amount of data and the query execution is easy to handle for partners in supply networks. Finally, <a class="ref" href="#dummy">Section VI</a> concludes and discusses future work.</li>
-                            </p>
+                            <em>Supply Chain Operations Reference Model </em> (<a class="ref" href="http://www.apics.org/sites/apics-supply-chain-council/frameworks/scor">SCOR</a>) [<a class="ref" href="#ref-1">1</a>]. While SCOR offers a great basis to answer the two identified business requirements, its reference itself only contains textual definitions. Neither machine-interpretable formats for messages, nor automatized ways to reason with such messages exist.
+                        </p>
+                        <p>
+                            In order to address these limitations, we developed an approach for making the SCOR reference model executable. Our approach comprises the definition of the SCORVoc vo- cabulary providing an ontological formalization of the terms and concepts defined by SCOR. We argue that using a light- weight RDFS vocabulary is a good step towards applying the SCOR reference in real world applications. The fine-grained Linked Data representation formalism provides a number of benefits for implementing SCOR, namely:
+                        </p>
+                        <ul style="list-style-type:disc">
+                            <li>
+                                <em>Identification</em> – world-wide unique identifiers facilitate the data exchange and linking in supply networks,</li>
+                            <li>
+                                <em>Coherence/Reuse</em> – mixing and mashing of vocabularies as well as schemata enables the reuse and alignment with domain specific formalisms,
+                            </li>
+                            <li>
+                                <em>Granularity</em> – integration of representation on different levels of granularity,
+                            </li>
+                            <li>
+                                <em>Execution</em> – query execution in order to automatically aggregate and analyze data,
+                            </li>
+                            <li>
+                                <em>Integration</em> – bindings to a number of other technology ecosystems comprising XML (with RDF/XML, JSON (with JSON-LD) or HTML (with RDFa).
+                            </li>
+                        </ul>
+                        <p>
+                            Thus, this paper addresses the following research question: <em>How can the SCOR model be formalized and operationalized using the Semantic Web formalisms and the Linked Data principles?</em>
+                        </p>
+                        <p>
+                            Our approach is structured as follows: <a class="ref" href="#the-body-of-the-paper">Section II</a> first provides a more detailed overview on SCOR together with a discussion about the motivation and the goal of the reference. Then, existing works aimed at formalizing SCOR into a vocabulary (using RDF/S and OWL) are reviewed in <a class="ref" href="#dummy">Section III.</a>
+                        </p>
+                        <p>
+                            Finally, <a class="ref" href="#dummy">Section IV</a> to <a class="ref" href="#dummy">Section V</a> detail our main contributions:
+                        </p>
+                        <ul style="list-style-type:disc">
+                            <li><a class="ref" href="#dummy">Section IV</a>, we describe our methodical formalization of the terms and concepts. As a result, we defined the SCORVoc vocabulary consisting of 211 classes, 257 properties and 327 instances publicly available on the web. The vocabulary is a first step towards solving the first identified business requirements. </li>
+                            <li>The SCORVoc vocabulary is partly operationalized using RDF Schema and OWL axioms is well as class constructors. Unfortunately, these languages are not sufficient to capture the semantics of all the metrics and evaluate all the KPIs. In <a class="ref" href="#dummy">Section IV-C</a> we address this specific need. We introduce 28 queries that adhere to the vocabulary for automatically computing crucial KPIs in a supply network, e.g. with regard to reliability, responsiveness, agility or cost.</li>
+                            <li>The practical applicability of SCORVoc and its associated SPARQL queries is evaluated in <a class="ref" href="#dummy">Section V</a>. We demonstrate on generated synthetic benchmark data, that the amount of data and the query execution is easy to handle for partners in supply networks. Finally, <a class="ref" href="#dummy">Section VI</a> concludes and discusses future work.</li>
                     </div>
                 </section>
                 <section id="overview-of-SCOR" rel="schema:hasPart" resource="#overview-of-SCOR">
                     <h2 property="schema:name">Overview of SCOR</h2>
                     <div datatype="rdf:HTML" property="schema:description" resource="#overview-of-SCOR" typeof="deo:todo">
                         <p>
-                            
-                                <figure>
-                                    <object data="img/SCORModel.png" height="240" type="image/png" width="240"></object>
-                                    <figcaption>High-level overview of the Supply Chain Organizations Reference (SCOR v11.0).                       </figcaption>
-                                </figure>
-                                      <figure>
-                                    <object data="img/before.png" height="240" type="image/png" width="240"></object>
-                                    <figcaption>Supply Chain workflow example: Reliability between Enterprises</figcaption>
-                                </figure>
+                            It is challenging to agree on a standardized way to represent knowledge about the business processes and the supply network. This is partly due to the variety in company size, industry and business models, viewpoints, and granularity of requirements. The APICS Supply Chain Council 2 tackles this challenge, and elaborates a reference model named <em>Supply
+Chain Operations Reference Model (<a class="ref" href="http://www.apics.org/sites/apics-supply-chain-council/frameworks/scor">SCOR</a>)</em> [<a class="ref" href="#ref-1">1</a>].
                         </p>
+                        <p>
+                            The main concept in SCOR is named process, and denotes any activity related to the production and logistics. The SCOR model has different conceptualization levels. The Top Level contains the main processes: <em>Enable</em>, <em>Make</em>, <em>Source</em>, <em>Deliver</em>, Return
+                            </em>. Then, the Configuration Level provides a set of process categories for main processes. Finally, the Process Element Level decomposes the process categories by adding process element definitions and process element information. This leads to a total of 201 definitions of industry-agnostic processes.
+                        </p>
+                        <p>
+                            By today, SCOR [<a class="ref" href="#ref-2">2</a>]–[<a class="ref" href="#ref-5">5</a>] is in its 11th revision, and has become a mature reference model backed up by many global players (including IBM, HP and SAP). It contains industry- agnostic definitions for 201 processes and 286 metrics. In Figure 1 we give an high-level overview of the reference model.
+                        </p>
+                        <p>
+                            The motivation behind SCOR is to enable enterprises to diagnose and manage their Supply Chains. Figure 2 illustrates the limited view of an enterprise without any Supply Chain communication. The goal is to extend the view in order to identify poorly performing links and act upon them. Besides communication, it is necessary that each link is measured equally by each partner.
+                        </p>
+                        <p>
+                            For that purpose, SCOR defines different performance in- dicators (metrics) including a calculation plan to ensure com- parability within the entire Supply Chain. In total, there are 286 metrics which are grouped into five categories: <em>Reliability</em>, <em>Responsiveness</em>, <em>Agility</em>, <em>Costs</em> and <em>Assets</em>. In Table II, we provide an high-level overview on these metrics. The usage of these metrics allows Supply Chain managers to identify weak and strong links within the Supply Chain.
+                            <figure>
+                                <object data="img/SCORModel.png" height="240" type="image/png" width="240"></object>
+                                <figcaption>High-level overview of the Supply Chain Organizations Reference (SCOR v11.0). </figcaption>
+                            </figure>
+                            <figure>
+                                <object data="img/before.png" height="240" type="image/png" width="240"></object>
+                                <figcaption>Supply Chain workflow example: Reliability between Enterprises</figcaption>
+                            </figure>
                     </div>
                 </section>
                 <section id="related-work" rel="schema:hasPart" resource="#related-work">
                     <h2 property="schema:name">Related Work</h2>
                     <div datatype="rdf:HTML" property="schema:description" resource="#related-work" typeof="deo:todo">
-                        <p></p>
+                        <p>
+                            Various projects and activities aim at formalizing SCOR into a vocabulary using RDFS and OWL [<a class="ref" href="#ref-7">7</a>]–[<a class="ref" href="#ref-11">11</a>].
+                        </p>
+                        <p>
+                            The formalization of the SCOR model into an ontology is first addressed in [<a class="ref" href="#ref-8">8</a>]. The authors analyzed the different conceptualization levels of the model and converted them into OWL classes.
+                        </p>
+                        <p>
+                            In [<a class="ref" href="#ref-10">10</a>], a seminal approach formalizes Supply Chain op- erations overcoming the semantic weaknesses of the SCOR model. In this work the SCOR-KOS OWL model is presented, which encodes the main entities and properties for SCOR. In addition, the SCOR-Full ontology is a domain ontology for the representation and management of knowledge about Supply Chain operations. The latter presents the core concepts of Supply Chain embedded in SCOR definitions. This effort is also the basis used by Zdravković et al. [<a class="ref" href="#ref-12">12</a>] to configure the Supply Chain process. They provide a thread model configuring a specific flow of the Supply Chain studied.
+                        </p>
+                        <p>
+                            The combination of the SCOR ontology and the ONTO- PDM 4 ontology is addressed in [<a class="ref" href="#ref-11">11</a>]. The ONTO-PDM on- tology is used to represent information regarding product development, which is not covered by SCOR. The goal is to create a Supply Chain ontology framework for networked enterprises interoperability.
+                        </p>
+                        <p>
+                            Sakka et al. [<a class="ref" href="#ref-9">9</a>][<a class="ref" href="#ref-8">8</a>] present a SCOR model as a way to align the business processes with strategical objectives for Supply Chains. Concepts like information and input/output are included to face this alignment. SCOR is modeled using ARIS 5 thus obtaining a SCOR/ARIS model. Then, XLST transforms the output of SCOR/ARIS into a SCOR OWL ontology.
+                        </p>
+                        <p>
+                            The work conducted by [<a class="ref" href="#ref-14">14</a>] provides an ontology model to support Supply Chain process modeling and analysis based on the SCOR model. In this work, only part of the SCOR-KOS model [<a class="ref" href="#ref-10">10</a>] related to the definition of input and output entities in SCOR processes is reused.
+                        </p>
+                        <p>
+                            However, most of these attempts have limitations, summed up in Table I:
+                        </p>
+                        <ul style="list-style-type:disc">
+                            <li>First, these approaches are based on SCOR versions up to 8.0, while the current version is 11.
+                            </li>
+                            <li>Then, the Linked Data principles are not satisfied by these works. They do not reuse existing vocabularies when possible, such as schema.org and Dublin Core. But above all, vocabularies of these works are not publicly available on the web. We contacted the authors in order to get access to their vocabularies, unsuccessfully.
+                            </li>
+                            <li>
+                                Most approaches choose to stay close to the hierarchical structure for processes and metrics given by the original source.
+                            </li>
+                            <li>
+                                Finally, none of these vocabularies are ‘operationalized’, and enabled to automatically compute KPIs using data.
+                            </li>
+                        </ul>
+                        <p>
+                            The rest of this paper reports on the development and evaluation of the SCORVoc vocabulary, that aims to formalize and operationalize the SCOR model, while alleviating these issues.
+                        </p>
                     </div>
                 </section>
                 <section id="formalization" rel="schema:hasPart" resource="#formalization">
                     <h2 property="schema:name">Formalization and Operationalization</h2>
                     <div datatype="rdf:HTML" property="schema:description" resource="#formalization" typeof="deo:todo">
-                        <p></p>
+                        <p>This section describes the formalization of SCOR in a comprehensive RDFS vocabulary, called SCORVoc.</p>
+                        <h3><em>Methodology</em></h3>
+                        <p>
+                            As seen in the previous section, the main issues in existing formalizations of SCOR is that they have not been developed for a specific version of SCOR, and cannot be continuously updated. On the contrary, we develop SCORVoc using the VoCol methodology and support environment [15] 6 based on the Git version control system. This makes SCORVoc a living artefact, which can be extended and revised by a community of collaborators.</p>
+                        <p>
+                            Multiple people were involved in the development of SCORVoc. In order to facilitate the collaborative development, we choose a GitHub repository 7 for managing vocabulary source files, documentation, queries as well as example data. The Turtle serialization format [16] was chosen due to its sim- plicity. GitHub’s web interface further provided our domain experts with a very simple way to access the latest SCORVoc version.
+                        </p>
+                        <p>
+                            We chose the methodology described by Uschold et al. [17] for building our vocabulary: i) define the purpose and scope; ii) capture the domain knowledge; iii) develop the ontology and integrate it with other existing vocabularies; iv) evaluate it and document it properly.
+                        </p>
+                        <p>
+                            <b>Purpose and Scope.</b> The purpose of SCORVoc is to provide enterprises with a vocabulary which they can use to express any data related to Supply Chain management (SCM). The users of the vocabulary are therefore enterprises which would like to profit from the benefits of expressing their supply chains in SCOR. The vocabulary aims at being light-weight in order to facilitate its usage for future SCOR compliant IT applications.
+                        </p>
+                        <p>
+                            <b>Capture.</b> The capture of the domain of interest (Supply Chain data management) was achieved in two ways. First, we used the 976-page SCOR reference [1], with its strong terminological definitions as a major source for studying the domain of interest. Second, we had a domain expert with a deep knowledge (a member of the APICS Supply Chain Council 8 ) which supported us in the entire process. As a result of many interviews with the domain expert, we acquired a more fundamental understanding of the motivation of SCOR, its strengths but also its weaknesses.
+                        </p>
+                        <p>
+                            <b>Design.</b> This step is decomposed in the design of the two main aspects of SCOR: processes, described in Section IV-B; and metrics, described in Section IV-C. Existing semantics for each concept and the lack of accessibility of prior approaches to formalize SCOR lead us to create many concepts by ourselves. Nevertheless, various concepts and properties are integrated from well-known vocabularies such as schema.org, SKOS and Dublin Core. We made this decision based on the semantic description of these terms.
+                        </p>
+                        <p>
+                            <b>Documentation and Evaluation.</b> As illustrated in Sec- tion IV-B and Section IV-C, each concept contains a definition together with a full documentation based on the descriptions provided by SCOR. Section V describes the evaluation of SCORVoc.
+                        </p>
+                        <h3><em>Formalizing Processes</em></h3>
+                        <p>
+                            In SCOR, these are the 201 processes. A process represents any business activity between and within enterprises. For most of them, the reference outlines unambiguous text definitions. Since some of them have a rather long name (e.g. Identify, Prioritize And Aggregate Supply Chain Requirements), we decided to keep the short name and attach the long version as a label. To stay coherent, all concept and property names follow the camel case notation.
+                        </p>
+                        <p>
+                            As proposed in the reference, we created the processes as a hierarchical structure. We defined an abstract super class Process with its subclasses Plan, Source, etc. While certain terms (e.g. Make, Deliver) do not seem to be self-explanatory, we nevertheless adopted them due to the clear meaning in the SCM domain. All together, the hierarchy consists of three levels (Scope, Configuration, Step). Each level fulfills a certain purpose:
+                        </p>
+                        <ul style="list-style-type:disc">
+                            <li>Level 1 groups processes together,</li>
+                            <li>Level 2 comprises events, that are to be instantiated in the real world, and</li>
+                            <li>Level 3 explains in detail how level 2 processes are to be executed (step by step).</li>
+                        </ul>
+                        <p>
+                            Furthermore, the reference defines IDs and clear text defi- nitions for each process. These are reused as is in SCORVoc. Figure 3 visualizes the general structure of the vocabulary with the processes and others main concepts.</p>
+                        <p>
+                            Listing 1 shows an example for the full definition of the concept Enable. Enable is a subclass of the abstract concept scor:Process. Each concept contains a definition together with further descriptions provided by SCOR. We further added translations for a variety of languages.</p>
+                        <p>
+                            There are some specificities in SCOR that required the addition of more fined-grained knowledge in the SCORVoc vocabulary.
+                        </p>
+                        <p>
+                            As an example, SCOR level 3 processes (also called steps) have an order of execution of these processes. Therefore, we used the Ordered List Ontology 9 property olo:next to express this relation in our ontology.</p>
+                        <p>
+                            SCOR further defined 179 Practices to provide a collection of industry-agnostics practices which were recognized for their value. In order to manage talent in the supply chain, concepts such as Person, Skills, Experiences, Aptitudes and Trainings were introduced. While these concepts are not necessarily needed for the calculation of KPIs, they are all added for sake of completeness.</p>
+                        <h3><em>Formalizing Metrics</em></h3>
+                        <p>
+                            Metrics are defined by SCOR to evaluate Supply Chains on certain aspects such as reliability or responsiveness.</p>
+                        <p>
+                            Similar as the aforementioned processes, the SCOR refer- ence organizes metrics into a hierarchical structure, level 1 being the highest, and level 3 the lowest. SCOR provides for each metrics in a level a calculation plan that takes as an input the value of certain metrics in a lower level.</p>
+                        <p>
+                            <p>Let us describe one selected metrics for each category 10:</p>
+                            <p><em>a) Reliability</em>: Level 2 metric Orders delivered in full (RL 2.1) of performance indicator Reliability measures whether orders are received by the customer in the quantities committed. Its calculation plan is:</p>
+                            <p>
+                                An order is considered as delivered in full once it contains the correct items (RL 3.33, level 3 metric) with the correct quantity (RL 3.35, level 3 metric).
+                            </p>
+                            <p>
+                                <em>b) Responsiveness:</em> Level 1 metric Order Fulfillment Cycle Time (RS 1.1) measures the average cycle time in days it requires to achieve customer orders. Its calculation plan is:
+                            </p>
+                            <p>
+                                It depends on multiple other metrics of level 2 such as the time it takes to procure goods and services (RS 2.1), its production time (RS 2.2), the delivery and the delivery retail time (RS 2.3).
+                            </p>
+                            <p>
+                                <em>c) Agility:</em> The metric Upside Supply Chain Flexibility (AG 1.1) counts the number of days to achieve an unplanned increase (20% suggested by the reference) in the output of Source, Make and Deliver components.</p>
+                            <p>
+                                By assuming the production can run concurrently (one strategy provided by SCOR), it requires to identify the process (see metrics AG 2.1-5) within the enterprise whose adaption takes the most time.</p>
+                            <p>
+                                <em>d) Costs</em>: The metric Production Cost (CO 2.004) ac- counts for all costs involved in the production process.</p>
+                            <p>
+                                Thus, it depends on metrics which assemble the labor costs (CO 3.014), the automation costs (CO 3.015), the property, plant and equipment costs (CO 3.016) and the governance, risk, compliance, inventory and overhead costs (CO 3.0017).
+                            </p>
+                            <p>
+                                <em>e) Assets</em>: The metric Cast-to-Cash Cycle Time (AM 1.1) represents the time it takes for an enterprise to earn money on raw material investments.
+                            </p>
+                            <p>Thus, it is necessary to summarize the days between a sale is made and the cash is received (AM 2.1) with the days of sales they were in the inventory (AM 2.2). That sum needs to be subtracted with the days between purchasing raw materials and their actual payment (AM 2.3).</p>
+                            <p>
+                                Previous approaches defined a concept for each metric. However in SCORVoc, metrics are represented as data proper- ties, and their calculation plan is represented as an SPARQL query. SCOR metrics are hence ‘operationalized’, in the sense that all information required for computing the metric is made available in a interoperable way (viz. as Linked Data) and the metrics itself can be translated into queries operating on this information (i.e. SPARQL queries [18]) and returning the respective KPI.</p>
+                            <p>
+                                The level 3 metrics are the data capture entry point in SCORVoc. They are hence defined as data properties. Their rdfs:domain points to their respective processes (given by SCOR) and their range is xsd:decimal since they all describe a number between 0-100 (percent values).</p>
+                            <p>
+                                Listing 2 shows an example for the full definition of the property hasMetricRL_33. Equally as for the documen- tation of processes, we expressed each property with the definition and the additional information provided by SCOR.</p>
+                            <p>
+                                Then, the level 1 and 2 metrics are formalized as SPARQL queries. When triggered, they compute the value of the metric using the values of lower level metrics. Section V contains multiple examples of such SPARQL metric queries.</p>
                     </div>
                 </section>
                 <section id="evaluation" rel="schema:hasPart" resource="#evaluation">
                     <h2 property="schema:name">Evaluation</h2>
                     <div datatype="rdf:HTML" property="schema:description" resource="#evaluation" typeof="deo:todo">
-                              <figure>
-                                    <object data="img/after.png" height="240" type="image/png" width="240"></object>
-                                    <figcaption>Final view on the Supply Chain, where KPI information is propagated through the network                     </figcaption>
-                                </figure>
-                        <p></p>
+                        <p>
+                            We evaluate our approach using a qualitative and quantita- tive method based on the metrics discussed in the previous section. Our qualitative evaluation describes the usage of the SPARQL metrics in a business scenario. In order to do a quantitative evaluation, we developed a SCOR test data generator and measured the execution time of typical queries.</p>
+                        <h3><em>Qualitative Evaluation</em></h3>
+                        <p>
+                            Listing 3 demonstrates a simple example of data expressed using SCORVoc. Since the reference limits itself entirely to processes and performance indicators, we added additional information (using the namespace prefix ex:) to make the example more realistic.</p>
+                        <p>
+                            The example describes a scenario (:process_1) in which goods (viz. keyboards) are received by an enter- prise on a certain date. These goods are forwarded to the warehouse which is the reason for the classification of the process as a :SourceStockedProduct. Alter- natively, if these goods are directly used in the produc- tion or for specialized client orders, the process may have been classified as :SourceMakeToOrderProduct or :SourceEngineerToOrderProduct. This enables en- terprises to distinguish more easily between possible unneces- sary orders, which end up as dead capital in the stock.</p>
+                        <p>
+                            As a next step, all information related to this event is captured. :hasMetricRL_33 represents the accuracy of the items and :hasMetricRL_50 the quantitative accuracy. Thus, our example shows that this order achieved a quantitative accuracy of 90%.</p>
+                        <p>
+                            Once the Supply Chain related information is captured using SCORVoc, the execution of SPARQL query metrics becomes feasible. As described in Section II, this was the driving force in the development of the SCORVoc vocabulary. Listing 4 shows the <em>Perfect Order Fulfillment</em> SPARQL metric. The query compares all complete deliveries (achieving 100%) with all deliveries in total by relying on the respective properties. Applied on the previous example, it returns 0% due to the delivery being incomplete.</p>
+                        <p>The knowledge of these metrics is considered to become a major competitive advantage in the enterprise world. Besides the previous data example, we will present and briefly discuss how the metrics are realized as SPARQL queries in the following:</p>
+                        <p>Listing 4 presents the Orders Delivered In Full metric. Orders are considered to be delivered entirely by SCOR once their item accuracy (RL 33) and quantitative accuracy (RL 50) correspond to 100%. Thus, every order below that value is regarded as incomplete.</p>
+                        <p>
+                            The <em>Order Fulfillment Cycle Time</em> is calculated by collecting the respective sum (days) of all source (RS 21), make (RS 22), deliver (RS 23) and deliver retail (RS 24) processes and divides them by amount of all orders.</p>
+                        <p>
+                            For the calculation of the <em>Upside Supply Chain Flexibility</em> metric, it is necessary to gather the value of all flexibility properties (AG1-5) and identify the maximum among them. Similar as a team is only as strong as its weakest part, a Supply Chain is only as agile as its slowest link.</p>
+                        <p>
+                            The <em>Production Cost</em> metric (CO 2.004) is dependent on the sum of the metric properties for the costs in Labor (CO 14), Automation (CO 15), Property (CO 16) and Inventory (CO 17).
+                        </p>
+                        <p>
+                            Listing 8 presents the Cast-to-Cash Cycle Time metric (AM 1.1). The query selects the average time raw materials stays in inventory (AM 2) together with the time the payment is due to by us (AM 1) subtracted by that of our customers (AM 3).</p>
+                        <figure>
+                            <object data="img/after.png" height="240" type="image/png" width="240"></object>
+                            <figcaption>Final view on the Supply Chain, where KPI information is propagated through the network </figcaption>
+                        </figure>
+                        <h3><em>Quantitative Evaluation</em></h3>
+                        <p>We demonstrate the feasibility of our approach on a SCOR dataset. The only known dataset is SCORmark 11 , which is assembled by a major consulting firm, but is only available for business customers and not open for research. We hence developed a open-source synthetic benchmark data generator, available on GitHub 12 .</p>
+                        <p>
+                            This generator allows to perform a round-trip between data representation and KPI evaluation. The benchmark allows to assess the performance of an SCORVoc implementation in a systematic and repeatable way. The generator creates data based on a number of parameters: Supply Chain depth, industry and Supply Chain partners. The Supply Chain depth sets the level from one main OEM enterprise to it suppliers’ supplier. The industry generates plausible product lines and enterprise names. The Supply Chain partners determine the width of the Supply Chain. A minimum of 2 generates a binary tree to both sides.</p>
+                        <p>Various dataset sizes can be generated in order to as- sess the scalability as well as the correctness of the metric SPARQL query implementations. We evaluated the metrics for datasets which contain 100k, 500k, 1M and 2M triples. Table III presents an overview of the generated data for the 100k scenario. While the instances represent different types of processes, the related properties are mostly 3-level data type properties which are required by the metrics (such as scor:hasMetricRL_50). The values randomized within a certain range (e.g. >80% for Reliability).
+                            <p>
+                                <p>
+                                    The queries were executed using the ARQ SPARQL pro- cessor 13 . The machine we used for the experiment contains 8GB of RAM, 256GB SSD and an Intel i7-3537U CPU with 2.00GHz.
+                                </p>
+                            </p>
+                            <p>
+                                Figure 4 summarizes the results of the quantitative evalua- tion. The Reliability and Assets queries performed best in our scenario and were also able to be executed fast with datasets larger than 2M triples. The other queries do not scale as well, but still perform with less than 10s query execution time. This is enough for real-world settings. Even for much larger supply networks, we deem query execution performance not to be a bottleneck, since queries are executed relatively infrequently and not by thousands of users. Also, since the number of metrics is limited it is possible to optimize query execution even more, but creating specific indexes or applying caching strategies. Overall this evaluation shows that the approach of having an executable vocabulary is feasible.</p>
+                            <p>Furthermore, the SCOR data generator can be used to systematically assess and evaluate SCORVoc compliant soft- ware solutions. Such solutions could be Specific supply net- work visualizations tools, Supply Chain robustness assessment frameworks, or scenario planning tools.</p>
+                            <p>In contrast with Figure 2, Figure 5 represents the full view on the entire Supply Chain.</p>
                     </div>
                 </section>
                 <section id="conclusion" rel="schema:hasPart" resource="#conclusion">
                     <h2 property="schema:name">Conclusion and Future work</h2>
                     <div datatype="rdf:HTML" property="schema:description" resource="#conclusion" typeof="deo:Conclusion">
-                        <p></p>
+                        <p>
+                            The use of data-centric approaches in engineering, manufac- turing and production are currently widely discussed topics (cf. Industry 4.0, smart manufacturing or cyber-physical systems initiatives). The complexity in Supply Chain Management in general is thought to be one of the major bottlenecks of the field. A key issue in engineering, manufacturing and production is to be able to efficiently and effectively manage Supply Chains.
+                        </p>
+                        <p>
+                            This paper introduces the SCORVoc RDFS vocabulary, that formalizes and operationalizes the SCOR standard. SCORVoc is available on GitHub 14 for collaborative further development and at purl.org. 15 . We used an innovative methodology to develop the SCORVoc vocabulary, and provided means to automatically compute typical KPIs. Finally, we described comprehensive test scenarios for SCORVoc and implemented a synthetic benchmark. SCORVoc, together with the formalized SPARQL queries, represents a comprehensive approach to facilitate information flows in Supply Chains, and enables the design of SCOR compliant IT applications.
+                        </p>
+                        <p>
+                            This work is the first step of a larger research and develop- ment agenda that aims at providing comprehensive support for information flows accompanying Supply Chains, employing the Linked Data paradigm. The next step is the constitution of a real industry SCOR benchmark, one may test SCORVoc implementations against. One could hence prove the usability of queries, and optimize their execution time.</p>
+                        <p>
+                            Finally, let us note we learned from domain experts that SCOR still has a number of limitations. For example a delivery of 9 out of 10 items is described as a 90% success rate. Although for one company this may be an appropriate measurement, for another company, the missing part may actually stop the entire production part. SCORVoc may help identify such limitations, and accompany the improvement of the SCOR specification.</p>
                     </div>
                 </section>
                 <section id="acknowledgements" rel="schema:hasPart" resource="#acknowledgements">
                     <h2 property="schema:name">Acknowledgements</h2>
                     <div datatype="rdf:HTML" property="schema:description" resource="#acknowledgements" typeof="deo:todo">
-                        <p></p>
+                        <p>This work was partly supported by the following grants from the German Federal Ministry of Education and Research (BMBF) for the LUCID Project 16 (GA no. 01IS14019A) as well as for the the LEDS Project 17 (GA no. 03WKCG11A).</p>
                     </div>
                 </section>
                 <section id="references">
@@ -172,9 +347,63 @@
                     <div>
                         <ol>
                             <li id="ref-1" property="schema:citation">S. C. Council, “Supply chain operations reference model,” <em>SCOR, Version</em>, vol. 11, 2012.</li>
-                            <!-- 
-                            <li id="ref-2" property="schema:citation">J. Braams. Babel, a multilingual style-option system for use with <span class="latex">L<span>a</span>T<span>e</span>X</span>’s standard document styles. <em>TUGboat</em>, 12(2):291–301, June 1991.</li>
-                            <li id="ref-3" property="schema:citation">M. Clark. Post congress tristesse. In <em>TeX90 Conference Proceedings</em>, pages 84–89. TeX Users Group, March 1991.</li>
+
+               
+                            <li id="ref-2" property="schema:citation">F. Salazar, M. Caro, and J. Cavazos, "Final Review of the Application of
+the SCOR Model: Supply Chain for Biodiesel Castor–Colombia Case,” <em>Journal of Technology Innovations in Renewable Energy</em>, vol. 1. no. 1, 2012</li>
+                 
+<li id="ref-3" property="schema:citation">B. Georgise, K.-D. Thoben, and F. Marcus Seifert, “Assessing the
+Existing Performance Measures, & Measurement Systems in Developing
+Countries: An Ethiopian Study,” <em>Global Journal of Researches In
+Engineering</em>, vol. 13, no. 2, 2013.</li>
+<li id="ref-4" property="schema:citation">F. B. Georgise, K.-d. Thoben, and M. Seifert, “Implementing the SCOR
+Model Best Practices for Supply Chain Improvement in Developing
+Countries,” <em>International Journal of u-and e-Service, Science and Technology</em>, vol. 6, no. 4, 2013.</li>
+<li id="ref-5" property="schema:citation">F. Lestari, K. Ismail, A. Hamid, and W. Sutopo, “Designing supply chain
+analysis tool using SCOR model (case study in palm oil refinery),” in
+<em>IEEE Int. Conf. on Industrial Engineering and Engineering Management</em>
+(IEEM). IEEE, 2013.</li>
+<li id="ref-6" property="schema:citation">Y. Ye, D. Yang, Z. Jiang, and L. Tong, “An ontology-based architecture
+for implementing semantic integration of supply chain management,”
+<em>International Journal of Computer Integrated Manufacturing</em>, vol. 21,
+no. 1, pp. 1–18, 2008.</li>
+<li id="ref-7" property="schema:citation">M. Fayez, L. Rabelo, and M. Mollaghasemi, “Ontologies for supply
+chain simulation modeling,” in <em>37th conference on Winter simulation</em>,
+2005.</li>
+<li id="ref-8" property="schema:citation">J. Leukel and S. Kirn, “A supply chain management approach to logistics
+ontologies in information systems,” in <em>Business Information Systems</em>.
+Springer, 2008.</li>
+<li id="ref-9" property="schema:citation">O. Sakka, P.-A. Millet, and V. Botta-Genoulaz, “An ontological approach
+for strategic alignment: a supply chain operations reference case study,”
+<em>International Journal of Computer Integrated Manufacturing</em>, vol. 24,
+no. March 2015, 2011.</li>
+<li id="ref-10" property="schema:citation">M. Zdravković, H. Panetto, M. Trajanović, and A. Aubry, “An approach
+for formalising the supply chain operations,” <em>Enterprise Information
+Systems</em>, vol. 5, no. 4, 2011.</li>
+<li id="ref-11" property="schema:citation">Y. Lu, H. Panetto, Y. Ni, and X. Gu, “Ontology alignment for networked
+enterprise information system interoperability in supply chain environment,” <em>International Journal of Computer Integrated Manufacturing</em>,
+vol. 26, no. 1-2, pp. 140–151, 2013.</li>
+<li id="ref-12" property="schema:citation">M. Zdravković, M. Trajanović, H. Panetto, A. Aubry, and M. Lezoche,
+“Ontology-based supply chain process configuration,” in <em>34th International Conference on Production Engineering</em>, ICPE 2011, 2011.</li>
+<li id="ref-13" property="schema:citation">H. Panetto, M. Dassisti, and A. Tursi, “Onto-pdm: Product-driven ontol-
+ogy for product data management interoperability within manufacturing
+process environment,” <em>Advanced Engineering Informatics</em>, vol. 26, no. 2,
+2012.</li>
+<li id="ref-14" property="schema:citation">T. Grubic and I. S. Fan, “Integrating process and ontology for supply
+chain modelling,” <em>International Journal of Computer Integrated Manufacturing</em>, vol. 24, no. March 2015, pp. 847–863, 2011.</li>
+<li id="ref-15" property="schema:citation">VoCol: An Agile Methodology and Environment for Collaborative
+Vocabulary Development. Zenodo, Feb. 2015. [Online]. Available:
+http://dx.doi.org/10.5281/zenodo.15023</li>
+<li id="ref-16" property="schema:citation">D. Beckett, T. Berners-Lee, E. Prudhommeaux, and G. Carothers,
+“RDF 1.1 Turtle–Terse RDF Triple Language. W3C Recommendation,”
+<em>World Wide Web Consortium (Feb 2014)</em>, available at http://www. w3.
+org/TR/turtle, 2014.</li>
+<li id="ref-17" property="schema:citation">M. Uschold and M. Gruninger, “Ontologies: Principles, methods and
+applications,” <em>The knowledge engineering review</em>, vol. 11, no. 02, 1996.</li>
+<li id="ref-18" property="schema:citation">S. Harris, A. Seaborne, and E. Prudhommeaux, “SPARQL 1.1 query
+language,”<em>W3C Recommendation</em>, vol. 21, 2013.</li>
+
+             <!-- 
                             <li id="ref-4" property="schema:citation">M. Herlihy. A methodology for implementing highly concurrent data objects. <em>ACM Trans. Program. Lang. Syst.</em>, 15(5):745–770, November 1993.</li>
                             <li id="ref-5" property="schema:citation">L. Lamport. <em>LaTeX User’s Guide and Document Reference Manual</em>. Addison-Wesley Publishing Company, Reading, Massachusetts, 1986.</li>
                             <li id="ref-6" property="schema:citation">S. Salas and E. Hille. <em>Calculus: One and Several Variable</em>. John Wiley and Sons, New York, 1978.</li>
@@ -182,7 +411,6 @@
                         </ol>
                     </div>
                 </section>
-
                 <section id="overview-of-scor" rel="schema:hasPart" resource="#tmp">
                     <h2 property="schema:name">/tmp/</h2>
                     <div property="schema:description">
@@ -546,7 +774,6 @@
                         </dl>
                     </div>
                 </section>
-                
                 <section id="appendix">
                     <dl>
                         <dt>Appendix</dt>
