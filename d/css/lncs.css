@@ -1,3 +1,6 @@
+
+/* Slightly customized by Niklas Petersen - http://np00.github.io/#i */ 
+
 /** LNCS
  *
  * Sarven Capadisli <info@csarven.ca> http://csarven.ca/#i
@@ -52,6 +55,7 @@ Computer Modern Unicode fonts are from http://canopus.iacp.dvo.ru/~panov/cm-unic
         padding: 0 !important;
         width: 122mm !important;
         height: 193mm !important;
+        background-color:#eca1a6 !important;
         /* A4 - LNCS height*/
     }
     h1 {
@@ -109,7 +113,7 @@ Computer Modern Unicode fonts are from http://canopus.iacp.dvo.ru/~panov/cm-unic
     }
     a {
         text-decoration: none;
-        color: #000;
+        color: #6b5b95;
     }
     abbr {
         border-bottom: none;
@@ -221,7 +225,8 @@ object.slides {
 }
 body {
     color: #000000;
-    font-family: "CMU Serif", serif;
+    background-color:#deeaee ;
+    font: 13pt/1.4 "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
     /*font-size:1.689vw;*/
 
     /*font-size: 162.448%;*/
@@ -229,7 +234,7 @@ body {
     position: relative;
     margin: 0 auto;
     padding: 2em 0;
-    width: 36em; /* should roughly match the width of a line in the pdf */
+    width: 800px; /* should roughly match the width of a line in the pdf */
     -moz-hyphens: auto;
     -webkit-hyphens: auto;
     -ms-hyphens: auto;
@@ -369,7 +374,7 @@ h6 {
 }
 
 a {
-  color: #2233FF;
+  color: #6b5b95;
 }
 a:hover {
   color: black;

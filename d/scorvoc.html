@@ -1,833 +1,667 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-<!-- A Sample ACM SIG Proceedings Paper in LaTeX Format -->
-<!-- view-source:https://dokie.li/acm-sigproc-sp -->
+	<head>
+		<meta charset="utf-8" />
+		<title>SCORVoc: Vocabulary-based Information Integration and Exchange in Supply Networks</title>
+		<link rel="stylesheet" href="css/lncs.css" media="all" title="LNCS" />
+		<link rel="stylesheet" href="css/do.css" media="all" /> 
+		<link rel="stylesheet alternate" href="https://www.w3.org/StyleSheets/ TR/W3C-ED.css" media="all" title="W3C-ED" />
+	<!--	<link rel="stylesheet alternate" href="css/acm.css" media="all" title="ACM" />
+		-->
+	<!--	-->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" media="all" />
+		<script src="scripts/simplerdf.js"></script>
+		<script src="scripts/medium-editor.min.js"></script>
+		<script src="scripts/medium-editor-tables.min.js"></script>
+	
+		<script src="scripts/do.js"></script> 
+	</head>
+	<body about="" prefix="rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns# rdfs: http://www.w3.org/2000/01/rdf-schema# owl: http://www.w3.org/2002/07/owl# xsd: http://www.w3.org/2001/XMLSchema# dcterms: http://purl.org/dc/terms/ dctypes: http://purl.org/dc/dcmitype/ foaf: http://xmlns.com/foaf/0.1/ v: http://www.w3.org/2006/vcard/ns# pimspace: http://www.w3.org/ns/pim/space# cc: https://creativecommons.org/ns# skos: http://www.w3.org/2004/02/skos/core# prov: http://www.w3.org/ns/prov# qb: http://purl.org/linked-data/cube# schema: http://schema.org/ void: http://rdfs.org/ns/void# rsa: http://www.w3.org/ns/auth/rsa# cert: http://www.w3.org/ns/auth/cert# cal: http://www.w3.org/2002/12/cal/ical# wgs: http://www.w3.org/2003/01/geo/wgs84_pos# org: http://www.w3.org/ns/org# biblio: http://purl.org/net/biblio# bibo: http://purl.org/ontology/bibo/ book: http://purl.org/NET/book/vocab# ov: http://open.vocab.org/terms/ sioc: http://rdfs.org/sioc/ns# doap: http://usefulinc.com/ns/doap# dbr: http://dbpedia.org/resource/ dbp: http://dbpedia.org/property/ sio: http://semanticscience.org/resource/ opmw: http://www.opmw.org/ontology/ deo: http://purl.org/spar/deo/ doco: http://purl.org/spar/doco/ cito: http://purl.org/spar/cito/ fabio: http://purl.org/spar/fabio/ oa: http://www.w3.org/ns/oa# as: https://www.w3.org/ns/activitystreams# ldp: http://www.w3.org/ns/ldp# solid: http://www.w3.org/ns/solid/terms# acl: http://www.w3.org/ns/auth/acl# dio: https://w3id.org/dio#" typeof="schema:CreativeWork sioc:Post prov:Entity">
+		<main>
+			<article about="" typeof="schema:ScholarlyArticle">
+				<h1 property="schema:name">SCORVoc: Vocabulary-based Information Integration and Exchange in Supply Networks</h1>
+				<div id="authors">
+					<dl id="author-name">
+						<dt>Authors</dt>
+						<dd id="author-1"><span about="" rel="schema:contributor"><a about="#Niklas-Petersen" typeof="schema:Person" rel="schema:url" property="schema:name" href="http://np00.github.io/#i">Niklas Petersen</a></span><span about="#Niklas-Petersen" rel="schema:memberOf" resource="#University-of-Bonn"></span><sup><a href="#author-org-1">1</a></sup><sup><a href="#author-org-2">2</a></sup></dd>
+						<dd id="author-2"><span about="http://sda.cs.uni-bonn.de/people/irlan-grangel-gonzalez/" rel="schema:contributor"><a about="#Irlan-Grangel-Gonzales" typeof="schema:Person" rel="schema:url" property="schema:name" href="http://sda.cs.uni-bonn.de/people/irlan-grangel-gonzalez/">Irlán Grangel-González</a></span><span about="#Irlan-Grangel-Gonzales" rel="schema:memberOf" resource="#University-of-Bonn"></span><sup><a href="#author-org-1">1</a></sup><sup><a href="#author-org-2">2</a></sup></dd>
+						<dd id="author-3"><span about="" rel="schema:contributor"><a about="#Gökhan-Coskun" typeof="schema:Person" rel="schema:url" property="schema:name" href="https://www.researchgate.net/profile/Goekhan_Coskun">Gökhan Coskun</a></span><span about="#Gökhan-Coskun" rel="schema:memberOf" resource="#Fraunhofer-IAIS"></span><sup><a href="#author-org-1">1</a></sup><sup><a href="#author-org-2">2</a></sup><sup></dd>
+						<dd id="author-4"><span about="" rel="schema:contributor"><a about="#Sören-Auer" typeof="schema:Person" rel="schema:url" property="schema:name" href="https://vivo.tib.eu/fis/display/n0000-0002-0698-2864">Sören Auer</a></span><span about="#Sören-Auer" rel="schema:memberOf" resource="#University-of-Bonn"></span><sup><a href="#author-org-1">1</a></sup><sup><a href="#author-org-2">2</a></sup></dd>
+						<dd id="author-5"><span about="https://www.researchgate.net/profile/Marvin_Frommhold" rel="schema:contributor"><a about="#Marvin-Frommhold" typeof="schema:Person" rel="schema:url" property="schema:name" href="https://www.researchgate.net/profile/Marvin_Frommhold">Marvin Frommhold</a></span><span about="#Marvin-Frommhold" rel="schema:memberOf" resource="#University-of-Leipzig"></span><sup><a href="#author-org-3">3</a></sup><sup><a href="#author-org-4">4</a></sup></dd>
+						<dd id="author-6"><span about="http://aksw.org/SebastianTramp" rel="schema:contributor"><a about="#Sebastian-Tramp" typeof="schema:Person" rel="schema:url" property="schema:name" href="http://aksw.org/SebastianTramp">Sebastian Tramp</a></span><span about="#Sebastian-Tramp" rel="schema:memberOf" resource="#Eccenca"></span></dd>
+						<dd id="author-7"><span about="http://www.maxime-lefrancois.info/" rel="schema:contributor"><a about="#Maxime-Lefrançois" typeof="schema:Person" rel="schema:url" property="schema:name" href="http://www.maxime-lefrancois.info/">Maxime Lefrançois</a></span><span about="#Maxime-Lefrançois" rel="schema:memberOf" resource="#FAYOL-ENSMSE"></span><sup><a href="#author-org-5">5</a></sup></dd>
+						<dd id="author-8"><span about="https://www.emse.fr/~zimmermann/" rel="schema:contributor"><a about="#Antoine-Zimmermann" typeof="schema:Person" rel="schema:url" property="schema:name" href="https://www.emse.fr/~zimmermann/">Antoine Zimmermann</a></span><span about="#Antoine-Zimmermann" rel="schema:memberOf" resource="#FAYOL-ENSMS"></span><sup><a href="#author-org-5">5</a></sup></dd>
+					</dl>
+					
+					<ul id="author-org">
+						<li id="author-org-1"><sup>1</sup><a about="#University-of-Bonn" typeof="schema:Organization" property="schema:name" rel="schema:url" href="https://www.uni-bonn.de/">University of Bonn</a>, <span class="country-name">Germany</span></span>
+						</li>
+						<li id="author-org-2"><sup>2</sup><a about="#Fraunhofer-IAIS" typeof="schema:Organization" property="schema:name" rel="schema:url" href="https://www.iais.fraunhofer.de/">Fraunhofer IAIS</a>, <span class="country-name">Germany</span></span></li>
 
-<head>
-    <meta charset="utf-8" />
-    <title>[Under Construction]SCORVoc: Vocabulary-based Information Integration and Exchange in Supply Networks</title>
-    <link rel="stylesheet" href="css/lncs.css" media="all" title="LNCS" />
-    <link rel="stylesheet alternate" href="css/acm.css" media="all" title="ACM" />
-    <link rel="stylesheet alternate" href="https://www.w3.org/StyleSheets/TR/W3C-ED.css" media="all" title="W3C-ED" />
-    <link rel="stylesheet" href="css/do.css" media="all" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" media="all" />
-    <script src="scripts/simplerdf.js"></script>
-    <script src="scripts/medium-editor.min.js"></script>
-    <script src="scripts/medium-editor-tables.min.js"></script>
-    <script src="scripts/do.js"></script>
-</head>
+						<li id="author-org-3"><sup>3</sup><a about="#University-of-Leipzig" typeof="schema:Organization" property="schema:name" rel="schema:url" href="http://www.uni-leipzig.de/">University of Leipzig</a>, <span class="country-name">Germany</span></span></li>
+						<li id="author-org-4"><sup>4</sup><a about="#Eccenca" typeof="schema:Organization" property="schema:name" rel="schema:url" href="https://www.eccenca.com/">eccenca GmbH</a>, <span class="country-name">Germany</span></span></li>
+				
+						<li id="author-org-5"><sup>5</sup><a about="#FAYOL-ENSMS" typeof="schema:Organization" property="schema:name" rel="schema:url" href="http://www.nasa.gov/centers/ames">École Nationale Supérieure des Mines</a>, <span class="country-name">France</span></span></li>
+					</ul>
+			</div>
+			<div id="content">
+			<section id="abstract">
+<h2>Abstract</h2>
+<div datatype="rdf:HTML" property="schema:abstract">
+<p>
+<b>Advanced, highly specialized economies require in- stant, robust and efficient information flows within its value- added and Supply Chain networks. Especially also in the context of the recent Industry 4.0, smart manufacturing or cyber-physical systems initiatives more efficient and effective information ex- change in supply networks is of paramount importance. The Supply Chain Operation Reference (SCOR) is a cross-industry approach to lay the groundwork for this goal by defining a con- ceptual model for Supply Chain related information. Semantics- based approaches could facilitate information flows in supply networks, and enable to analyze, monitor and optimize Supply Chains (in particular for robustness). This paper first reviews existing formalizations of the Supply Chain Council’s SCOR standard. It then introduces the SCORVoc RDFS vocabulary which fully formalizes the latest SCOR standard, while over- coming the identified limitations of existing work. SCORVoc is operationalized by a set of SPARQL queries, that enable to evaluate metrics and key performance indicator (KPIs) defined by SCOR, on-the-fly, in an information systems that adheres to the vocabulary. Finally, we define concrete test scenarios and implement a synthetic </b>
+</p>
+</div>
+</section>
+<section id="introduction" rel="schema:hasPart" resource="#introduction">
+<h2 property="schema:name">Introduction</h2>
+<div datatype="rdf:HTML" property="schema:description" resource="#introduction" typeof="deo:Introduction">
+<p>
+In the past decades, internal enterprise information systems experienced much technical and scientific advancement. However, comparatively little progress was made to improve the exchange of information between enterprises. Until today, most of the communication between enterprises is done via informal channels, such as emails (including file attachments) or telephone calls. Only tier-1 suppliers of major Original Equipment Manufacturers (OEM) are usually fully integrated into the information exchange and corresponding IT-support (e.g. electronic data interchange connections) since these are expensive to deploy and maintain. Informal communication is time-consuming, costly and can become inefficient when crucial information is spread among many different people that each use their own format or system.
+</p>
+<p>
+This paper focuses on the two following business requirements:
+</p>
+<ol type="1">
+<li>The production plans of a factory are highly dependent on the incoming supplies, since just-in-time productions aims at keeping the stock as low as possible to reduce dead capital. Hence being able to instantly exchange machine-interpretable messages between manufacturer and supplier is critical, for example, in case of supply shortages.
+</li>
+<li>It is a competitive advantage for a business to be able to assess the reliability of suppliers. However, monitor- ing the direct suppliers is not enough, since problems deeper in the Supply Chain (delays, strikes, outages, bankruptcies) can have a negative effect even on reliable suppliers. Therefore, it is of paramount importance to be able to pro-actively identify critical suppliers and potential threats in the entire value-added network.
+</li>
+</ol>
+<p>
+Hence we need a standardized way to represent knowledge about the business processes and the supply network, and to reason with it. This paper focuses on one of the most prominent such standards, namely the
+<em>Supply Chain Operations Reference Model</em> (<a class="ref" href="http://www.apics.org/sites/apics-supply-chain-council/frameworks/scor">SCOR</a>) [<a class="ref" href="#ref-1">1</a>]. While SCOR offers a great basis to answer the two identified business requirements, its reference itself only contains textual definitions. Neither machine-interpretable formats for messages, nor automatized ways to reason with such messages exist.
+</p>
+<p>
+In order to address these limitations, we developed an approach for making the SCOR reference model executable. Our approach comprises the definition of the SCORVoc vo- cabulary providing an ontological formalization of the terms and concepts defined by SCOR. We argue that using a light-weight RDFS vocabulary is a good step towards applying the SCOR reference in real world applications. The fine-grained Linked Data representation formalism provides a number of benefits for implementing SCOR, namely:
+</p>
+<ul style="list-style-type:disc">
+<li>
+<em>Identification</em> – world-wide unique identifiers facilitate the data exchange and linking in supply networks,</li>
+<li>
+	<em>Coherence/Reuse</em> – mixing and mashing of vocabularies as well as schemata enables the reuse and alignment with domain specific formalisms,
+</li>
+<li>
+	<em>Granularity</em> – integration of representation on different levels of granularity,
+</li>
+<li>
+	<em>Execution</em> – query execution in order to automatically aggregate and analyze data,
+</li>
+<li>
+	<em>Integration</em> – bindings to a number of other technology ecosystems comprising XML (with RDF/XML, JSON (with JSON-LD) or HTML (with RDFa).
+</li>
+</ul>
+<p>
+Thus, this paper addresses the following research question: <em>How can the SCOR model be formalized and operationalized using the Semantic Web formalisms and the Linked Data principles?</em>
+</p>
+<p>
+Our approach is structured as follows: <a class="ref" href="#overview-of-SCOR">Section II</a> first provides a more detailed overview on SCOR together with a discussion about the motivation and the goal of the reference. Then, existing works aimed at formalizing SCOR into a vocabulary (using RDF/S and OWL) are reviewed in <a class="ref" href="#related-work">Section III.</a>
 
-<body about="" prefix="rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns# rdfs: http://www.w3.org/2000/01/rdf-schema# owl: http://www.w3.org/2002/07/owl# xsd: http://www.w3.org/2001/XMLSchema# dcterms: http://purl.org/dc/terms/ dctypes: http://purl.org/dc/dcmitype/ foaf: http://xmlns.com/foaf/0.1/ v: http://www.w3.org/2006/vcard/ns# pimspace: http://www.w3.org/ns/pim/space# cc: https://creativecommons.org/ns# skos: http://www.w3.org/2004/02/skos/core# prov: http://www.w3.org/ns/prov# qb: http://purl.org/linked-data/cube# schema: http://schema.org/ void: http://rdfs.org/ns/void# rsa: http://www.w3.org/ns/auth/rsa# cert: http://www.w3.org/ns/auth/cert# cal: http://www.w3.org/2002/12/cal/ical# wgs: http://www.w3.org/2003/01/geo/wgs84_pos# org: http://www.w3.org/ns/org# biblio: http://purl.org/net/biblio# bibo: http://purl.org/ontology/bibo/ book: http://purl.org/NET/book/vocab# ov: http://open.vocab.org/terms/ sioc: http://rdfs.org/sioc/ns# doap: http://usefulinc.com/ns/doap# dbr: http://dbpedia.org/resource/ dbp: http://dbpedia.org/property/ sio: http://semanticscience.org/resource/ opmw: http://www.opmw.org/ontology/ deo: http://purl.org/spar/deo/ doco: http://purl.org/spar/doco/ cito: http://purl.org/spar/cito/ fabio: http://purl.org/spar/fabio/ oa: http://www.w3.org/ns/oa# as: https://www.w3.org/ns/activitystreams# ldp: http://www.w3.org/ns/ldp# solid: http://www.w3.org/ns/solid/terms# acl: http://www.w3.org/ns/auth/acl# dio: https://w3id.org/dio#" typeof="schema:CreativeWork sioc:Post prov:Entity">
-    <main>
-        <article about="" typeof="schema:ScholarlyArticle">
-            <h1 property="schema:name">[Under Construction]SCORVoc: Vocabulary-based Information Integration and Exchange in Supply Networks</h1>
-            <div id="authors">
-                <dl id="author-name">
-                    <dt>Authors</dt>
-                    <dd id="author-1"><span about="" rel="schema:contributor"><a about="#Niklas-Petersen" typeof="schema:Person" rel="schema:url" property="schema:name" href="">Niklas Petersen</a></span><span about="#Niklas-Petersen" rel="schema:memberOf" resource="#University-of-Bonn"></span><sup><a href="#author-org-1">1</a></sup><sup><a href="#author-org-2">2</a></sup><sup><a href="#author-email-1">‡</a></sup></dd>
-                    <dd id="author-2"><span about="" rel="schema:contributor"><a about="#Irlan-Grangel-Gonzales" typeof="schema:Person" rel="schema:url" property="schema:name" href="">Irlán Grangel-González</a></span><span about="#Irlan-Grangel-Gonzales" rel="schema:memberOf" resource="#University-of-Bonn"></span><sup><a href="#author-org-1">1</a></sup><sup><a href="#author-org-2">2</a></sup><sup><a href="#author-email-2">§</a></sup></dd>
-                    <dd id="author-3"><span about="" rel="schema:contributor"><a about="#Gökhan-Coskun" typeof="schema:Person" rel="schema:url" property="schema:name" href="">Gökhan Coskun</a></span><span about="#Gökhan-Coskun" rel="schema:memberOf" resource="#Fraunhofer-IAIS"></span><sup><a href="#author-org-1">1</a></sup><sup><a href="#author-org-2">2</a></sup><sup><a href="#author-email-3">¶</a></sup></dd>
-                    <dd id="author-4"><span about="" rel="schema:contributor"><a about="#Sören-Auer" typeof="schema:Person" rel="schema:url" property="schema:name" href="">Sören Auer</a></span><span about="#Sören-Auer" rel="schema:memberOf" resource="#University-of-Bonn"></span><sup><a href="#author-org-1">1</a></sup><sup><a href="#author-org-2">2</a></sup><sup><a href="#author-email-4">x</a></sup></dd>
-                    <dd id="author-5"><span about="" rel="schema:contributor"><a about="#Marvin-Frommhold" typeof="schema:Person" rel="schema:url" property="schema:name" href="">Marvin Frommhold</a></span><span about="#Marvin-Frommhold" rel="schema:memberOf" resource="#University-of-Leipzig"></span><sup><a href="#author-org-3">3</a></sup><sup><a href="#author-org-4">4</a></sup><sup><a href="#author-email-5">y</a></sup></dd>
-                    <dd id="author-6"><span about="" rel="schema:contributor"><a about="#Sebastian-Tramp" typeof="schema:Person" rel="schema:url" property="schema:name" href="">Sebastian Tramp</a></span><span about="#Sebastian-Tramp" rel="schema:memberOf" resource="#eccenca"></span><sup><a href="#author-org-4">4</a></sup><sup><a href="#author-email-6">z</a></sup></dd>
-                    <dd id="author-7"><span about="" rel="schema:contributor"><a about="#Maxime-Lefrançois" typeof="schema:Person" rel="schema:url" property="schema:name" href="">Maxime Lefrançois</a></span><span about="#Maxime-Lefrançois" rel="schema:memberOf" resource="#FAYOL-ENSMSE"></span><sup><a href="#author-org-5">5</a></sup><sup><a href="#author-email-7">u</a></sup></dd>
-                    <dd id="author-8"><span about="" rel="schema:contributor"><a about="#Antoine-Zimmermann" typeof="schema:Person" rel="schema:url" property="schema:name" href="">Antoine Zimmermann</a></span><span about="#Antoine-Zimmermann" rel="schema:memberOf" resource="#FAYOL-ENSMS"></span><sup><a href="#author-org-5">5</a></sup><sup><a href="#author-email-8">i</a></sup></dd>
-                </dl>
-                <ul id="author-org">
-                    <li id="author-org-1"><sup>1</sup><a about="#University-of-Bonn" typeof="schema:Organization" property="schema:name" rel="schema:url" href="https://www.uni-bonn.de/">University of Bonn</a>, <span class="adr"><span class="street-address"> Römerstraße 164</span>, <span class="region">Northrhine Westfalia</span>, <span class="locality">Bonn</span>, <span clss="postal-code">53111</span>, <span class="country-name">Germany</span></span>
-                    </li>
-                    <li id="author-org-2"><sup>2</sup><a about="#Fraunhofer-IAIS" typeof="schema:Organization" property="schema:name" rel="schema:url" href="https://www.iais.fraunhofer.de/">Fraunhofer IAIS</a>, <span class="adr"><span class="street-address"> Schloss Birlinghoven </span>, <span class="region">Northrhine Westfalia</span>, <span class="locality"> Sankt Augustin</span>, <span clss="postal-code">53757</span>, <span class="country-name">Germany</span></span>
-                    </li>
-                    <li id="author-org-3"><sup>3</sup><a about="#University-of-Leipzig" typeof="schema:Organization" property="schema:name" rel="schema:url" href="http://www.uni-leipzig.de/">University of Leipzig</a>, <span class="adr"><span class="locality">Leipzig</span>, <span class="country-name">Germany</span></span>
-                    </li>
-                    <li id="author-org-4"><sup>4</sup><a about="#Brookhaven-Laboratories" typeof="schema:Organization" property="schema:name" rel="schema:url" href="http://www.eccenca.com/">eccenca GmbH</a>, <span class="adr"><span class="locality">Leipzig</span>, <span class="country-name">Germany</span></span>
-                    </li>
-                    <li id="author-org-5"><sup>5</sup><a about="#FAYOL-ENSMS" typeof="schema:Organization" property="schema:name" rel="schema:url" href="http://www.nasa.gov/centers/ames">École Nationale Supérieure des Mines</a>, <span class="adr"><span class="locality">Saint-Étienne</span>, <span class="postal-code">42023</span></span>
-                    </li>
-                </ul>
-                <ul id="author-email">
-                    <li id="author-email-1"><sup>‡</sup><a about="#Niklas-Petersen" rel="schema:email" href="mailto:dummy@dummy.com">dummy@dummy.com</a></li>
-                    <li id="author-email-2"><sup>§</sup><a about="#Irlan-Grangel-Gonzales" rel="schema:email" href="mailto:dummy@dummy.com">dummy@dummy.com</a></li>
-                    <li id="author-email-3"><sup>¶</sup><a about="#Gökhan-Coskun" rel="schema:email" href="mailto:dummy@dummy.com">dummy@dummy.com</a></li>
-                    <li id="author-email-4"><sup>x</sup><a about="#Sören-Auer" rel="schema:email" href="mailto:dummy@dummy.com">dummy@dummy.com</a></li>
-                    <li id="author-email-5"><sup>y</sup><a about="#Marvin-Frommhold" rel="schema:email" href="mailto:dummy@dummy.com">dummy@dummy.com</a></li>
-                    <li id="author-email-6"><sup>z</sup><a about="#Sebastian-Tramp" rel="schema:email" href="mailto:dummy@dummy.com">dummy@dummy.com</a></li>
-                    <li id="author-email-7"><sup>u</sup><a about="#Maxime-Lefrançois" rel="schema:email" href="mailto:dummy@dummy.com">dummy@dummy.com</a></li>
-                    <li id="author-email-8"><sup>i</sup><a about="#Antoine-Zimmermann" rel="schema:email" href="mailto:dummy@dummy.com">dummy@dummy.com</a></li>
-                </ul>
-            </div>
-            <div id="content">
-                <section id="abstract">
-                    <h2>Abstract</h2>
-                    <div datatype="rdf:HTML" property="schema:abstract">
-                        <p>
-                            <b>Advanced, highly specialized economies require in- stant, robust and efficient information flows within its value- added and Supply Chain networks. Especially also in the context of the recent Industry 4.0, smart manufacturing or cyber-physical systems initiatives more efficient and effective information ex- change in supply networks is of paramount importance. The Supply Chain Operation Reference (SCOR) is a cross-industry approach to lay the groundwork for this goal by defining a con- ceptual model for Supply Chain related information. Semantics- based approaches could facilitate information flows in supply networks, and enable to analyze, monitor and optimize Supply Chains (in particular for robustness). This paper first reviews existing formalizations of the Supply Chain Council’s SCOR standard. It then introduces the SCORVoc RDFS vocabulary which fully formalizes the latest SCOR standard, while over- coming the identified limitations of existing work. SCORVoc is operationalized by a set of SPARQL queries, that enable to evaluate metrics and key performance indicator (KPIs) defined by SCOR, on-the-fly, in an information systems that adheres to the vocabulary. Finally, we define concrete test scenarios and implement a synthetic </b>
-                        </p>
-                    </div>
-                </section>
-                <section id="introduction" rel="schema:hasPart" resource="#introduction">
-                    <h2 property="schema:name">Introduction</h2>
-                    <div datatype="rdf:HTML" property="schema:description" resource="#introduction" typeof="deo:Introduction">
-                        <p>
-                            In the past decades, internal enterprise information systems experienced much technical and scientific advancement. However, comparatively little progress was made to improve the exchange of information between enterprises. Until today, most of the communication between enterprises is done via informal channels, such as emails (including file attachments) or telephone calls. Only tier-1 suppliers of major Original Equipment Manufacturers (OEM) are usually fully integrated into the information exchange and corresponding IT-support (e.g. electronic data interchange connections) since these are expensive to deploy and maintain. Informal communication is time-consuming, costly and can become inefficient when crucial information is spread among many different people that each use their own format or system.
-                        </p>
-                        <p>
-                            This paper focuses on the two following business requirements:
-                        </p>
-                        <ol type="1">
-                            <li>The production plans of a factory are highly dependent on the incoming supplies, since just-in-time productions aims at keeping the stock as low as possible to reduce dead capital. Hence being able to instantly exchange machine-interpretable messages between manufacturer and supplier is critical, for example, in case of supply shortages.
-                            </li>
-                            <li>It is a competitive advantage for a business to be able to assess the reliability of suppliers. However, monitor- ing the direct suppliers is not enough, since problems deeper in the Supply Chain (delays, strikes, outages, bankruptcies) can have a negative effect even on reliable suppliers. Therefore, it is of paramount importance to be able to pro-actively identify critical suppliers and potential threats in the entire value-added network.
-                            </li>
-                        </ol>
-                        <p>
-                            Hence we need a standardized way to represent knowledge about the business processes and the supply network, and to reason with it. This paper focuses on one of the most prominent such standards, namely the
-                            <em>Supply Chain Operations Reference Model </em> (<a class="ref" href="http://www.apics.org/sites/apics-supply-chain-council/frameworks/scor">SCOR</a>) [<a class="ref" href="#ref-1">1</a>]. While SCOR offers a great basis to answer the two identified business requirements, its reference itself only contains textual definitions. Neither machine-interpretable formats for messages, nor automatized ways to reason with such messages exist.
-                        </p>
-                        <p>
-                            In order to address these limitations, we developed an approach for making the SCOR reference model executable. Our approach comprises the definition of the SCORVoc vo- cabulary providing an ontological formalization of the terms and concepts defined by SCOR. We argue that using a light- weight RDFS vocabulary is a good step towards applying the SCOR reference in real world applications. The fine-grained Linked Data representation formalism provides a number of benefits for implementing SCOR, namely:
-                        </p>
-                        <ul style="list-style-type:disc">
-                            <li>
-                                <em>Identification</em> – world-wide unique identifiers facilitate the data exchange and linking in supply networks,</li>
-                            <li>
-                                <em>Coherence/Reuse</em> – mixing and mashing of vocabularies as well as schemata enables the reuse and alignment with domain specific formalisms,
-                            </li>
-                            <li>
-                                <em>Granularity</em> – integration of representation on different levels of granularity,
-                            </li>
-                            <li>
-                                <em>Execution</em> – query execution in order to automatically aggregate and analyze data,
-                            </li>
-                            <li>
-                                <em>Integration</em> – bindings to a number of other technology ecosystems comprising XML (with RDF/XML, JSON (with JSON-LD) or HTML (with RDFa).
-                            </li>
-                        </ul>
-                        <p>
-                            Thus, this paper addresses the following research question: <em>How can the SCOR model be formalized and operationalized using the Semantic Web formalisms and the Linked Data principles?</em>
-                        </p>
-                        <p>
-                            Our approach is structured as follows: <a class="ref" href="#the-body-of-the-paper">Section II</a> first provides a more detailed overview on SCOR together with a discussion about the motivation and the goal of the reference. Then, existing works aimed at formalizing SCOR into a vocabulary (using RDF/S and OWL) are reviewed in <a class="ref" href="#dummy">Section III.</a>
-                        </p>
-                        <p>
-                            Finally, <a class="ref" href="#dummy">Section IV</a> to <a class="ref" href="#dummy">Section V</a> detail our main contributions:
-                        </p>
-                        <ul style="list-style-type:disc">
-                            <li><a class="ref" href="#dummy">Section IV</a>, we describe our methodical formalization of the terms and concepts. As a result, we defined the SCORVoc vocabulary consisting of 211 classes, 257 properties and 327 instances publicly available on the web. The vocabulary is a first step towards solving the first identified business requirements. </li>
-                            <li>The SCORVoc vocabulary is partly operationalized using RDF Schema and OWL axioms is well as class constructors. Unfortunately, these languages are not sufficient to capture the semantics of all the metrics and evaluate all the KPIs. In <a class="ref" href="#dummy">Section IV-C</a> we address this specific need. We introduce 28 queries that adhere to the vocabulary for automatically computing crucial KPIs in a supply network, e.g. with regard to reliability, responsiveness, agility or cost.</li>
-                            <li>The practical applicability of SCORVoc and its associated SPARQL queries is evaluated in <a class="ref" href="#dummy">Section V</a>. We demonstrate on generated synthetic benchmark data, that the amount of data and the query execution is easy to handle for partners in supply networks. Finally, <a class="ref" href="#dummy">Section VI</a> concludes and discusses future work.</li>
-                    </div>
-                </section>
-                <section id="overview-of-SCOR" rel="schema:hasPart" resource="#overview-of-SCOR">
-                    <h2 property="schema:name">Overview of SCOR</h2>
-                    <div datatype="rdf:HTML" property="schema:description" resource="#overview-of-SCOR" typeof="deo:todo">
-                        <p>
-                            It is challenging to agree on a standardized way to represent knowledge about the business processes and the supply network. This is partly due to the variety in company size, industry and business models, viewpoints, and granularity of requirements. The APICS Supply Chain Council 2 tackles this challenge, and elaborates a reference model named <em>Supply
-Chain Operations Reference Model (<a class="ref" href="http://www.apics.org/sites/apics-supply-chain-council/frameworks/scor">SCOR</a>)</em> [<a class="ref" href="#ref-1">1</a>].
-                        </p>
-                        <p>
-                            The main concept in SCOR is named process, and denotes any activity related to the production and logistics. The SCOR model has different conceptualization levels. The Top Level contains the main processes: <em>Enable</em>, <em>Make</em>, <em>Source</em>, <em>Deliver</em>, Return
-                            </em>. Then, the Configuration Level provides a set of process categories for main processes. Finally, the Process Element Level decomposes the process categories by adding process element definitions and process element information. This leads to a total of 201 definitions of industry-agnostic processes.
-                        </p>
-                        <p>
-                            By today, SCOR [<a class="ref" href="#ref-2">2</a>]–[<a class="ref" href="#ref-5">5</a>] is in its 11th revision, and has become a mature reference model backed up by many global players (including IBM, HP and SAP). It contains industry- agnostic definitions for 201 processes and 286 metrics. In Figure 1 we give an high-level overview of the reference model.
-                        </p>
-                        <p>
-                            The motivation behind SCOR is to enable enterprises to diagnose and manage their Supply Chains. Figure 2 illustrates the limited view of an enterprise without any Supply Chain communication. The goal is to extend the view in order to identify poorly performing links and act upon them. Besides communication, it is necessary that each link is measured equally by each partner.
-                        </p>
-                        <p>
-                            For that purpose, SCOR defines different performance in- dicators (metrics) including a calculation plan to ensure com- parability within the entire Supply Chain. In total, there are 286 metrics which are grouped into five categories: <em>Reliability</em>, <em>Responsiveness</em>, <em>Agility</em>, <em>Costs</em> and <em>Assets</em>. In Table II, we provide an high-level overview on these metrics. The usage of these metrics allows Supply Chain managers to identify weak and strong links within the Supply Chain.
-                            <figure>
-                                <object data="img/SCORModel.png" height="240" type="image/png" width="240"></object>
-                                <figcaption>High-level overview of the Supply Chain Organizations Reference (SCOR v11.0). </figcaption>
-                            </figure>
-                            <figure>
-                                <object data="img/before.png" height="240" type="image/png" width="240"></object>
-                                <figcaption>Supply Chain workflow example: Reliability between Enterprises</figcaption>
-                            </figure>
-                    </div>
-                </section>
-                <section id="related-work" rel="schema:hasPart" resource="#related-work">
-                    <h2 property="schema:name">Related Work</h2>
-                    <div datatype="rdf:HTML" property="schema:description" resource="#related-work" typeof="deo:todo">
-                        <p>
-                            Various projects and activities aim at formalizing SCOR into a vocabulary using RDFS and OWL [<a class="ref" href="#ref-7">7</a>]–[<a class="ref" href="#ref-11">11</a>].
-                        </p>
-                        <p>
-                            The formalization of the SCOR model into an ontology is first addressed in [<a class="ref" href="#ref-8">8</a>]. The authors analyzed the different conceptualization levels of the model and converted them into OWL classes.
-                        </p>
-                        <p>
-                            In [<a class="ref" href="#ref-10">10</a>], a seminal approach formalizes Supply Chain op- erations overcoming the semantic weaknesses of the SCOR model. In this work the SCOR-KOS OWL model is presented, which encodes the main entities and properties for SCOR. In addition, the SCOR-Full ontology is a domain ontology for the representation and management of knowledge about Supply Chain operations. The latter presents the core concepts of Supply Chain embedded in SCOR definitions. This effort is also the basis used by Zdravković et al. [<a class="ref" href="#ref-12">12</a>] to configure the Supply Chain process. They provide a thread model configuring a specific flow of the Supply Chain studied.
-                        </p>
-                        <p>
-                            The combination of the SCOR ontology and the ONTO- PDM 4 ontology is addressed in [<a class="ref" href="#ref-11">11</a>]. The ONTO-PDM on- tology is used to represent information regarding product development, which is not covered by SCOR. The goal is to create a Supply Chain ontology framework for networked enterprises interoperability.
-                        </p>
-                        <p>
-                            Sakka et al. [<a class="ref" href="#ref-9">9</a>][<a class="ref" href="#ref-8">8</a>] present a SCOR model as a way to align the business processes with strategical objectives for Supply Chains. Concepts like information and input/output are included to face this alignment. SCOR is modeled using ARIS 5 thus obtaining a SCOR/ARIS model. Then, XLST transforms the output of SCOR/ARIS into a SCOR OWL ontology.
-                        </p>
-                        <p>
-                            The work conducted by [<a class="ref" href="#ref-14">14</a>] provides an ontology model to support Supply Chain process modeling and analysis based on the SCOR model. In this work, only part of the SCOR-KOS model [<a class="ref" href="#ref-10">10</a>] related to the definition of input and output entities in SCOR processes is reused.
-                        </p>
-                        <p>
-                            However, most of these attempts have limitations, summed up in Table I:
-                        </p>
-                        <ul style="list-style-type:disc">
-                            <li>First, these approaches are based on SCOR versions up to 8.0, while the current version is 11.
-                            </li>
-                            <li>Then, the Linked Data principles are not satisfied by these works. They do not reuse existing vocabularies when possible, such as schema.org and Dublin Core. But above all, vocabularies of these works are not publicly available on the web. We contacted the authors in order to get access to their vocabularies, unsuccessfully.
-                            </li>
-                            <li>
-                                Most approaches choose to stay close to the hierarchical structure for processes and metrics given by the original source.
-                            </li>
-                            <li>
-                                Finally, none of these vocabularies are ‘operationalized’, and enabled to automatically compute KPIs using data.
-                            </li>
-                        </ul>
-                        <p>
-                            The rest of this paper reports on the development and evaluation of the SCORVoc vocabulary, that aims to formalize and operationalize the SCOR model, while alleviating these issues.
-                        </p>
-                    </div>
-                </section>
-                <section id="formalization" rel="schema:hasPart" resource="#formalization">
-                    <h2 property="schema:name">Formalization and Operationalization</h2>
-                    <div datatype="rdf:HTML" property="schema:description" resource="#formalization" typeof="deo:todo">
-                        <p>This section describes the formalization of SCOR in a comprehensive RDFS vocabulary, called SCORVoc.</p>
-                        <h3><em>Methodology</em></h3>
-                        <p>
-                            As seen in the previous section, the main issues in existing formalizations of SCOR is that they have not been developed for a specific version of SCOR, and cannot be continuously updated. On the contrary, we develop SCORVoc using the VoCol methodology and support environment [15] 6 based on the Git version control system. This makes SCORVoc a living artefact, which can be extended and revised by a community of collaborators.</p>
-                        <p>
-                            Multiple people were involved in the development of SCORVoc. In order to facilitate the collaborative development, we choose a GitHub repository 7 for managing vocabulary source files, documentation, queries as well as example data. The Turtle serialization format [16] was chosen due to its sim- plicity. GitHub’s web interface further provided our domain experts with a very simple way to access the latest SCORVoc version.
-                        </p>
-                        <p>
-                            We chose the methodology described by Uschold et al. [17] for building our vocabulary: i) define the purpose and scope; ii) capture the domain knowledge; iii) develop the ontology and integrate it with other existing vocabularies; iv) evaluate it and document it properly.
-                        </p>
-                        <p>
-                            <b>Purpose and Scope.</b> The purpose of SCORVoc is to provide enterprises with a vocabulary which they can use to express any data related to Supply Chain management (SCM). The users of the vocabulary are therefore enterprises which would like to profit from the benefits of expressing their supply chains in SCOR. The vocabulary aims at being light-weight in order to facilitate its usage for future SCOR compliant IT applications.
-                        </p>
-                        <p>
-                            <b>Capture.</b> The capture of the domain of interest (Supply Chain data management) was achieved in two ways. First, we used the 976-page SCOR reference [1], with its strong terminological definitions as a major source for studying the domain of interest. Second, we had a domain expert with a deep knowledge (a member of the APICS Supply Chain Council 8 ) which supported us in the entire process. As a result of many interviews with the domain expert, we acquired a more fundamental understanding of the motivation of SCOR, its strengths but also its weaknesses.
-                        </p>
-                        <p>
-                            <b>Design.</b> This step is decomposed in the design of the two main aspects of SCOR: processes, described in Section IV-B; and metrics, described in Section IV-C. Existing semantics for each concept and the lack of accessibility of prior approaches to formalize SCOR lead us to create many concepts by ourselves. Nevertheless, various concepts and properties are integrated from well-known vocabularies such as schema.org, SKOS and Dublin Core. We made this decision based on the semantic description of these terms.
-                        </p>
-                        <p>
-                            <b>Documentation and Evaluation.</b> As illustrated in Sec- tion IV-B and Section IV-C, each concept contains a definition together with a full documentation based on the descriptions provided by SCOR. Section V describes the evaluation of SCORVoc.
-                        </p>
-                        <h3><em>Formalizing Processes</em></h3>
-                        <p>
-                            In SCOR, these are the 201 processes. A process represents any business activity between and within enterprises. For most of them, the reference outlines unambiguous text definitions. Since some of them have a rather long name (e.g. Identify, Prioritize And Aggregate Supply Chain Requirements), we decided to keep the short name and attach the long version as a label. To stay coherent, all concept and property names follow the camel case notation.
-                        </p>
-                        <p>
-                            As proposed in the reference, we created the processes as a hierarchical structure. We defined an abstract super class Process with its subclasses Plan, Source, etc. While certain terms (e.g. Make, Deliver) do not seem to be self-explanatory, we nevertheless adopted them due to the clear meaning in the SCM domain. All together, the hierarchy consists of three levels (Scope, Configuration, Step). Each level fulfills a certain purpose:
-                        </p>
-                        <ul style="list-style-type:disc">
-                            <li>Level 1 groups processes together,</li>
-                            <li>Level 2 comprises events, that are to be instantiated in the real world, and</li>
-                            <li>Level 3 explains in detail how level 2 processes are to be executed (step by step).</li>
-                        </ul>
-                        <p>
-                            Furthermore, the reference defines IDs and clear text defi- nitions for each process. These are reused as is in SCORVoc. Figure 3 visualizes the general structure of the vocabulary with the processes and others main concepts.</p>
-                        <p>
-                            Listing 1 shows an example for the full definition of the concept Enable. Enable is a subclass of the abstract concept scor:Process. Each concept contains a definition together with further descriptions provided by SCOR. We further added translations for a variety of languages.</p>
-                        <p>
-                            There are some specificities in SCOR that required the addition of more fined-grained knowledge in the SCORVoc vocabulary.
-                        </p>
-                        <p>
-                            As an example, SCOR level 3 processes (also called steps) have an order of execution of these processes. Therefore, we used the Ordered List Ontology 9 property olo:next to express this relation in our ontology.</p>
-                        <p>
-                            SCOR further defined 179 Practices to provide a collection of industry-agnostics practices which were recognized for their value. In order to manage talent in the supply chain, concepts such as Person, Skills, Experiences, Aptitudes and Trainings were introduced. While these concepts are not necessarily needed for the calculation of KPIs, they are all added for sake of completeness.</p>
-                        <h3><em>Formalizing Metrics</em></h3>
-                        <p>
-                            Metrics are defined by SCOR to evaluate Supply Chains on certain aspects such as reliability or responsiveness.</p>
-                        <p>
-                            Similar as the aforementioned processes, the SCOR refer- ence organizes metrics into a hierarchical structure, level 1 being the highest, and level 3 the lowest. SCOR provides for each metrics in a level a calculation plan that takes as an input the value of certain metrics in a lower level.</p>
-                        <p>
-                            <p>Let us describe one selected metrics for each category 10:</p>
-                            <p><em>a) Reliability</em>: Level 2 metric Orders delivered in full (RL 2.1) of performance indicator Reliability measures whether orders are received by the customer in the quantities committed. Its calculation plan is:</p>
-                            <p>
-                                An order is considered as delivered in full once it contains the correct items (RL 3.33, level 3 metric) with the correct quantity (RL 3.35, level 3 metric).
-                            </p>
-                            <p>
-                                <em>b) Responsiveness:</em> Level 1 metric Order Fulfillment Cycle Time (RS 1.1) measures the average cycle time in days it requires to achieve customer orders. Its calculation plan is:
-                            </p>
-                            <p>
-                                It depends on multiple other metrics of level 2 such as the time it takes to procure goods and services (RS 2.1), its production time (RS 2.2), the delivery and the delivery retail time (RS 2.3).
-                            </p>
-                            <p>
-                                <em>c) Agility:</em> The metric Upside Supply Chain Flexibility (AG 1.1) counts the number of days to achieve an unplanned increase (20% suggested by the reference) in the output of Source, Make and Deliver components.</p>
-                            <p>
-                                By assuming the production can run concurrently (one strategy provided by SCOR), it requires to identify the process (see metrics AG 2.1-5) within the enterprise whose adaption takes the most time.</p>
-                            <p>
-                                <em>d) Costs</em>: The metric Production Cost (CO 2.004) ac- counts for all costs involved in the production process.</p>
-                            <p>
-                                Thus, it depends on metrics which assemble the labor costs (CO 3.014), the automation costs (CO 3.015), the property, plant and equipment costs (CO 3.016) and the governance, risk, compliance, inventory and overhead costs (CO 3.0017).
-                            </p>
-                            <p>
-                                <em>e) Assets</em>: The metric Cast-to-Cash Cycle Time (AM 1.1) represents the time it takes for an enterprise to earn money on raw material investments.
-                            </p>
-                            <p>Thus, it is necessary to summarize the days between a sale is made and the cash is received (AM 2.1) with the days of sales they were in the inventory (AM 2.2). That sum needs to be subtracted with the days between purchasing raw materials and their actual payment (AM 2.3).</p>
-                            <p>
-                                Previous approaches defined a concept for each metric. However in SCORVoc, metrics are represented as data proper- ties, and their calculation plan is represented as an SPARQL query. SCOR metrics are hence ‘operationalized’, in the sense that all information required for computing the metric is made available in a interoperable way (viz. as Linked Data) and the metrics itself can be translated into queries operating on this information (i.e. SPARQL queries [18]) and returning the respective KPI.</p>
-                            <p>
-                                The level 3 metrics are the data capture entry point in SCORVoc. They are hence defined as data properties. Their rdfs:domain points to their respective processes (given by SCOR) and their range is xsd:decimal since they all describe a number between 0-100 (percent values).</p>
-                            <p>
-                                Listing 2 shows an example for the full definition of the property hasMetricRL_33. Equally as for the documen- tation of processes, we expressed each property with the definition and the additional information provided by SCOR.</p>
-                            <p>
-                                Then, the level 1 and 2 metrics are formalized as SPARQL queries. When triggered, they compute the value of the metric using the values of lower level metrics. Section V contains multiple examples of such SPARQL metric queries.</p>
-                    </div>
-                </section>
-                <section id="evaluation" rel="schema:hasPart" resource="#evaluation">
-                    <h2 property="schema:name">Evaluation</h2>
-                    <div datatype="rdf:HTML" property="schema:description" resource="#evaluation" typeof="deo:todo">
-                        <p>
-                            We evaluate our approach using a qualitative and quantita- tive method based on the metrics discussed in the previous section. Our qualitative evaluation describes the usage of the SPARQL metrics in a business scenario. In order to do a quantitative evaluation, we developed a SCOR test data generator and measured the execution time of typical queries.</p>
-                        <h3><em>Qualitative Evaluation</em></h3>
-                        <p>
-                            Listing 3 demonstrates a simple example of data expressed using SCORVoc. Since the reference limits itself entirely to processes and performance indicators, we added additional information (using the namespace prefix ex:) to make the example more realistic.</p>
-                        <p>
-                            The example describes a scenario (:process_1) in which goods (viz. keyboards) are received by an enter- prise on a certain date. These goods are forwarded to the warehouse which is the reason for the classification of the process as a :SourceStockedProduct. Alter- natively, if these goods are directly used in the produc- tion or for specialized client orders, the process may have been classified as :SourceMakeToOrderProduct or :SourceEngineerToOrderProduct. This enables en- terprises to distinguish more easily between possible unneces- sary orders, which end up as dead capital in the stock.</p>
-                        <p>
-                            As a next step, all information related to this event is captured. :hasMetricRL_33 represents the accuracy of the items and :hasMetricRL_50 the quantitative accuracy. Thus, our example shows that this order achieved a quantitative accuracy of 90%.</p>
-                        <p>
-                            Once the Supply Chain related information is captured using SCORVoc, the execution of SPARQL query metrics becomes feasible. As described in Section II, this was the driving force in the development of the SCORVoc vocabulary. Listing 4 shows the <em>Perfect Order Fulfillment</em> SPARQL metric. The query compares all complete deliveries (achieving 100%) with all deliveries in total by relying on the respective properties. Applied on the previous example, it returns 0% due to the delivery being incomplete.</p>
-                        <p>The knowledge of these metrics is considered to become a major competitive advantage in the enterprise world. Besides the previous data example, we will present and briefly discuss how the metrics are realized as SPARQL queries in the following:</p>
-                        <p>Listing 4 presents the Orders Delivered In Full metric. Orders are considered to be delivered entirely by SCOR once their item accuracy (RL 33) and quantitative accuracy (RL 50) correspond to 100%. Thus, every order below that value is regarded as incomplete.</p>
-                        <p>
-                            The <em>Order Fulfillment Cycle Time</em> is calculated by collecting the respective sum (days) of all source (RS 21), make (RS 22), deliver (RS 23) and deliver retail (RS 24) processes and divides them by amount of all orders.</p>
-                        <p>
-                            For the calculation of the <em>Upside Supply Chain Flexibility</em> metric, it is necessary to gather the value of all flexibility properties (AG1-5) and identify the maximum among them. Similar as a team is only as strong as its weakest part, a Supply Chain is only as agile as its slowest link.</p>
-                        <p>
-                            The <em>Production Cost</em> metric (CO 2.004) is dependent on the sum of the metric properties for the costs in Labor (CO 14), Automation (CO 15), Property (CO 16) and Inventory (CO 17).
-                        </p>
-                        <p>
-                            Listing 8 presents the Cast-to-Cash Cycle Time metric (AM 1.1). The query selects the average time raw materials stays in inventory (AM 2) together with the time the payment is due to by us (AM 1) subtracted by that of our customers (AM 3).</p>
-                        <figure>
-                            <object data="img/after.png" height="240" type="image/png" width="240"></object>
-                            <figcaption>Final view on the Supply Chain, where KPI information is propagated through the network </figcaption>
-                        </figure>
-                        <h3><em>Quantitative Evaluation</em></h3>
-                        <p>We demonstrate the feasibility of our approach on a SCOR dataset. The only known dataset is SCORmark 11 , which is assembled by a major consulting firm, but is only available for business customers and not open for research. We hence developed a open-source synthetic benchmark data generator, available on GitHub 12 .</p>
-                        <p>
-                            This generator allows to perform a round-trip between data representation and KPI evaluation. The benchmark allows to assess the performance of an SCORVoc implementation in a systematic and repeatable way. The generator creates data based on a number of parameters: Supply Chain depth, industry and Supply Chain partners. The Supply Chain depth sets the level from one main OEM enterprise to it suppliers’ supplier. The industry generates plausible product lines and enterprise names. The Supply Chain partners determine the width of the Supply Chain. A minimum of 2 generates a binary tree to both sides.</p>
-                        <p>Various dataset sizes can be generated in order to as- sess the scalability as well as the correctness of the metric SPARQL query implementations. We evaluated the metrics for datasets which contain 100k, 500k, 1M and 2M triples. Table III presents an overview of the generated data for the 100k scenario. While the instances represent different types of processes, the related properties are mostly 3-level data type properties which are required by the metrics (such as scor:hasMetricRL_50). The values randomized within a certain range (e.g. >80% for Reliability).
-                            <p>
-                                <p>
-                                    The queries were executed using the ARQ SPARQL pro- cessor 13 . The machine we used for the experiment contains 8GB of RAM, 256GB SSD and an Intel i7-3537U CPU with 2.00GHz.
-                                </p>
-                            </p>
-                            <p>
-                                Figure 4 summarizes the results of the quantitative evalua- tion. The Reliability and Assets queries performed best in our scenario and were also able to be executed fast with datasets larger than 2M triples. The other queries do not scale as well, but still perform with less than 10s query execution time. This is enough for real-world settings. Even for much larger supply networks, we deem query execution performance not to be a bottleneck, since queries are executed relatively infrequently and not by thousands of users. Also, since the number of metrics is limited it is possible to optimize query execution even more, but creating specific indexes or applying caching strategies. Overall this evaluation shows that the approach of having an executable vocabulary is feasible.</p>
-                            <p>Furthermore, the SCOR data generator can be used to systematically assess and evaluate SCORVoc compliant soft- ware solutions. Such solutions could be Specific supply net- work visualizations tools, Supply Chain robustness assessment frameworks, or scenario planning tools.</p>
-                            <p>In contrast with Figure 2, Figure 5 represents the full view on the entire Supply Chain.</p>
-                    </div>
-                </section>
-                <section id="conclusion" rel="schema:hasPart" resource="#conclusion">
-                    <h2 property="schema:name">Conclusion and Future work</h2>
-                    <div datatype="rdf:HTML" property="schema:description" resource="#conclusion" typeof="deo:Conclusion">
-                        <p>
-                            The use of data-centric approaches in engineering, manufac- turing and production are currently widely discussed topics (cf. Industry 4.0, smart manufacturing or cyber-physical systems initiatives). The complexity in Supply Chain Management in general is thought to be one of the major bottlenecks of the field. A key issue in engineering, manufacturing and production is to be able to efficiently and effectively manage Supply Chains.
-                        </p>
-                        <p>
-                            This paper introduces the SCORVoc RDFS vocabulary, that formalizes and operationalizes the SCOR standard. SCORVoc is available on GitHub 14 for collaborative further development and at purl.org. 15 . We used an innovative methodology to develop the SCORVoc vocabulary, and provided means to automatically compute typical KPIs. Finally, we described comprehensive test scenarios for SCORVoc and implemented a synthetic benchmark. SCORVoc, together with the formalized SPARQL queries, represents a comprehensive approach to facilitate information flows in Supply Chains, and enables the design of SCOR compliant IT applications.
-                        </p>
-                        <p>
-                            This work is the first step of a larger research and develop- ment agenda that aims at providing comprehensive support for information flows accompanying Supply Chains, employing the Linked Data paradigm. The next step is the constitution of a real industry SCOR benchmark, one may test SCORVoc implementations against. One could hence prove the usability of queries, and optimize their execution time.</p>
-                        <p>
-                            Finally, let us note we learned from domain experts that SCOR still has a number of limitations. For example a delivery of 9 out of 10 items is described as a 90% success rate. Although for one company this may be an appropriate measurement, for another company, the missing part may actually stop the entire production part. SCORVoc may help identify such limitations, and accompany the improvement of the SCOR specification.</p>
-                    </div>
-                </section>
-                <section id="acknowledgements" rel="schema:hasPart" resource="#acknowledgements">
-                    <h2 property="schema:name">Acknowledgements</h2>
-                    <div datatype="rdf:HTML" property="schema:description" resource="#acknowledgements" typeof="deo:todo">
-                        <p>This work was partly supported by the following grants from the German Federal Ministry of Education and Research (BMBF) for the LUCID Project 16 (GA no. 01IS14019A) as well as for the the LEDS Project 17 (GA no. 03WKCG11A).</p>
-                    </div>
-                </section>
-                <section id="references">
-                    <h2>References</h2>
-                    <div>
-                        <ol>
-                            <li id="ref-1" property="schema:citation">S. C. Council, “Supply chain operations reference model,” <em>SCOR, Version</em>, vol. 11, 2012.</li>
 
-               
-                            <li id="ref-2" property="schema:citation">F. Salazar, M. Caro, and J. Cavazos, "Final Review of the Application of
-the SCOR Model: Supply Chain for Biodiesel Castor–Colombia Case,” <em>Journal of Technology Innovations in Renewable Energy</em>, vol. 1. no. 1, 2012</li>
-                 
-<li id="ref-3" property="schema:citation">B. Georgise, K.-D. Thoben, and F. Marcus Seifert, “Assessing the
-Existing Performance Measures, & Measurement Systems in Developing
-Countries: An Ethiopian Study,” <em>Global Journal of Researches In
-Engineering</em>, vol. 13, no. 2, 2013.</li>
-<li id="ref-4" property="schema:citation">F. B. Georgise, K.-d. Thoben, and M. Seifert, “Implementing the SCOR
-Model Best Practices for Supply Chain Improvement in Developing
-Countries,” <em>International Journal of u-and e-Service, Science and Technology</em>, vol. 6, no. 4, 2013.</li>
-<li id="ref-5" property="schema:citation">F. Lestari, K. Ismail, A. Hamid, and W. Sutopo, “Designing supply chain
-analysis tool using SCOR model (case study in palm oil refinery),” in
-<em>IEEE Int. Conf. on Industrial Engineering and Engineering Management</em>
-(IEEM). IEEE, 2013.</li>
-<li id="ref-6" property="schema:citation">Y. Ye, D. Yang, Z. Jiang, and L. Tong, “An ontology-based architecture
-for implementing semantic integration of supply chain management,”
-<em>International Journal of Computer Integrated Manufacturing</em>, vol. 21,
-no. 1, pp. 1–18, 2008.</li>
-<li id="ref-7" property="schema:citation">M. Fayez, L. Rabelo, and M. Mollaghasemi, “Ontologies for supply
-chain simulation modeling,” in <em>37th conference on Winter simulation</em>,
-2005.</li>
-<li id="ref-8" property="schema:citation">J. Leukel and S. Kirn, “A supply chain management approach to logistics
-ontologies in information systems,” in <em>Business Information Systems</em>.
-Springer, 2008.</li>
-<li id="ref-9" property="schema:citation">O. Sakka, P.-A. Millet, and V. Botta-Genoulaz, “An ontological approach
-for strategic alignment: a supply chain operations reference case study,”
-<em>International Journal of Computer Integrated Manufacturing</em>, vol. 24,
-no. March 2015, 2011.</li>
-<li id="ref-10" property="schema:citation">M. Zdravković, H. Panetto, M. Trajanović, and A. Aubry, “An approach
-for formalising the supply chain operations,” <em>Enterprise Information
-Systems</em>, vol. 5, no. 4, 2011.</li>
-<li id="ref-11" property="schema:citation">Y. Lu, H. Panetto, Y. Ni, and X. Gu, “Ontology alignment for networked
-enterprise information system interoperability in supply chain environment,” <em>International Journal of Computer Integrated Manufacturing</em>,
-vol. 26, no. 1-2, pp. 140–151, 2013.</li>
-<li id="ref-12" property="schema:citation">M. Zdravković, M. Trajanović, H. Panetto, A. Aubry, and M. Lezoche,
-“Ontology-based supply chain process configuration,” in <em>34th International Conference on Production Engineering</em>, ICPE 2011, 2011.</li>
-<li id="ref-13" property="schema:citation">H. Panetto, M. Dassisti, and A. Tursi, “Onto-pdm: Product-driven ontol-
-ogy for product data management interoperability within manufacturing
-process environment,” <em>Advanced Engineering Informatics</em>, vol. 26, no. 2,
-2012.</li>
-<li id="ref-14" property="schema:citation">T. Grubic and I. S. Fan, “Integrating process and ontology for supply
-chain modelling,” <em>International Journal of Computer Integrated Manufacturing</em>, vol. 24, no. March 2015, pp. 847–863, 2011.</li>
-<li id="ref-15" property="schema:citation">VoCol: An Agile Methodology and Environment for Collaborative
-Vocabulary Development. Zenodo, Feb. 2015. [Online]. Available:
-http://dx.doi.org/10.5281/zenodo.15023</li>
-<li id="ref-16" property="schema:citation">D. Beckett, T. Berners-Lee, E. Prudhommeaux, and G. Carothers,
-“RDF 1.1 Turtle–Terse RDF Triple Language. W3C Recommendation,”
-<em>World Wide Web Consortium (Feb 2014)</em>, available at http://www. w3.
-org/TR/turtle, 2014.</li>
-<li id="ref-17" property="schema:citation">M. Uschold and M. Gruninger, “Ontologies: Principles, methods and
-applications,” <em>The knowledge engineering review</em>, vol. 11, no. 02, 1996.</li>
-<li id="ref-18" property="schema:citation">S. Harris, A. Seaborne, and E. Prudhommeaux, “SPARQL 1.1 query
-language,”<em>W3C Recommendation</em>, vol. 21, 2013.</li>
+<section id="introduction"
+<section id="overview-of-SCOR"
+<section id="related-work" 
+<section id="formalization" .4 
+<section id="evaluation"
+<section id="conclusion"
 
-             <!-- 
-                            <li id="ref-4" property="schema:citation">M. Herlihy. A methodology for implementing highly concurrent data objects. <em>ACM Trans. Program. Lang. Syst.</em>, 15(5):745–770, November 1993.</li>
-                            <li id="ref-5" property="schema:citation">L. Lamport. <em>LaTeX User’s Guide and Document Reference Manual</em>. Addison-Wesley Publishing Company, Reading, Massachusetts, 1986.</li>
-                            <li id="ref-6" property="schema:citation">S. Salas and E. Hille. <em>Calculus: One and Several Variable</em>. John Wiley and Sons, New York, 1978.</li>
-                            -->
-                        </ol>
-                    </div>
-                </section>
-                <section id="overview-of-scor" rel="schema:hasPart" resource="#tmp">
-                    <h2 property="schema:name">/tmp/</h2>
-                    <div property="schema:description">
-                        <section id="citations" rel="schema:hasPart" resource="#citations">
-                            <h3 property="schema:name">Citations</h3>
-                            <div datatype="rdf:HTML" property="schema:description">
-                                <p>Citations to articles [<a class="ref" href="#1">1</a>, <a class="ref" href="#3">3</a>, <a class="ref" href="#3">3</a>, <a class="ref" href="#4">4</a>], conference proceedings [<a class="ref" href="#2">2</a>] or books
-                                    <cite>[<a class="ref" href="#5">5</a>, <a class="ref" href="#6">6</a>]</cite> listed in the Bibliography section of your article will occur throughout the text of your article. You should use BibTeX to automatically produce this bibliography; you simply need to insert one of several citation commands with a key of the item cited in the proper location in the <code>.tex</code> file [<a class="ref" href="#5">5</a>]. The key is a short reference you invent to uniquely identify each work; in this sample document, the key is the first author’s surname and a word from the title. This identifying key is included with each item in the <code>.bib</code> file for your article.</p>
-                                <p>The details of the construction of the <code>.bib</code> file are beyond the scope of this sample document, but more information can be found in the <em>Author’s Guide</em>, and exhaustive details in the <em><span class="latex">L<span>a</span>T<span>e</span>X</span> User’s Guide</em>[<a class="ref" href="#5">5</a>].</p>
-                                <p>This article shows only the plainest form of the citation command, using <code>\cite</code>. This is what is stipulated in the SIGS style specifications. No other citation format is endorsed.</p>
-                            </div>
-                        </section>
-                        <section id="tables" rel="schema:hasPart" resource="#tables">
-                            <h3 property="schema:name">Tables</h3>
-                            <div datatype="rdf:HTML" property="schema:description">
-                                <p>Because tables cannot be split across pages, the best placement for them is typically the top of the page nearest their initial cite. To ensure this proper
-                                    <q>floating</q> placement of tables, use the environment <strong>table</strong> to enclose the table’s contents and the table caption. The contents of the table itself must go in the <strong>tabular</strong> environment, to be aligned properly in rows and columns, with the desired horizontal and vertical rules. Again, detailed instructions on <strong>tabular</strong> material is found in the <em><span class="latex">L<span>a</span>T<span>e</span>X</span> User’s Guide</em>.</p>
-                                <p>Immediately following this sentence is the point at which Table [<a href="#frequency-of-special-characters">Frequency of Special Characters</a>] is included in the input file; compare the placement of the table here with the table in the printed dvi output of this document.</p>
-                                <table id="frequency-of-special-characters">
-                                    <caption>Frequency of Special Characters</caption>
-                                    <thead>
-                                        <tr>
-                                            <th>Non-English or Math</th>
-                                            <th>Frequency</th>
-                                            <th>Comments</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>Ø</td>
-                                            <td>1 in 1,000</td>
-                                            <td>For Swedish names</td>
-                                        </tr>
-                                        <tr>
-                                            <td>π</td>
-                                            <td>1 in 5</td>
-                                            <td>Common in math</td>
-                                        </tr>
-                                        <tr>
-                                            <td>$</td>
-                                            <td>4 in 5</td>
-                                            <td>Used in business</td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <math>
-                                                    <msubsup>
-                                                        <mi>Ψ</mi>
-                                                        <mn>1</mn>
-                                                        <mn>2</mn>
-                                                    </msubsup>
-                                                </math>
-                                            </td>
-                                            <td>1 in 40,000</td>
-                                            <td>Unexplained usage</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                                <p>To set a wider table, which takes up the whole width of the page’s live area, use the environment <strong>table*</strong> to enclose the table’s contents and the table caption. As with a single-column table, this wide table will
-                                    <q>float</q> to a location deemed more desirable. Immediately following this sentence is the point at which Table 2 is included in the input file; again, it is instructive to compare the placement of the table here with the table in the printed dvi output of this document.</p>
-                            </div>
-                        </section>
-                        <section id="figures" rel="schema:hasPart" resource="#figures">
-                            <h3 property="schema:name">Figures</h3>
-                            <div datatype="rdf:HTML" property="schema:description">
-                                <p>Like tables, figures cannot be split across pages; the best placement for them is typically the top or the bottom of the page nearest their initial cite. To ensure this proper
-                                    <q>floating</q> placement of figures, use the environment <strong>figure</strong> to enclose the figure and its caption.</p>
-                                <p>This sample document contains examples of <strong>.eps</strong> and <strong>.ps</strong> files to be displayable with <span class="latex">L<span>a</span>T<span>e</span>X</span>. More details on each of these is found in the <em>Author’s Guide</em>.</p>
-                                <figure>
-                                    <img height="13%" src="media/images/fly.png" width="13%" />
-                                    <figcaption>A sample black and white graphic (.eps format).</figcaption>
-                                </figure>
-                                <figure>
-                                    <img height="25%" src="media/images/fly.png" width="25%" />
-                                    <figcaption>A sample black and white graphic (.eps format) that has been resized with the <code>epsfig</code> command.</figcaption>
-                                </figure>
-                                <p>As was the case with tables, you may want a figure that spans two columns. To do this, and still to ensure proper
-                                    <q>floating</q> placement of tables, use the environment <strong>figure*</strong> to enclose the figure and its caption.</p>
-                                <p>Note that either <strong>.ps</strong> or <strong>.eps</strong> formats are used; use the <code>\epsfig</code> or <code>\psfig</code> commands as appropriate for the different file types.</p>
-                                <figure>
-                                    <object data="media/images/rosette.svg" height="240" type="image/svg+xml" width="240"></object>
-                                    <figcaption>A sample black and white graphic (.ps format) that has been resized with the <code>psfig</code> command.</figcaption>
-                                </figure>
-                            </div>
-                        </section>
-                        <section id="theorem-like-constructs" rel="schema:hasPart" resource="#theorem-like-constructs">
-                            <h3 property="schema:name">Theorem-like Constructs</h3>
-                            <div datatype="rdf:HTML" property="schema:description">
-                                <p>Other common constructs that may occur in your article are the forms for logical constructs like theorems, axioms, corollaries and proofs. There are two forms, one produced by the command <code>\newtheorem</code> and the other by the command <code>\newdef</code>; perhaps the clearest and easiest way to distinguish them is to compare the two in the output of this sample document:</p>
-                                <p>This uses the <strong>theorem</strong> environment, created by the <code>\newtheorem</code> command:</p>
-                                <dl class="theorem">
-                                    <dt>Theorem 1</dt>
-                                    <dd><span>Let <math><mi>f</mi></math> be continuous on <math><mo form="prefix">[</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo form="postfix">]</mo></math>. If G is an antiderivative for f on [a, b], then</span>
-                                        <math xmlns="http://www.w3.org/1998/Math/MathML">
-                                            <mtable class="m-equation" displaystyle="true">
-                                                <mtr>
-                                                    <mtd columnalign="left">
-                                                        <mstyle displaystyle="true">
-                                                            <munderover>
-                                                                <mo>∫</mo>
-                                                                <mi>a</mi>
-                                                                <mi>b</mi>
-                                                            </munderover>
-                                                        </mstyle>
-                                                        <mi>f</mi>
-                                                        <mrow>
-                                                            <mo form="prefix">(</mo>
-                                                            <mi>t</mi>
-                                                            <mo form="postfix">)</mo>
-                                                        </mrow>
-                                                        <mo>ⅆ</mo>
-                                                        <mi>t</mi>
-                                                        <mo>=</mo>
-                                                        <mi>G</mi>
-                                                        <mrow>
-                                                            <mo form="prefix">(</mo>
-                                                            <mi>b</mi>
-                                                            <mo form="postfix">)</mo>
-                                                        </mrow>
-                                                        <mo>-</mo>
-                                                        <mi>G</mi>
-                                                        <mrow>
-                                                            <mo form="prefix">(</mo>
-                                                            <mi>a</mi>
-                                                            <mo form="postfix">)</mo>
-                                                        </mrow>
-                                                        <mo>.</mo>
-                                                    </mtd>
-                                                </mtr>
-                                            </mtable>
-                                        </math>
-                                    </dd>
-                                </dl>
-                                <p>The other uses the <strong>definition</strong> environment, created by the <code>\newdef</code> command:</p>
-                                <dl class="definition">
-                                    <dt>Definition 1</dt>
-                                    <dd><span>If <math><mi>z</mi></math> is irrational, then by <math><msup><mi>e</mi><mi>z</mi></msup></math> we mean the unique number which has logarithm <math><mi>z</mi></math>:</span>
-                                        <math>
-                                            <mo>log</mo>
-                                            <msup>
-                                                <mi>e</mi>
-                                                <mi>z</mi>
-                                            </msup>
-                                            <mo>=</mo>
-                                            <mi>z</mi>
-                                        </math>
-                                    </dd>
-                                </dl>
-                                <p>Two lists of constructs that use one of these forms is given in the <em>Author’s Guidelines</em>.</p>
-                                <p>There is one other similar construct environment, which is already set up for you; i.e. you must <em>not</em> use a <code>\newdef</code> command to create it: the <strong>proof</strong> environment. Here is a example of its use:</p>
-                                <dl class="proof">
-                                    <dt>Proof</dt>
-                                    <dd><span>Suppose on the contrary there exists a real number <math><mi>L</mi></math> such that</span>
-                                        <math xmlns="http://www.w3.org/1998/Math/MathML">
-                                            <mtable class="m-equation" displaystyle="true">
-                                                <mtr>
-                                                    <mtd columnalign="left">
-                                                        <mstyle displaystyle="true">
-                                                            <munder>
-                                                                <mi>lim</mi>
-                                                                <mrow>
-                                                                    <mi>x</mi>
-                                                                    <mo>→</mo>
-                                                                    <mo>∞</mo>
-                                                                </mrow>
-                                                            </munder>
-                                                        </mstyle>
-                                                        <mfrac linethickness="1">
-                                                            <mrow>
-                                                                <mi>f</mi>
-                                                                <mrow>
-                                                                    <mo form="prefix">(</mo>
-                                                                    <mi>x</mi>
-                                                                    <mo form="postfix">)</mo>
-                                                                </mrow>
-                                                            </mrow>
-                                                            <mrow>
-                                                                <mi>g</mi>
-                                                                <mrow>
-                                                                    <mo form="prefix">(</mo>
-                                                                    <mi>x</mi>
-                                                                    <mo form="postfix">)</mo>
-                                                                </mrow>
-                                                            </mrow>
-                                                        </mfrac>
-                                                        <mo>=</mo>
-                                                        <mi>L</mi>
-                                                        <mo>.</mo>
-                                                    </mtd>
-                                                </mtr>
-                                            </mtable>
-                                        </math>
-                                        <p>Then</p>
-                                        <math xmlns="http://www.w3.org/1998/Math/MathML">
-                                            <mtable class="m-equation" displaystyle="true">
-                                                <mtr>
-                                                    <mtd columnalign="left">
-                                                        <mi>l</mi>
-                                                        <mo>=</mo>
-                                                        <mstyle displaystyle="true">
-                                                            <munder>
-                                                                <mi>lim</mi>
-                                                                <mrow>
-                                                                    <mi>x</mi>
-                                                                    <mo>→</mo>
-                                                                    <mi>c</mi>
-                                                                </mrow>
-                                                            </munder>
-                                                        </mstyle>
-                                                        <mi>f</mi>
-                                                        <mrow>
-                                                            <mo form="prefix">(</mo>
-                                                            <mi>x</mi>
-                                                            <mo form="postfix">)</mo>
-                                                        </mrow>
-                                                        <mo>=</mo>
-                                                        <mstyle displaystyle="true">
-                                                            <munder>
-                                                                <mi>lim</mi>
-                                                                <mrow>
-                                                                    <mi>x</mi>
-                                                                    <mo>→</mo>
-                                                                    <mi>c</mi>
-                                                                </mrow>
-                                                            </munder>
-                                                        </mstyle>
-                                                        <mrow>
-                                                            <mo rspace="0.3em" lspace="0em" stretchy="true" fence="true" form="prefix">[</mo>
-                                                            <mi>g</mi>
-                                                            <mrow>
-                                                                <mi>x</mi>
-                                                            </mrow>
-                                                            <mo>⋅</mo>
-                                                            <mfrac linethickness="1">
-                                                                <mrow>
-                                                                    <mi>f</mi>
-                                                                    <mrow>
-                                                                        <mo form="prefix">(</mo>
-                                                                        <mi>x</mi>
-                                                                        <mo form="postfix">)</mo>
-                                                                    </mrow>
-                                                                </mrow>
-                                                                <mrow>
-                                                                    <mi>g</mi>
-                                                                    <mrow>
-                                                                        <mo form="prefix">(</mo>
-                                                                        <mi>x</mi>
-                                                                        <mo form="postfix">)</mo>
-                                                                    </mrow>
-                                                                </mrow>
-                                                            </mfrac>
-                                                            <mo rspace="0em" lspace="0.3em" stretchy="true" fence="true" form="postfix">]</mo>
-                                                        </mrow>
-                                                        <mo>=</mo>
-                                                        <mstyle displaystyle="true">
-                                                            <munder>
-                                                                <mi>lim</mi>
-                                                                <mrow>
-                                                                    <mi>x</mi>
-                                                                    <mo>→</mo>
-                                                                    <mi>c</mi>
-                                                                </mrow>
-                                                            </munder>
-                                                        </mstyle>
-                                                        <mi>g</mi>
-                                                        <mrow>
-                                                            <mo form="prefix">(</mo>
-                                                            <mi>x</mi>
-                                                            <mo form="postfix">)</mo>
-                                                        </mrow>
-                                                        <mo>⋅</mo>
-                                                        <mstyle displaystyle="true">
-                                                            <munder>
-                                                                <mi>lim</mi>
-                                                                <mrow>
-                                                                    <mi>x</mi>
-                                                                    <mo>→</mo>
-                                                                    <mi>c</mi>
-                                                                </mrow>
-                                                            </munder>
-                                                        </mstyle>
-                                                        <mfrac linethickness="1">
-                                                            <mrow>
-                                                                <mi>f</mi>
-                                                                <mrow>
-                                                                    <mo form="prefix">(</mo>
-                                                                    <mi>x</mi>
-                                                                    <mo form="postfix">)</mo>
-                                                                </mrow>
-                                                            </mrow>
-                                                            <mrow>
-                                                                <mi>g</mi>
-                                                                <mrow>
-                                                                    <mo form="prefix">(</mo>
-                                                                    <mi>x</mi>
-                                                                    <mo form="postfix">)</mo>
-                                                                </mrow>
-                                                            </mrow>
-                                                        </mfrac>
-                                                        <mo>=</mo>
-                                                        <mn>0</mn>
-                                                        <mo>⋅</mo>
-                                                        <mi>L</mi>
-                                                        <mo>=</mo>
-                                                        <mn>0</mn>
-                                                        <mo>,</mo>
-                                                    </mtd>
-                                                </mtr>
-                                            </mtable>
-                                        </math>
-                                        <p>which contradicts our assumption that
-                                            <math>
-                                                <mi>l</mi>
-                                                <mo>≠</mo>
-                                                <mn>0</mn>
-                                            </math>.</p>
-                                    </dd>
-                                </dl>
-                                <p>Complete rules about using these environments and using the two different creation commands are in the <em>Author’s Guide</em>; please consult it for more detailed instructions. If you need to use another construct, not listed therein, which you want to have the same formatting as the Theorem or the Definition[<a class="ref" href="#6">6</a>] shown above, use the <code>\newtheorem</code> or the <code>\newdef</code> command, respectively, to create it.</p>
-                                <table id="some-typical-commands">
-                                    <caption>Some Typical Commands</caption>
-                                    <thead>
-                                        <tr>
-                                            <th>Command</th>
-                                            <th>A Number</th>
-                                            <th>Comments</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td><code>\alignauthor</code></td>
-                                            <td>100</td>
-                                            <td>Author alignment</td>
-                                        </tr>
-                                        <tr>
-                                            <td><code>\numberofauthors</code></td>
-                                            <td>200</td>
-                                            <td>Author enumeration</td>
-                                        </tr>
-                                        <tr>
-                                            <td><code>\table</code></td>
-                                            <td>300</td>
-                                            <td>For tables</td>
-                                        </tr>
-                                        <tr>
-                                            <td><code>\table*</code></td>
-                                            <td>400</td>
-                                            <td>For wider tables</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                                <figure>
-                                    <img height="auto" src="media/images/flies.png" width="100%" />
-                                    <figcaption>A sample black and white graphic (.eps format) that needs to span two columns of text.</figcaption>
-                                </figure>
-                            </div>
-                        </section>
-                        <dl>
-                            <dt>A <em>Caveat</em> for the <span class="tex">T<span>e</span>X</span> Expert</dt>
-                            <dd>Because you have just been given permission to use the <code>\newdef</code> command to create a new form, you might think you can use <span class="tex">T<span>e</span>X</span>’s <code>\def</code> to create a new command: <em>Please refrain from doing this!</em> Remember that your <span class="latex">L<span>a</span>T<span>e</span>X</span> source code is primarily intended to create camera-ready copy, but may be converted to other forms – e.g. HTML. If you inadvertently omit some or all of the <code>\def</code>s recompilation will be, to say the least, problematic.</dd>
-                        </dl>
-                    </div>
-                </section>
-                <section id="appendix">
-                    <dl>
-                        <dt>Appendix</dt>
-                        <dd>
-                            <section>
-                                <h2>Headings in Appendices</h2>
-                                <div>
-                                    <p>The rules about hierarchical headings discussed above for the body of the article are different in the appendices. In the <strong>appendix</strong> environment, the <strong>command</strong> section is used to indicate the start of each Appendix, with alphabetic order designation (i.e. the first is A, the second B, etc.) and a title (if you include one). So, if you need hierarchical structure within an Appendix, start with <strong>subsection</strong> as the highest level. Here is an outline of the body of this document in Appendix-appropriate form:</p>
-                                    <section>
-                                        <h3>Introduction</h3>
-                                    </section>
-                                    <section>
-                                        <h3>The Body of the Paper</h3>
-                                        <div>
-                                            <section>
-                                                <h4>Type Changes and Special Characters</h4>
-                                            </section>
-                                            <section>
-                                                <h4>Math Equations</h4>
-                                            </section>
-                                        </div>
-                                    </section>
-                                    <section>
-                                        <h3>Conclusions</h3>
-                                    </section>
-                                    <section>
-                                        <h3>Acknowledgments</h3>
-                                    </section>
-                                    <section>
-                                        <h3>Additional Authors</h3>
-                                        <div>
-                                            <p>This section is inserted by <span class="latex">L<span>a</span>T<span>e</span>X</span>; you do not insert it. You just add the names and information in the <code>\additionalauthors</code> command at the start of the document.</p>
-                                        </div>
-                                    </section>
-                                    <section>
-                                        <h3>References</h3>
-                                        <div>
-                                            <p>Generated by bibtex from your .bib file. Run latex, then bibtex, then latex twice (to resolve references) to create the .bbl file. Insert that .bbl file into the .tex source file and comment out the command <code>\thebibliography</code>.</p>
-                                        </div>
-                                    </section>
-                                </div>
-                            </section>
-                            <section>
-                                <h2>More Help For The Hardy</h2>
-                                <div>
-                                    <p>The acm_proc_article-sp document class file itself is chockfull of succinct and helpful comments. If you consider yourself a moderately experienced to expert user of <span class="latex">L<span>a</span>T<span>e</span>X</span>, you may find reading it useful but please remember not to change it.</p>
-                                </div>
-                            </section>
-                        </dd>
-                    </dl>
-                </section>
-            </div>
-        </article>
-    </main>
+</p>
+<p>
+Finally, <a class="ref" href="#formalization">Section IV</a> to <a class="ref" href="#evaluation">Section V</a> detail our main contributions:
+</p>
+<ul style="list-style-type:disc">
+<li><a class="ref" href="#formalization">Section IV</a>, we describe our methodical formalization of the terms and concepts. As a result, we defined the SCORVoc vocabulary consisting of 211 classes, 257 properties and 327 instances publicly available on the web. The vocabulary is a first step towards solving the first identified business requirements. </li>
+<li>The SCORVoc vocabulary is partly operationalized using RDF Schema and OWL axioms is well as class constructors. Unfortunately, these languages are not sufficient to capture the semantics of all the metrics and evaluate all the KPIs. In <a class="ref" href="#formalization">Section IV-C</a> we address this specific need. We introduce 28 queries that adhere to the vocabulary for automatically computing crucial KPIs in a supply network, e.g. with regard to reliability, responsiveness, agility or cost.</li>
+<li>The practical applicability of SCORVoc and its associated SPARQL queries is evaluated in <a class="ref" href="#evaluation">Section V</a>. We demonstrate on generated synthetic benchmark data, that the amount of data and the query execution is easy to handle for partners in supply networks. Finally, <a class="ref" href="#conclusion">Section VI</a> concludes and discusses future work.</li>
+</div>
+</section>
+<section id="overview-of-SCOR" rel="schema:hasPart" resource="#overview-of-SCOR">
+<h2 property="schema:name">Overview of SCOR</h2>
+<div datatype="rdf:HTML" property="schema:description" resource="#overview-of-SCOR" typeof="deo:todo">
+<p>
+	It is challenging to agree on a standardized way to represent knowledge about the business processes and the supply network. This is partly due to the variety in company size, industry and business models, viewpoints, and granularity of requirements. The <a href="http://www.apics.org/sites/apics-supply-chain-council/about-apics-scc">APICS Supply Chain Council</a> tackles this challenge, and elaborates a reference model named <em>Supply
+	Chain Operations Reference Model (<a class="ref" href="http://www.apics.org/sites/apics-supply-chain-council/frameworks/scor">SCOR</a>)</em> [<a class="ref" href="#ref-1">1</a>].
+</p>
+<p>
+	The main concept in SCOR is named process, and denotes any activity related to the production and logistics. The SCOR model has different conceptualization levels. The Top Level contains the main processes: <em>Enable</em>, <em>Make</em>, <em>Source</em>, <em>Deliver</em>, Return
+	</em>. Then, the Configuration Level provides a set of process categories for main processes. Finally, the Process Element Level decomposes the process categories by adding process element definitions and process element information. This leads to a total of 201 definitions of industry-agnostic processes.
+</p>
+    <figure class="fig" id="fig:SCORModel">
+		<object data="img/SCORModel.png" height="240" type="image/png" width="240"></object>
+		<figcaption>High-level overview of the Supply Chain Organizations Reference (SCOR v11.0). </figcaption>
+	</figure>
+
+<p>
+	By today, SCOR [<a class="ref" href="#ref-2">2</a>]–[<a class="ref" href="#ref-5">5</a>] is in its 11th revision, and has become a mature reference model backed up by many global players (including IBM, HP and SAP). It contains industry- agnostic definitions for 201 processes and 286 metrics. In <a href="#fig:sc_example">Figure 1</a>  we give an high-level overview of the reference model.
+</p>
+	<figure class="fig" id="fig:sc_example">
+		<object data="img/before.png" height="240" type="image/png" width="240"></object>
+		<figcaption>Supply Chain workflow example: Reliability between Enterprises</figcaption>
+	</figure>
+<p>
+	The motivation behind SCOR is to enable enterprises to diagnose and manage their Supply Chains. <a href="#fig:sc_example">Figure 2</a> illustrates the limited view of an enterprise without any Supply Chain communication. The goal is to extend the view in order to identify poorly performing links and act upon them. Besides communication, it is necessary that each link is measured equally by each partner.
+</p>
+<table id="tab:generated-data-overview">
+					<caption>SCOR performance indidcator overview</caption>
+					<thead>
+						<tr>
+							<th><b>Performance indicator</b></th>
+							<th><b>Measures [<a class="ref" href="#ref-1">1</a>]</b></th>
+							<th><b>Result</b></th>
+							<th><b>Example</b></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th><i>Reliability</i></th>
+							<th>If a task is performed as expected</th>
+							<th>Percentage</th>
+							<th>Order Delivery on-time</th>
+						</tr>
+						<tr>
+							<th><i>Responsiveness</i></th>
+							<th>The speed in which tasks are performed</th>
+							<th># of Days</th>
+							<th>Average days needed to deliver an order</th>
+						</tr>
+						<tr>
+							<th><i>Agility</i></th>
+							<th>The ability to respond to external influences</th>
+							<th># of Days</th>
+							<th>Days needed for an unplaned production increase</th>
+						</tr>
+						<tr>
+							<th><i>Costs</i></th>
+							<th>The cost of Supply Chain processes</th>
+							<th>Amount of money</th>
+							<th>All labor costs required for a specific product</th>
+
+						</tr>
+						<tr>
+							<th><i>Asset Management</th>
+							<th>The ability to efficiently utilize assets</th>
+							<th># of Days & Percentage</th>
+							<th>Inventory days of raw material supply</th>
+						</tr>
+						<tr>
+						</tr>
+					</tbody>
+				</table>
+
+<p>
+	For that purpose, SCOR defines different performance in- dicators (metrics) including a calculation plan to ensure com- parability within the entire Supply Chain. In total, there are 286 metrics which are grouped into five categories: <em>Reliability</em>, <em>Responsiveness</em>, <em>Agility</em>, <em>Costs</em> and <em>Assets</em>. In <a href="#tab:generated-data-overview:">Table I</a>, we provide an high-level overview on these metrics. The usage of these metrics allows Supply Chain managers to identify weak and strong links within the Supply Chain.</p>
+</div>
+</section>
+<section id="related-work" rel="schema:hasPart" resource="#related-work">
+<h2 property="schema:name">Related Work</h2>
+<div datatype="rdf:HTML" property="schema:description" resource="#related-work" typeof="deo:todo">
+	<p>
+		Various projects and activities aim at formalizing SCOR into a vocabulary using RDFS and OWL [<a class="ref" href="#ref-7">7</a>]–[<a class="ref" href="#ref-11">11</a>].
+	</p>
+	<p>
+		The formalization of the SCOR model into an ontology is first addressed in [<a class="ref" href="#ref-8">8</a>]. The authors analyzed the different conceptualization levels of the model and converted them into OWL classes.
+	</p>
+	<p>
+		In [<a class="ref" href="#ref-10">10</a>], a seminal approach formalizes Supply Chain operations overcoming the semantic weaknesses of the SCOR model. In this work the SCOR-KOS OWL model is presented, which encodes the main entities and properties for SCOR. In addition, the SCOR-Full ontology is a domain ontology for the representation and management of knowledge about Supply Chain operations. The latter presents the core concepts of Supply Chain embedded in SCOR definitions. This effort is also the basis used by Zdravković et al. [<a class="ref" href="#ref-12">12</a>] to configure the Supply Chain process. They provide a thread model configuring a specific flow of the Supply Chain studied.
+	</p>
+	<p>
+		The combination of the SCOR ontology and the ONTO- PDM 4 ontology is addressed in [<a class="ref" href="#ref-11">11</a>]. The ONTO-PDM on- tology is used to represent information regarding product development, which is not covered by SCOR. The goal is to create a Supply Chain ontology framework for networked enterprises interoperability.
+	</p>
+	<p>
+		Sakka et al. [<a class="ref" href="#ref-9">9</a>][<a class="ref" href="#ref-8">8</a>] present a SCOR model as a way to align the business processes with strategical objectives for Supply Chains. Concepts like information and input/output are included to face this alignment. SCOR is modeled using ARIS 5 thus obtaining a SCOR/ARIS model. Then, XLST transforms the output of SCOR/ARIS into a SCOR OWL ontology.
+	</p>
+	<p>
+		The work conducted by [<a class="ref" href="#ref-14">14</a>] provides an ontology model to support Supply Chain process modeling and analysis based on the SCOR model. In this work, only part of the SCOR-KOS model [<a class="ref" href="#ref-10">10</a>] related to the definition of input and output entities in SCOR processes is reused.
+	</p>
+<table id="tab:relWork">
+					<caption>Existing efforts for formalizing SCOR</caption>
+					<thead>
+						<tr>
+							<th></th>
+							<th>Ye [<a class="ref" href="#ref-6">6</a>]</th>
+							<th>Fayez [<a class="ref" href="#ref-7">7</a>]</th>
+							<th>Leukel [<a class="ref" href="#ref-8">8</a>]</th>
+							<th>Sakka [<a class="ref" href="#ref-9">9</a>]</th>
+							<th>Zradvkovic [<a class="ref" href="#ref-10">10</a>]</th>
+							<th>Lu [<a class="ref" href="#ref-11">11</a>]</th>
+							<th>SCORVoc</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th>Reference Version</th>
+							<th>7.0</th>
+							<th>7.0</th>
+							<th>8.0</th>
+							<th>9.0</th>
+							<th>n/a</th>
+							<th>7.0</th>
+							<th>11.0</th>
+						</tr>
+						<tr>
+							<th>Creation Date</th>
+							<th>2005</th>
+							<th>2008</th>
+							<th>2008</th>
+							<th>2011</th>
+							<th>2011</th>
+							<th>2013</th>
+							<th>2015</th>
+						</tr>
+						<tr>
+							<th>Ontology availablity</th>
+							<th>No</th>
+							<th>No</th>
+							<th>No</th>
+							<th>No</th>
+							<th>No</th>
+							<th>No</th>
+							<th>Yes</th>
+						</tr>
+						<tr>
+							<th>Completeness</th>
+							<th>n/a</th>
+							<th>Assumed</th>
+							<th>No</th>
+							<th>n/a</th>
+							<th>Assumed</th>
+							<th>No</th>
+							<th>Yes</th>
+						</tr>
+						<tr>
+							<th>Metric Structure</th>
+							<th>n/a</th>
+							<th>Hierarchical</th>
+							<th>Hierarchical</th>
+							<th>Hierarchical</th>
+							<th>n/a</th>
+							<th>Hierarchical</th>
+							<th>Queries & Properties</th>
+						</tr>
+						<tr>
+							<th>Evaluation using data</th>
+							<th>No</th>
+							<th>No</th>
+							<th>No</th>
+							<th>No</th>
+							<th>No</th>
+							<th>No</th>
+							<th>Yes</th>
+						</tr>
+					</tbody>
+				</table>
+	<p>
+		However, most of these attempts have limitations, summed up in <a href="#tab:relWork">Table II</a>:
+	</p>
+	<ul style="list-style-type:disc">
+		<li>First, these approaches are based on SCOR versions up to 8.0, while the current version is 11.0.
+		</li>
+		<li>Then, the Linked Data principles are not satisfied by these works. They do not reuse existing vocabularies when possible, such as schema.org and Dublin Core. But above all, vocabularies of these works are not publicly available on the web. We contacted the authors in order to get access to their vocabularies, unsuccessfully.
+		</li>
+		<li>
+			Most approaches choose to stay close to the hierarchical structure for processes and metrics given by the original source.
+		</li>
+		<li>
+			Finally, none of these vocabularies are ‘operationalized’, and enabled to automatically compute KPIs using data.
+		</li>
+	</ul>
+	<p>
+		The rest of this paper reports on the development and evaluation of the SCORVoc vocabulary, that aims to formalize and operationalize the SCOR model, while alleviating these issues.
+	</p>
+</div>
+</section>
+<section id="formalization" rel="schema:hasPart" resource="#formalization">
+<h2 property="schema:name">Formalization and Operationalization</h2>
+<div datatype="rdf:HTML" property="schema:description" resource="#formalization" typeof="deo:todo">
+	<p>This section describes the formalization of SCOR in a comprehensive RDFS vocabulary, called SCORVoc.</p>
+	<h3><em>Methodology</em></h3>
+	<p>
+		As seen in the previous section, the main issues in existing formalizations of SCOR is that they have not been developed for a specific version of SCOR, and cannot be continuously updated. On the contrary, we develop SCORVoc using the <a href="ref" href="https://github.com/vocol/vocol">VoCol</a> methodology and support environment [<a class="ref" href="#ref-15">15</a>] 6 based on the Git version control system. This makes SCORVoc a living artefact, which can be extended and revised by a community of collaborators.</p>
+		<p>
+			Multiple people were involved in the development of SCORVoc. In order to facilitate the collaborative development, we choose a <a class="ref" href="https://github.com/vocol/scor">Github repository</a> for managing vocabulary source files, documentation, queries as well as example data. The Turtle serialization format [<a class="ref" href="#ref-16">16</a>] was chosen due to its sim- plicity. GitHub’s web interface further provided our domain experts with a very simple way to access the latest SCORVoc version.
+		</p>
+		<p>
+			We chose the methodology described by Uschold et al. [<a class="ref" href="#ref-17">17</a>] for building our vocabulary: i) define the purpose and scope; ii) capture the domain knowledge; iii) develop the ontology and integrate it with other existing vocabularies; iv) evaluate it and document it properly.
+		</p>
+		<p>
+			<b>Purpose and Scope.</b> The purpose of SCORVoc is to provide enterprises with a vocabulary which they can use to express any data related to Supply Chain management (SCM). The users of the vocabulary are therefore enterprises which would like to profit from the benefits of expressing their supply chains in SCOR. The vocabulary aims at being light-weight in order to facilitate its usage for future SCOR compliant IT applications.
+		</p>
+		<p>
+			<b>Capture.</b> The capture of the domain of interest (Supply Chain data management) was achieved in two ways. First, we used the 976-page SCOR reference [<a class="ref" href="#ref-1">1</a>], with its strong terminological definitions as a major source for studying the domain of interest. Second, we had a domain expert with a deep knowledge (a member of the <a class="ref" href="http://www.apics.org/sites/apics-supply-chain-council">APICS Supply Chain Council</a>) which supported us in the entire process. As a result of many interviews with the domain expert, we acquired a more fundamental understanding of the motivation of SCOR, its strengths but also its weaknesses.
+		</p>
+		<p>
+			<b>Design.</b> This step is decomposed in the design of the two main aspects of SCOR: processes, described in Section IV-B; and metrics, described in Section IV-C. Existing semantics for each concept and the lack of accessibility of prior approaches to formalize SCOR lead us to create many concepts by ourselves. Nevertheless, various concepts and properties are integrated from well-known vocabularies such as schema.org, SKOS and Dublin Core. We made this decision based on the semantic description of these terms.
+		</p>
+		<p>
+			<b>Documentation and Evaluation.</b> As illustrated in Sec- tion IV-B and Section IV-C, each concept contains a definition together with a full documentation based on the descriptions provided by SCOR. Section V describes the evaluation of SCORVoc.
+		</p>
+		<h3><em>Formalizing Processes</em></h3>
+		<p>
+			In SCOR, these are the 201 processes. A process represents any business activity between and within enterprises. For most of them, the reference outlines unambiguous text definitions. Since some of them have a rather long name (e.g. Identify, Prioritize And Aggregate Supply Chain Requirements), we decided to keep the short name and attach the long version as a label. To stay coherent, all concept and property names follow the camel case notation.
+		</p>
+		<p>
+			As proposed in the reference, we created the processes as a hierarchical structure. We defined an abstract super class Process with its subclasses Plan, Source, etc. While certain terms (e.g. Make, Deliver) do not seem to be self-explanatory, we nevertheless adopted them due to the clear meaning in the SCM domain. All together, the hierarchy consists of three levels (Scope, Configuration, Step). Each level fulfills a certain purpose:
+		</p>
+		<ul style="list-style-type:disc">
+			<li>Level 1 groups processes together,</li>
+			<li>Level 2 comprises events, that are to be instantiated in the real world, and</li>
+			<li>Level 3 explains in detail how level 2 processes are to be executed (step by step).</li>
+		</ul>
+		<p>
+		Furthermore, the reference defines IDs and clear text defi- nitions for each process. These are reused as is in SCORVoc. <a href="#fig:SCORModel">Figure 3</a> visualizes the general structure of the vocabulary with the processes and others main concepts.</p>
+		<p>
+		<a href="#lst:example">Listing 1</a> shows an example for the full definition of the concept Enable. Enable is a subclass of the abstract concept scor:Process. Each concept contains a definition together with further descriptions provided by SCOR. We further added translations for a variety of languages.</p>
+		
+<figure class="listing" id="list:example">
+<pre>
+<code>@prefix rdfs: &#60;http://www.w3.org/2000/01/rdf−schema#> .</code>
+<code>@prefix skos: &#60;http://www.w3.org/2004/02/skos/core#> .</code>
+<code>@prefix  xsd: &#60;http://www.w3.org/2000/01/XMLSchema#> .</code>
+<code>@prefix     : &#60;http://purl.org/eis/vocab/scor#> .</code>
+<code>    </code>
+<code> :Enable   rdfs:subClassOf :Process ;</code>
+<code>           rdfs:comment    "Enable describes the ...";</code>
+<code>           rdfs:label      "Enable"@en ,</code>
+<code>                           "Permitir"@es ;</code>
+<code>           skos:notation   "E" ;</code>
+</pre>
+<figcaption> Concept definition example</figcaption>
+</figure>
+		<p>
+			There are some specificities in SCOR that required the addition of more fined-grained knowledge in the SCORVoc vocabulary.
+		</p>
+		<p>
+		As an example, SCOR level 3 processes (also called steps) have an order of execution of these processes. Therefore, we used the <a class="ref" href="http://smiy.sourceforge.net/olo/spec/orderedlistontology.html">Ordered List Ontology</a> property olo:next to express this relation in our ontology.</p>
+		<p>
+		SCOR further defined 179 Practices to provide a collection of industry-agnostics practices which were recognized for their value. In order to manage talent in the supply chain, concepts such as Person, Skills, Experiences, Aptitudes and Trainings were introduced. While these concepts are not necessarily needed for the calculation of KPIs, they are all added for sake of completeness.</p>
+		<h3><em>Formalizing Metrics</em></h3>
+		<p>
+		Metrics are defined by SCOR to evaluate Supply Chains on certain aspects such as reliability or responsiveness.</p>
+		<p>
+		Similar as the aforementioned processes, the SCOR refer- ence organizes metrics into a hierarchical structure, level 1 being the highest, and level 3 the lowest. SCOR provides for each metrics in a level a calculation plan that takes as an input the value of certain metrics in a lower level.</p>
+		<p>
+			<p>Let us describe one selected metrics for each category 10:</p>
+			<p><em>a) Reliability</em>: Level 2 metric Orders delivered in full (RL 2.1) of performance indicator Reliability measures whether orders are received by the customer in the quantities committed. Its calculation plan is:</p>
+			<p>
+				An order is considered as delivered in full once it contains the correct items (RL 3.33, level 3 metric) with the correct quantity (RL 3.35, level 3 metric).
+			</p>
+			<p>
+				<em>b) Responsiveness:</em> Level 1 metric Order Fulfillment Cycle Time (RS 1.1) measures the average cycle time in days it requires to achieve customer orders. Its calculation plan is:
+			</p>
+			<p>
+				It depends on multiple other metrics of level 2 such as the time it takes to procure goods and services (RS 2.1), its production time (RS 2.2), the delivery and the delivery retail time (RS 2.3).
+			</p>
+			<p>
+			<em>c) Agility:</em> The metric Upside Supply Chain Flexibility (AG 1.1) counts the number of days to achieve an unplanned increase (20% suggested by the reference) in the output of Source, Make and Deliver components.</p>
+			<p>
+			By assuming the production can run concurrently (one strategy provided by SCOR), it requires to identify the process (see metrics AG 2.1-5) within the enterprise whose adaption takes the most time.</p>
+			<p>
+			<em>d) Costs</em>: The metric Production Cost (CO 2.004) ac- counts for all costs involved in the production process.</p>
+			<p>
+				Thus, it depends on metrics which assemble the labor costs (CO 3.014), the automation costs (CO 3.015), the property, plant and equipment costs (CO 3.016) and the governance, risk, compliance, inventory and overhead costs (CO 3.0017).
+			</p>
+			<p>
+				<em>e) Assets</em>: The metric Cast-to-Cash Cycle Time (AM 1.1) represents the time it takes for an enterprise to earn money on raw material investments.
+			</p>
+			<p>Thus, it is necessary to summarize the days between a sale is made and the cash is received (AM 2.1) with the days of sales they were in the inventory (AM 2.2). That sum needs to be subtracted with the days between purchasing raw materials and their actual payment (AM 2.3).</p>
+			<p>
+				Previous approaches defined a concept for each metric. However in SCORVoc, metrics are represented as data proper- ties, and their calculation plan is represented as an SPARQL query. SCOR metrics are hence ‘operationalized’, in the sense that all information required for computing the metric is made available in a interoperable way (viz. as Linked Data) and the metrics itself can be translated into queries operating on this information (i.e. SPARQL queries [<a class="ref" href="#ref-18">18</a>]) and returning the respective KPI.</p>
+				<p>
+				The level 3 metrics are the data capture entry point in SCORVoc. They are hence defined as data properties. Their rdfs:domain points to their respective processes (given by SCOR) and their range is xsd:decimal since they all describe a number between 0-100 (percent values).</p>
+				<p>
+				<a href="#lst:exampleProperty">Listing 2</a> shows an example for the full definition of the property hasMetricRL_33. Equally as for the documen- tation of processes, we expressed each property with the definition and the additional information provided by SCOR.</p>
+				
+<figure class="listing" id="lst:exampleProperty">
+<pre>
+<code> :hasMetricRL_33 a owl:DatatypeProperty ;</code>
+<code>           rdfs:comment    "Percentage of orders ..." ;     </code>
+<code>           rdfs:label      "Delivery Item Accuracy"@en,   </code>
+<code>                            "Exactitud en Entrega de Items"@es;</code>
+<code>           skos:notation   "RL.3.33" ;  </code>
+<code>           rdfs:range      xsd:decimal ;</code>
+<code>           rdfs:domain     :ItemAccuracyProcesses .</code>
+</pre>
+<figcaption> Property definition example</figcaption>
+</figure>
+				<p>
+				Then, the level 1 and 2 metrics are formalized as SPARQL queries. When triggered, they compute the value of the metric using the values of lower level metrics. Section V contains multiple examples of such SPARQL metric queries.</p>
+			</div>
+		</section>
+		<section id="evaluation" rel="schema:hasPart" resource="#evaluation">
+			<h2 property="schema:name">Evaluation</h2>
+			<div datatype="rdf:HTML" property="schema:description" resource="#evaluation" typeof="deo:todo">
+				<p>
+				We evaluate our approach using a qualitative and quantita- tive method based on the metrics discussed in the previous section. Our qualitative evaluation describes the usage of the SPARQL metrics in a business scenario. In order to do a quantitative evaluation, we developed a SCOR test data generator and measured the execution time of typical queries.</p>
+				<h3><em>Qualitative Evaluation</em></h3>
+				<p>
+<figure class="listing" id="lst:exampleInstance">
+<pre>
+<code>#--- General information -------------- </code>
+<code> :process_1 ex:isSubjectOf  "Keyboard X"         </code>
+<code>            ex:hasTimeStamp "2015-10-01T12:52:16" ;         </code>
+<code>            ex:hasSupplier   ex:Logitech ;            </code>
+<code>            ex:hasCustomer   ex:Dell .          </code>
+<code>#--- SCOR Information -----------------       </code>
+<code>  :process_1 a               :SourceStockedProduct ;       </code>
+<code>             :hasMetricRL_33 100 ;</code>
+<code>             :hasMetricRL_50 90 . </code>
+</pre>
+<figcaption>Example of data expressed using SCORVoc </figcaption>
+</figure>
+				<a href="#lst:exampleInstance">Listing 3</a> demonstrates a simple example of data expressed using SCORVoc. Since the reference limits itself entirely to processes and performance indicators, we added additional information (using the namespace prefix ex:) to make the example more realistic.</p>
+				<p>
+				The example describes a scenario (:process_1) in which goods (viz. keyboards) are received by an enter- prise on a certain date. These goods are forwarded to the warehouse which is the reason for the classification of the process as a :SourceStockedProduct. Alter- natively, if these goods are directly used in the produc- tion or for specialized client orders, the process may have been classified as :SourceMakeToOrderProduct or :SourceEngineerToOrderProduct. This enables en- terprises to distinguish more easily between possible unneces- sary orders, which end up as dead capital in the stock.</p>
+				<p>
+				As a next step, all information related to this event is captured. :hasMetricRL_33 represents the accuracy of the items and :hasMetricRL_50 the quantitative accuracy. Thus, our example shows that this order achieved a quantitative accuracy of 90%.</p>
+
+				<p>
+				Once the Supply Chain related information is captured using SCORVoc, the execution of SPARQL query metrics becomes feasible. As described in Section II, this was the driving force in the development of the SCORVoc vocabulary. <a href="#lst:exampleMetricOrdersDelivery">Listing 4</a> shows the <em>Perfect Order Fulfillment</em> SPARQL metric. The query compares all complete deliveries (achieving 100%) with all deliveries in total by relying on the respective properties. Applied on the previous example, it returns 0% due to the delivery being incomplete.</p>
+				<p>The knowledge of these metrics is considered to become a major competitive advantage in the enterprise world. Besides the previous data example, we will present and briefly discuss how the metrics are realized as SPARQL queries in the following:</p>
+				<p>Listing 4 presents the Orders Delivered In Full metric. Orders are considered to be delivered entirely by SCOR once their item accuracy (RL 33) and quantitative accuracy (RL 50) correspond to 100%. Thus, every order below that value is regarded as incomplete.</p>
+<figure class="listing" id="list:exampleMetricOrdersDelivery">
+<pre>
+<code> SELECT ((xsd:decimal(?full) /</code>
+<code>         (xsd:decimal(?notFull))</code>
+<code>            * 100) as ?result) </code>
+<code> WHERE { {SELECT ((count(?deliveredInFull)) as ?full)             </code>         
+<code> WHERE { ?deliveredInFull :hasMetricRL_33 100 . </code>
+<code>         ?deliveredInFull :hasMetricRL_50 100 . }}   </code>
+<code> {SELECT ((count(?allDeliveries)) as ?notFull)          </code>
+<code>   WHERE { ?allDeliveries a :Process . }}}        </code>
+</pre>
+<figcaption>Orders Delivery in Full metric </figcaption>
+</figure>
+				<p>
+				The <em>Order Fulfillment Cycle Time</em> is calculated by collecting the respective sum (days) of all source (RS 21), make (RS 22), deliver (RS 23) and deliver retail (RS 24) processes and divides them by amount of all orders.</p>
+<figure class="listing" id="list:exampleMetricOrderFullfillment">
+<pre>
+<code> SELECT ((xsd:decimal(?actualTime)) /</code>
+<code>         (xsd:decimal(?allOrders)) as ?result)     </code>
+<code> WHERE { {SELECT (SUM(xsd:decimal(?value)) as ?actualTime)          </code>
+<code>          WHERE { ?order :hasMetricRS_21    </code>
+<code>          |:hasMetricRS_22  </code>
+<code>          |:hasMetricRS_23 </code>
+<code>          |:hasMetricRS_24 ?value . }} </code>
+<code> {SELECT (count(?order) as ?allOrders)</code>
+<code>  WHERE { ?order a :Process . }}}</code>
+</pre>
+<figcaption>Order Fulfillment Cylce Time metric</figcaption>
+</figure>
+				<p>
+				For the calculation of the <em>Upside Supply Chain Flexibility</em> metric, it is necessary to gather the value of all flexibility properties (AG1-5) and identify the maximum among them. Similar as a team is only as strong as its weakest part, a Supply Chain is only as agile as its slowest link.</p>
+<figure class="listing" id="list:exampleMetricFlexibility">
+<pre>
+<code>SELECT (MAX(xsd:decimal(?flexibility)) AS ?result) </code>
+<code> WHERE { ?order :hasMetricAG_1     </code>
+<code>               |:hasMetricAG_2 </code>
+<code>               |:hasMetricAG_3   </code>
+<code>               |:hasMetricAG_4  </code>
+<code>               |:hasMetricAG_5 ?flexibility . } </code>
+</pre>
+<figcaption>Upside Supply Chain Flexibility metric</figcaption>
+</figure>
+				<p>
+					The <em>Production Cost</em> metric (CO 2.004) is dependent on the sum of the metric properties for the costs in Labor (CO 14), Automation (CO 15), Property (CO 16) and Inventory (CO 17).
+				</p>
+<figure class="listing" id="list:exampleMetricProductionCost">
+<pre>
+<code> SELECT (SUM(xsd:decimal(?costs)) AS ?result)</code>
+<code> WHERE { ?order :hasMetricCO_14         </code>
+<code>               |:hasMetricCO_15         </code>
+<code>               |:hasMetricCO_16            </code>
+<code>               |:hasMetricCO_17 ?costs . }          </code>
+</pre>
+<figcaption>Production Cost metric</figcaption>
+</figure>
+				<p>
+				Listing 8 presents the Cast-to-Cash Cycle Time metric (AM 1.1). The query selects the average time raw materials stays in inventory (AM 2) together with the time the payment is due to by us (AM 1) subtracted by that of our customers (AM 3).</p>
+<figure class="listing" id="list:exampleMetricCycleTime">
+<pre>
+<code>SELECT (AVG(xsd:decimal(?inventoryDays)) </code>
+<code>      + AVG(xsd:decimal(?salesOutstanding))    </code>
+<code>      - AVG(xsd:decimal(?payableOutstanding)) as ?result)      </code> 
+<code> WHERE { ?order :hasMetricAM_1 ?salesOutstanding . </code>
+<code>         ?order :hasMetricAM_2 ?inventoryDays .        </code>
+<code>         ?order :hasMetricAM_3 ?payableOutstanding . }    </code>
+</pre>
+<figcaption>Cash-to-Cash Cycle Time metric</figcaption>
+</figure>
+				<figure>
+					<object data="img/after.png" height="240" type="image/png" width="240"></object>
+					<figcaption>Final view on the Supply Chain, where KPI information is propagated through the network </figcaption>
+				</figure>
+				<h3><em>Quantitative Evaluation</em></h3>
+				<p>We demonstrate the feasibility of our approach on a SCOR dataset. The only known dataset is <a class="ref" href="http://www.apics.org/sites/apics-supply-chain-council/benchmarking">SCORmark</a>, which is assembled by a major consulting firm, but is only available for business customers and not open for research. We hence developed a open-source synthetic benchmark data generator, available on <a class="ref" href="https://github.com/vocol/scor/generator">GitHub</a>.</p>
+				<p>
+				This generator allows to perform a round-trip between data representation and KPI evaluation. The benchmark allows to assess the performance of an SCORVoc implementation in a systematic and repeatable way. The generator creates data based on a number of parameters: Supply Chain depth, industry and Supply Chain partners. The Supply Chain depth sets the level from one main OEM enterprise to it suppliers’ supplier. The industry generates plausible product lines and enterprise names. The Supply Chain partners determine the width of the Supply Chain. A minimum of 2 generates a binary tree to both sides.</p>
+				<table id="generated-data-overview">
+					<caption>Generated Data Overview: 100k Scenario</caption>
+					<thead>
+						<tr>
+							<th>Processes</th>
+							<th>Instances</th>
+							<th>Related Properties</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Source</td>
+							<td>1.481</td>
+							<td>28.576</td>
+						</tr>
+						<tr>
+							<td>Make</td>
+							<td>1.785</td>
+							<td>23.216</td>
+						</tr>
+						<tr>
+							<td>Deliver</td>
+							<td>2.083</td>
+							<td>22.917</td>
+						</tr>
+						<tr>
+							<td>Plan</td>
+							<td>1.538</td>
+							<td>18.462</td>
+						</tr>
+					</tbody>
+				</table>
+				<p>Various dataset sizes can be generated in order to as- sess the scalability as well as the correctness of the metric SPARQL query implementations. We evaluated the metrics for datasets which contain 100k, 500k, 1M and 2M triples. <a href="#generated-data-overview">Table III</a> presents an overview of the generated data for the 100k scenario. While the instances represent different types of processes, the related properties are mostly 3-level data type properties which are required by the metrics (such as scor:hasMetricRL_50). The values randomized within a certain range (e.g. >80% for Reliability).</p>
+				<p>
+					The queries were executed using the <a class="ref" href="https://jena.apache.org/documentation/query/">ARQ SPARQL processor</a>. The machine we used for the experiment contains 8GB of RAM, 256GB SSD and an Intel i7-3537U CPU with 2.00GHz.
+				</p>
+				<p>
+				<a href="#fig:dummy">Figure 4</a> summarizes the results of the quantitative evalua- tion. The Reliability and Assets queries performed best in our scenario and were also able to be executed fast with datasets larger than 2M triples. The other queries do not scale as well, but still perform with less than 10s query execution time. This is enough for real-world settings. Even for much larger supply networks, we deem query execution performance not to be a bottleneck, since queries are executed relatively infrequently and not by thousands of users. Also, since the number of metrics is limited it is possible to optimize query execution even more, but creating specific indexes or applying caching strategies. Overall this evaluation shows that the approach of having an executable vocabulary is feasible.</p>
+				<p>Furthermore, the SCOR data generator can be used to systematically assess and evaluate SCORVoc compliant soft- ware solutions. Such solutions could be Specific supply net- work visualizations tools, Supply Chain robustness assessment frameworks, or scenario planning tools.</p>
+				<p>In contrast with <a href="#fig:fig:sc_example">Figure 2</a>, <a href="#fig:dummy">Figure 5</a> represents the full view on the entire Supply Chain.</p>
+			</div>
+		</section>
+		<section id="conclusion" rel="schema:hasPart" resource="#conclusion">
+			<h2 property="schema:name">Conclusion and Future work</h2>
+			<div datatype="rdf:HTML" property="schema:description" resource="#conclusion" typeof="deo:Conclusion">
+				<p>
+					The use of data-centric approaches in engineering, manufac- turing and production are currently widely discussed topics (cf. Industry 4.0, smart manufacturing or cyber-physical systems initiatives). The complexity in Supply Chain Management in general is thought to be one of the major bottlenecks of the field. A key issue in engineering, manufacturing and production is to be able to efficiently and effectively manage Supply Chains.
+				</p>
+				<p>
+					This paper introduces the SCORVoc RDFS vocabulary, that formalizes and operationalizes the SCOR standard. SCORVoc is available on <a class="ref" href="https://github.com/vocol/scor">GitHub</a> for collaborative further development and at <a class="ref" href="http://purl.org/eis/vocab/scor">purl.org</a>. We used an innovative methodology to develop the SCORVoc vocabulary, and provided means to automatically compute typical KPIs. Finally, we described comprehensive test scenarios for SCORVoc and implemented a synthetic benchmark. SCORVoc, together with the formalized SPARQL queries, represents a comprehensive approach to facilitate information flows in Supply Chains, and enables the design of SCOR compliant IT applications.
+				</p>
+				<p>
+				This work is the first step of a larger research and develop- ment agenda that aims at providing comprehensive support for information flows accompanying Supply Chains, employing the Linked Data paradigm. The next step is the constitution of a real industry SCOR benchmark, one may test SCORVoc implementations against. One could hence prove the usability of queries, and optimize their execution time.</p>
+				<p>
+				Finally, let us note we learned from domain experts that SCOR still has a number of limitations. For example a delivery of 9 out of 10 items is described as a 90% success rate. Although for one company this may be an appropriate measurement, for another company, the missing part may actually stop the entire production part. SCORVoc may help identify such limitations, and accompany the improvement of the SCOR specification.</p>
+			</div>
+		</section>
+		<section id="acknowledgements" rel="schema:hasPart" resource="#acknowledgements">
+			<h2 property="schema:name">Acknowledgements</h2>
+			<div datatype="rdf:HTML" property="schema:description" resource="#acknowledgements" typeof="deo:todo">
+				<p>This work was partly supported by the following grants from the German Federal Ministry of Education and Research (BMBF) for the <a href="http://lucid-project.org">LUCID project</a> (GA no. 01IS14019A) as well as for the the <a href="http://lucid-project.org">LEDS project</a> (GA no. 03WKCG11A).</p>
+			</div>
+		</section>
+		<section id="references">
+			<h2>References</h2>
+			<div>
+				<ol>
+					<li id="ref-1" property="schema:citation">S. C. Council, “Supply chain operations reference model,” <em>SCOR, Version</em>, vol. 11, 2012.</li>
+					
+					<li id="ref-2" property="schema:citation">F. Salazar, M. Caro, and J. Cavazos, "Final Review of the Application of
+					the SCOR Model: Supply Chain for Biodiesel Castor–Colombia Case,” <em>Journal of Technology Innovations in Renewable Energy</em>, vol. 1. no. 1, 2012</li>
+					
+					<li id="ref-3" property="schema:citation">B. Georgise, K.-D. Thoben, and F. Marcus Seifert, “Assessing the
+						Existing Performance Measures, & Measurement Systems in Developing
+						Countries: An Ethiopian Study,” <em>Global Journal of Researches In
+					Engineering</em>, vol. 13, no. 2, 2013.</li>
+					<li id="ref-4" property="schema:citation">F. B. Georgise, K.-d. Thoben, and M. Seifert, “Implementing the SCOR
+						Model Best Practices for Supply Chain Improvement in Developing
+					Countries,” <em>International Journal of u-and e-Service, Science and Technology</em>, vol. 6, no. 4, 2013.</li>
+					<li id="ref-5" property="schema:citation">F. Lestari, K. Ismail, A. Hamid, and W. Sutopo, “Designing supply chain
+						analysis tool using SCOR model (case study in palm oil refinery),” in
+						<em>IEEE Int. Conf. on Industrial Engineering and Engineering Management</em>
+					(IEEM). IEEE, 2013.</li>
+					<li id="ref-6" property="schema:citation">Y. Ye, D. Yang, Z. Jiang, and L. Tong, “An ontology-based architecture
+						for implementing semantic integration of supply chain management,”
+						<em>International Journal of Computer Integrated Manufacturing</em>, vol. 21,
+					no. 1, pp. 1–18, 2008.</li>
+					<li id="ref-7" property="schema:citation">M. Fayez, L. Rabelo, and M. Mollaghasemi, “Ontologies for supply
+						chain simulation modeling,” in <em>37th conference on Winter simulation</em>,
+					2005.</li>
+					<li id="ref-8" property="schema:citation">J. Leukel and S. Kirn, “A supply chain management approach to logistics
+						ontologies in information systems,” in <em>Business Information Systems</em>.
+					Springer, 2008.</li>
+					<li id="ref-9" property="schema:citation">O. Sakka, P.-A. Millet, and V. Botta-Genoulaz, “An ontological approach
+						for strategic alignment: a supply chain operations reference case study,”
+						<em>International Journal of Computer Integrated Manufacturing</em>, vol. 24,
+					no. March 2015, 2011.</li>
+					<li id="ref-10" property="schema:citation">M. Zdravković, H. Panetto, M. Trajanović, and A. Aubry, “An approach
+						for formalising the supply chain operations,” <em>Enterprise Information
+					Systems</em>, vol. 5, no. 4, 2011.</li>
+					<li id="ref-11" property="schema:citation">Y. Lu, H. Panetto, Y. Ni, and X. Gu, “Ontology alignment for networked
+						enterprise information system interoperability in supply chain environment,” <em>International Journal of Computer Integrated Manufacturing</em>,
+					vol. 26, no. 1-2, pp. 140–151, 2013.</li>
+					<li id="ref-12" property="schema:citation">M. Zdravković, M. Trajanović, H. Panetto, A. Aubry, and M. Lezoche,
+					“Ontology-based supply chain process configuration,” in <em>34th International Conference on Production Engineering</em>, ICPE 2011, 2011.</li>
+					<li id="ref-13" property="schema:citation">H. Panetto, M. Dassisti, and A. Tursi, “Onto-pdm: Product-driven ontol-
+						ogy for product data management interoperability within manufacturing
+						process environment,” <em>Advanced Engineering Informatics</em>, vol. 26, no. 2,
+					2012.</li>
+					<li id="ref-14" property="schema:citation">T. Grubic and I. S. Fan, “Integrating process and ontology for supply
+					chain modelling,” <em>International Journal of Computer Integrated Manufacturing</em>, vol. 24, no. March 2015, pp. 847–863, 2011.</li>
+					<li id="ref-15" property="schema:citation">VoCol: An Agile Methodology and Environment for Collaborative
+						Vocabulary Development. Zenodo, Feb. 2015. [Online]. Available:
+					http://dx.doi.org/10.5281/zenodo.15023</li>
+					<li id="ref-16" property="schema:citation">D. Beckett, T. Berners-Lee, E. Prudhommeaux, and G. Carothers,
+						“RDF 1.1 Turtle–Terse RDF Triple Language. W3C Recommendation,”
+						<em>World Wide Web Consortium (Feb 2014)</em>, available at http://www. w3.
+					org/TR/turtle, 2014.</li>
+					<li id="ref-17" property="schema:citation">M. Uschold and M. Gruninger, “Ontologies: Principles, methods and
+					applications,” <em>The knowledge engineering review</em>, vol. 11, no. 02, 1996.</li>
+					<li id="ref-18" property="schema:citation">S. Harris, A. Seaborne, and E. Prudhommeaux, “SPARQL 1.1 query
+					language,”<em>W3C Recommendation</em>, vol. 21, 2013.</li>
+				</ol>
+			</div>
+		</section>
+		
+	</div>
+</article>
+</main>
 </body>
-
 </html>
